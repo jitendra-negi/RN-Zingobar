@@ -1,0 +1,538 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.otrixcommercelaravel"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="21"
+9        android:targetSdkVersion="31" />
+10
+11    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+11-->/Users/jitendra/Documents/ReactNativeProjects/otrixcommercelaravelapp/android/app/src/debug/AndroidManifest.xml:5:5-77
+11-->/Users/jitendra/Documents/ReactNativeProjects/otrixcommercelaravelapp/android/app/src/debug/AndroidManifest.xml:5:22-75
+12    <uses-permission android:name="android.permission.INTERNET" />
+12-->/Users/jitendra/Documents/ReactNativeProjects/otrixcommercelaravelapp/android/app/src/main/AndroidManifest.xml:4:5-67
+12-->/Users/jitendra/Documents/ReactNativeProjects/otrixcommercelaravelapp/android/app/src/main/AndroidManifest.xml:4:22-64
+13    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+13-->[com.facebook.flipper:flipper:0.125.0] /Users/jitendra/.gradle/caches/transforms-3/4579d77217e00b3eb1409e4f5131b607/transformed/jetified-flipper-0.125.0/AndroidManifest.xml:16:5-76
+13-->[com.facebook.flipper:flipper:0.125.0] /Users/jitendra/.gradle/caches/transforms-3/4579d77217e00b3eb1409e4f5131b607/transformed/jetified-flipper-0.125.0/AndroidManifest.xml:16:22-73
+14    <uses-permission android:name="android.permission.WAKE_LOCK" />
+14-->[:react-native-firebase_auth] /Users/jitendra/Documents/ReactNativeProjects/otrixcommercelaravelapp/node_modules/@react-native-firebase/auth/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:10:5-68
+14-->[:react-native-firebase_auth] /Users/jitendra/Documents/ReactNativeProjects/otrixcommercelaravelapp/node_modules/@react-native-firebase/auth/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:10:22-65
+15    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+15-->[:react-native-firebase_auth] /Users/jitendra/Documents/ReactNativeProjects/otrixcommercelaravelapp/node_modules/@react-native-firebase/auth/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:11:5-79
+15-->[:react-native-firebase_auth] /Users/jitendra/Documents/ReactNativeProjects/otrixcommercelaravelapp/node_modules/@react-native-firebase/auth/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:11:22-76
+16    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" /> <!-- Required by older versions of Google Play services to create IID tokens -->
+16-->[com.google.firebase:firebase-messaging:23.1.1] /Users/jitendra/.gradle/caches/transforms-3/49caeea695f7c01261b547db803e51cf/transformed/jetified-firebase-messaging-23.1.1/AndroidManifest.xml:25:5-77
+16-->[com.google.firebase:firebase-messaging:23.1.1] /Users/jitendra/.gradle/caches/transforms-3/49caeea695f7c01261b547db803e51cf/transformed/jetified-firebase-messaging-23.1.1/AndroidManifest.xml:25:22-74
+17    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+17-->[com.google.firebase:firebase-messaging:23.1.1] /Users/jitendra/.gradle/caches/transforms-3/49caeea695f7c01261b547db803e51cf/transformed/jetified-firebase-messaging-23.1.1/AndroidManifest.xml:28:5-82
+17-->[com.google.firebase:firebase-messaging:23.1.1] /Users/jitendra/.gradle/caches/transforms-3/49caeea695f7c01261b547db803e51cf/transformed/jetified-firebase-messaging-23.1.1/AndroidManifest.xml:28:22-79
+18    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" />
+18-->[com.android.installreferrer:installreferrer:1.0] /Users/jitendra/.gradle/caches/transforms-3/baed4dc2f36f7d3aff91dcf94c17805e/transformed/jetified-installreferrer-1.0/AndroidManifest.xml:9:5-110
+18-->[com.android.installreferrer:installreferrer:1.0] /Users/jitendra/.gradle/caches/transforms-3/baed4dc2f36f7d3aff91dcf94c17805e/transformed/jetified-installreferrer-1.0/AndroidManifest.xml:9:22-107
+19
+20    <application
+20-->/Users/jitendra/Documents/ReactNativeProjects/otrixcommercelaravelapp/android/app/src/main/AndroidManifest.xml:6:5-26:19
+21        android:name="com.otrixcommercelaravel.MainApplication"
+21-->/Users/jitendra/Documents/ReactNativeProjects/otrixcommercelaravelapp/android/app/src/main/AndroidManifest.xml:7:7-38
+22        android:allowBackup="false"
+22-->/Users/jitendra/Documents/ReactNativeProjects/otrixcommercelaravelapp/android/app/src/main/AndroidManifest.xml:11:7-34
+23        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+23-->[androidx.core:core:1.7.0] /Users/jitendra/.gradle/caches/transforms-3/0647204d58c048d1dd06350cd74722f3/transformed/core-1.7.0/AndroidManifest.xml:24:18-86
+24        android:debuggable="true"
+25        android:icon="@mipmap/ic_launcher"
+25-->/Users/jitendra/Documents/ReactNativeProjects/otrixcommercelaravelapp/android/app/src/main/AndroidManifest.xml:9:7-41
+26        android:label="@string/app_name"
+26-->/Users/jitendra/Documents/ReactNativeProjects/otrixcommercelaravelapp/android/app/src/main/AndroidManifest.xml:8:7-39
+27        android:roundIcon="@mipmap/ic_launcher_round"
+27-->/Users/jitendra/Documents/ReactNativeProjects/otrixcommercelaravelapp/android/app/src/main/AndroidManifest.xml:10:7-52
+28        android:supportsRtl="true"
+28-->[com.facebook.android:facebook-android-sdk:8.2.0] /Users/jitendra/.gradle/caches/transforms-3/a042f186fce76a48c573cb931166d1be/transformed/jetified-facebook-android-sdk-8.2.0/AndroidManifest.xml:28:18-44
+29        android:theme="@style/AppTheme"
+29-->/Users/jitendra/Documents/ReactNativeProjects/otrixcommercelaravelapp/android/app/src/main/AndroidManifest.xml:12:7-38
+30        android:usesCleartextTraffic="true" >
+30-->/Users/jitendra/Documents/ReactNativeProjects/otrixcommercelaravelapp/android/app/src/debug/AndroidManifest.xml:8:9-44
+31        <activity
+31-->/Users/jitendra/Documents/ReactNativeProjects/otrixcommercelaravelapp/android/app/src/debug/AndroidManifest.xml:11:9-111
+32            android:name="com.facebook.react.devsupport.DevSettingsActivity"
+32-->/Users/jitendra/Documents/ReactNativeProjects/otrixcommercelaravelapp/android/app/src/debug/AndroidManifest.xml:11:19-83
+33            android:exported="false" />
+33-->/Users/jitendra/Documents/ReactNativeProjects/otrixcommercelaravelapp/android/app/src/debug/AndroidManifest.xml:11:84-108
+34        <activity
+34-->/Users/jitendra/Documents/ReactNativeProjects/otrixcommercelaravelapp/android/app/src/main/AndroidManifest.xml:13:7-24:18
+35            android:name="com.otrixcommercelaravel.MainActivity"
+35-->/Users/jitendra/Documents/ReactNativeProjects/otrixcommercelaravelapp/android/app/src/main/AndroidManifest.xml:14:9-37
+36            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode"
+36-->/Users/jitendra/Documents/ReactNativeProjects/otrixcommercelaravelapp/android/app/src/main/AndroidManifest.xml:16:9-118
+37            android:exported="true"
+37-->/Users/jitendra/Documents/ReactNativeProjects/otrixcommercelaravelapp/android/app/src/main/AndroidManifest.xml:19:9-32
+38            android:label="@string/app_name"
+38-->/Users/jitendra/Documents/ReactNativeProjects/otrixcommercelaravelapp/android/app/src/main/AndroidManifest.xml:15:9-41
+39            android:launchMode="singleTask"
+39-->/Users/jitendra/Documents/ReactNativeProjects/otrixcommercelaravelapp/android/app/src/main/AndroidManifest.xml:17:9-40
+40            android:windowSoftInputMode="adjustResize" >
+40-->/Users/jitendra/Documents/ReactNativeProjects/otrixcommercelaravelapp/android/app/src/main/AndroidManifest.xml:18:9-51
+41            <intent-filter>
+41-->/Users/jitendra/Documents/ReactNativeProjects/otrixcommercelaravelapp/android/app/src/main/AndroidManifest.xml:20:9-23:25
+42                <action android:name="android.intent.action.MAIN" />
+42-->/Users/jitendra/Documents/ReactNativeProjects/otrixcommercelaravelapp/android/app/src/main/AndroidManifest.xml:21:13-65
+42-->/Users/jitendra/Documents/ReactNativeProjects/otrixcommercelaravelapp/android/app/src/main/AndroidManifest.xml:21:21-62
+43
+44                <category android:name="android.intent.category.LAUNCHER" />
+44-->/Users/jitendra/Documents/ReactNativeProjects/otrixcommercelaravelapp/android/app/src/main/AndroidManifest.xml:22:13-73
+44-->/Users/jitendra/Documents/ReactNativeProjects/otrixcommercelaravelapp/android/app/src/main/AndroidManifest.xml:22:23-70
+45            </intent-filter>
+46        </activity>
+47
+48        <meta-data
+48-->/Users/jitendra/Documents/ReactNativeProjects/otrixcommercelaravelapp/android/app/src/main/AndroidManifest.xml:25:13-111
+49            android:name="com.facebook.sdk.ApplicationId"
+49-->/Users/jitendra/Documents/ReactNativeProjects/otrixcommercelaravelapp/android/app/src/main/AndroidManifest.xml:25:24-69
+50            android:value="@string/facebook_app_id" />
+50-->/Users/jitendra/Documents/ReactNativeProjects/otrixcommercelaravelapp/android/app/src/main/AndroidManifest.xml:25:70-109
+51
+52        <service
+52-->[:react-native-firebase_messaging] /Users/jitendra/Documents/ReactNativeProjects/otrixcommercelaravelapp/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:14:9-16:40
+53            android:name="io.invertase.firebase.messaging.ReactNativeFirebaseMessagingHeadlessService"
+53-->[:react-native-firebase_messaging] /Users/jitendra/Documents/ReactNativeProjects/otrixcommercelaravelapp/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:15:13-103
+54            android:exported="false" />
+54-->[:react-native-firebase_messaging] /Users/jitendra/Documents/ReactNativeProjects/otrixcommercelaravelapp/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:16:13-37
+55        <service
+55-->[:react-native-firebase_messaging] /Users/jitendra/Documents/ReactNativeProjects/otrixcommercelaravelapp/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:17:9-23:19
+56            android:name="io.invertase.firebase.messaging.ReactNativeFirebaseMessagingService"
+56-->[:react-native-firebase_messaging] /Users/jitendra/Documents/ReactNativeProjects/otrixcommercelaravelapp/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:18:13-95
+57            android:exported="false" >
+57-->[:react-native-firebase_messaging] /Users/jitendra/Documents/ReactNativeProjects/otrixcommercelaravelapp/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:19:13-37
+58            <intent-filter>
+58-->[:react-native-firebase_messaging] /Users/jitendra/Documents/ReactNativeProjects/otrixcommercelaravelapp/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:20:13-22:29
+59                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+59-->[:react-native-firebase_messaging] /Users/jitendra/Documents/ReactNativeProjects/otrixcommercelaravelapp/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:21:17-78
+59-->[:react-native-firebase_messaging] /Users/jitendra/Documents/ReactNativeProjects/otrixcommercelaravelapp/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:21:25-75
+60            </intent-filter>
+61        </service>
+62
+63        <receiver
+63-->[:react-native-firebase_messaging] /Users/jitendra/Documents/ReactNativeProjects/otrixcommercelaravelapp/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:25:9-32:20
+64            android:name="io.invertase.firebase.messaging.ReactNativeFirebaseMessagingReceiver"
+64-->[:react-native-firebase_messaging] /Users/jitendra/Documents/ReactNativeProjects/otrixcommercelaravelapp/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:26:13-96
+65            android:exported="true"
+65-->[:react-native-firebase_messaging] /Users/jitendra/Documents/ReactNativeProjects/otrixcommercelaravelapp/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:27:13-36
+66            android:permission="com.google.android.c2dm.permission.SEND" >
+66-->[:react-native-firebase_messaging] /Users/jitendra/Documents/ReactNativeProjects/otrixcommercelaravelapp/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:28:13-73
+67            <intent-filter>
+67-->[:react-native-firebase_messaging] /Users/jitendra/Documents/ReactNativeProjects/otrixcommercelaravelapp/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:29:13-31:29
+68                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+68-->[:react-native-firebase_messaging] /Users/jitendra/Documents/ReactNativeProjects/otrixcommercelaravelapp/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:30:17-81
+68-->[:react-native-firebase_messaging] /Users/jitendra/Documents/ReactNativeProjects/otrixcommercelaravelapp/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:30:25-78
+69            </intent-filter>
+70        </receiver>
+71
+72        <meta-data
+72-->[:react-native-firebase_messaging] /Users/jitendra/Documents/ReactNativeProjects/otrixcommercelaravelapp/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:34:9-36:36
+73            android:name="firebase_messaging_auto_init_enabled"
+73-->[:react-native-firebase_messaging] /Users/jitendra/Documents/ReactNativeProjects/otrixcommercelaravelapp/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:35:13-64
+74            android:value="true" />
+74-->[:react-native-firebase_messaging] /Users/jitendra/Documents/ReactNativeProjects/otrixcommercelaravelapp/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:36:13-33
+75        <meta-data
+75-->[:react-native-firebase_messaging] /Users/jitendra/Documents/ReactNativeProjects/otrixcommercelaravelapp/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:37:9-39:32
+76            android:name="com.google.firebase.messaging.default_notification_channel_id"
+76-->[:react-native-firebase_messaging] /Users/jitendra/Documents/ReactNativeProjects/otrixcommercelaravelapp/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:38:13-89
+77            android:value="" />
+77-->[:react-native-firebase_messaging] /Users/jitendra/Documents/ReactNativeProjects/otrixcommercelaravelapp/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:39:13-29
+78        <meta-data
+78-->[:react-native-firebase_messaging] /Users/jitendra/Documents/ReactNativeProjects/otrixcommercelaravelapp/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:40:9-42:47
+79            android:name="com.google.firebase.messaging.default_notification_color"
+79-->[:react-native-firebase_messaging] /Users/jitendra/Documents/ReactNativeProjects/otrixcommercelaravelapp/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:41:13-84
+80            android:resource="@color/white" />
+80-->[:react-native-firebase_messaging] /Users/jitendra/Documents/ReactNativeProjects/otrixcommercelaravelapp/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:42:13-44
+81        <meta-data
+81-->[:react-native-firebase_app] /Users/jitendra/Documents/ReactNativeProjects/otrixcommercelaravelapp/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:11:9-13:36
+82            android:name="app_data_collection_default_enabled"
+82-->[:react-native-firebase_app] /Users/jitendra/Documents/ReactNativeProjects/otrixcommercelaravelapp/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:12:13-63
+83            android:value="true" />
+83-->[:react-native-firebase_app] /Users/jitendra/Documents/ReactNativeProjects/otrixcommercelaravelapp/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:13:13-33
+84
+85        <service
+85-->[:react-native-firebase_app] /Users/jitendra/Documents/ReactNativeProjects/otrixcommercelaravelapp/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:15:9-23:19
+86            android:name="com.google.firebase.components.ComponentDiscoveryService"
+86-->[:react-native-firebase_app] /Users/jitendra/Documents/ReactNativeProjects/otrixcommercelaravelapp/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:16:13-84
+87            android:directBootAware="true"
+87-->[:react-native-firebase_app] /Users/jitendra/Documents/ReactNativeProjects/otrixcommercelaravelapp/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:17:13-43
+88            android:exported="false" >
+88-->[:react-native-firebase_app] /Users/jitendra/Documents/ReactNativeProjects/otrixcommercelaravelapp/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:18:13-37
+89            <meta-data
+89-->[:react-native-firebase_app] /Users/jitendra/Documents/ReactNativeProjects/otrixcommercelaravelapp/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:20:13-22:85
+90                android:name="com.google.firebase.components:io.invertase.firebase.app.ReactNativeFirebaseAppRegistrar"
+90-->[:react-native-firebase_app] /Users/jitendra/Documents/ReactNativeProjects/otrixcommercelaravelapp/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:21:17-120
+91                android:value="com.google.firebase.components.ComponentRegistrar" />
+91-->[:react-native-firebase_app] /Users/jitendra/Documents/ReactNativeProjects/otrixcommercelaravelapp/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:22:17-82
+92            <meta-data
+92-->[com.google.firebase:firebase-messaging:23.1.1] /Users/jitendra/.gradle/caches/transforms-3/49caeea695f7c01261b547db803e51cf/transformed/jetified-firebase-messaging-23.1.1/AndroidManifest.xml:55:13-57:85
+93                android:name="com.google.firebase.components:com.google.firebase.messaging.FirebaseMessagingRegistrar"
+93-->[com.google.firebase:firebase-messaging:23.1.1] /Users/jitendra/.gradle/caches/transforms-3/49caeea695f7c01261b547db803e51cf/transformed/jetified-firebase-messaging-23.1.1/AndroidManifest.xml:56:17-119
+94                android:value="com.google.firebase.components.ComponentRegistrar" />
+94-->[com.google.firebase:firebase-messaging:23.1.1] /Users/jitendra/.gradle/caches/transforms-3/49caeea695f7c01261b547db803e51cf/transformed/jetified-firebase-messaging-23.1.1/AndroidManifest.xml:57:17-82
+95            <meta-data
+95-->[com.google.firebase:firebase-datatransport:18.1.7] /Users/jitendra/.gradle/caches/transforms-3/835502a43f012edd9551b28291b92861/transformed/jetified-firebase-datatransport-18.1.7/AndroidManifest.xml:27:13-29:85
+96                android:name="com.google.firebase.components:com.google.firebase.datatransport.TransportRegistrar"
+96-->[com.google.firebase:firebase-datatransport:18.1.7] /Users/jitendra/.gradle/caches/transforms-3/835502a43f012edd9551b28291b92861/transformed/jetified-firebase-datatransport-18.1.7/AndroidManifest.xml:28:17-115
+97                android:value="com.google.firebase.components.ComponentRegistrar" />
+97-->[com.google.firebase:firebase-datatransport:18.1.7] /Users/jitendra/.gradle/caches/transforms-3/835502a43f012edd9551b28291b92861/transformed/jetified-firebase-datatransport-18.1.7/AndroidManifest.xml:29:17-82
+98            <meta-data
+98-->[com.google.firebase:firebase-auth:21.1.0] /Users/jitendra/.gradle/caches/transforms-3/0a4e9d23b78f4c59fce61403d3dc608e/transformed/jetified-firebase-auth-21.1.0/AndroidManifest.xml:67:13-69:85
+99                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
+99-->[com.google.firebase:firebase-auth:21.1.0] /Users/jitendra/.gradle/caches/transforms-3/0a4e9d23b78f4c59fce61403d3dc608e/transformed/jetified-firebase-auth-21.1.0/AndroidManifest.xml:68:17-109
+100                android:value="com.google.firebase.components.ComponentRegistrar" />
+100-->[com.google.firebase:firebase-auth:21.1.0] /Users/jitendra/.gradle/caches/transforms-3/0a4e9d23b78f4c59fce61403d3dc608e/transformed/jetified-firebase-auth-21.1.0/AndroidManifest.xml:69:17-82
+101            <meta-data
+101-->[com.google.firebase:firebase-installations:17.1.0] /Users/jitendra/.gradle/caches/transforms-3/e49e7e3e932a7fc59e237b00011b831d/transformed/jetified-firebase-installations-17.1.0/AndroidManifest.xml:17:13-19:85
+102                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar"
+102-->[com.google.firebase:firebase-installations:17.1.0] /Users/jitendra/.gradle/caches/transforms-3/e49e7e3e932a7fc59e237b00011b831d/transformed/jetified-firebase-installations-17.1.0/AndroidManifest.xml:18:17-127
+103                android:value="com.google.firebase.components.ComponentRegistrar" />
+103-->[com.google.firebase:firebase-installations:17.1.0] /Users/jitendra/.gradle/caches/transforms-3/e49e7e3e932a7fc59e237b00011b831d/transformed/jetified-firebase-installations-17.1.0/AndroidManifest.xml:19:17-82
+104        </service>
+105
+106        <provider
+106-->[:react-native-firebase_app] /Users/jitendra/Documents/ReactNativeProjects/otrixcommercelaravelapp/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:25:9-29:38
+107            android:name="io.invertase.firebase.app.ReactNativeFirebaseAppInitProvider"
+107-->[:react-native-firebase_app] /Users/jitendra/Documents/ReactNativeProjects/otrixcommercelaravelapp/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:26:13-88
+108            android:authorities="com.otrixcommercelaravel.reactnativefirebaseappinitprovider"
+108-->[:react-native-firebase_app] /Users/jitendra/Documents/ReactNativeProjects/otrixcommercelaravelapp/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:27:13-86
+109            android:exported="false"
+109-->[:react-native-firebase_app] /Users/jitendra/Documents/ReactNativeProjects/otrixcommercelaravelapp/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:28:13-37
+110            android:initOrder="99" />
+110-->[:react-native-firebase_app] /Users/jitendra/Documents/ReactNativeProjects/otrixcommercelaravelapp/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:29:13-35
+111        <provider
+111-->[:react-native-image-picker] /Users/jitendra/Documents/ReactNativeProjects/otrixcommercelaravelapp/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:10:9-18:20
+112            android:name="com.imagepicker.ImagePickerProvider"
+112-->[:react-native-image-picker] /Users/jitendra/Documents/ReactNativeProjects/otrixcommercelaravelapp/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:11:13-63
+113            android:authorities="com.otrixcommercelaravel.imagepickerprovider"
+113-->[:react-native-image-picker] /Users/jitendra/Documents/ReactNativeProjects/otrixcommercelaravelapp/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:12:13-71
+114            android:exported="false"
+114-->[:react-native-image-picker] /Users/jitendra/Documents/ReactNativeProjects/otrixcommercelaravelapp/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:13:13-37
+115            android:grantUriPermissions="true" >
+115-->[:react-native-image-picker] /Users/jitendra/Documents/ReactNativeProjects/otrixcommercelaravelapp/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:14:13-47
+116            <meta-data
+116-->[:react-native-image-picker] /Users/jitendra/Documents/ReactNativeProjects/otrixcommercelaravelapp/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:15:13-17:70
+117                android:name="android.support.FILE_PROVIDER_PATHS"
+117-->[:react-native-image-picker] /Users/jitendra/Documents/ReactNativeProjects/otrixcommercelaravelapp/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:16:17-67
+118                android:resource="@xml/imagepicker_provider_paths" />
+118-->[:react-native-image-picker] /Users/jitendra/Documents/ReactNativeProjects/otrixcommercelaravelapp/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:17:17-67
+119        </provider>
+120        <provider
+120-->[:react-native-share] /Users/jitendra/Documents/ReactNativeProjects/otrixcommercelaravelapp/node_modules/react-native-share/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:10:9-18:20
+121            android:name="cl.json.RNShareFileProvider"
+121-->[:react-native-share] /Users/jitendra/Documents/ReactNativeProjects/otrixcommercelaravelapp/node_modules/react-native-share/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:11:13-55
+122            android:authorities="com.otrixcommercelaravel.rnshare.fileprovider"
+122-->[:react-native-share] /Users/jitendra/Documents/ReactNativeProjects/otrixcommercelaravelapp/node_modules/react-native-share/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:12:13-72
+123            android:exported="false"
+123-->[:react-native-share] /Users/jitendra/Documents/ReactNativeProjects/otrixcommercelaravelapp/node_modules/react-native-share/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:13:13-37
+124            android:grantUriPermissions="true" >
+124-->[:react-native-share] /Users/jitendra/Documents/ReactNativeProjects/otrixcommercelaravelapp/node_modules/react-native-share/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:14:13-47
+125            <meta-data
+125-->[:react-native-image-picker] /Users/jitendra/Documents/ReactNativeProjects/otrixcommercelaravelapp/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:15:13-17:70
+126                android:name="android.support.FILE_PROVIDER_PATHS"
+126-->[:react-native-image-picker] /Users/jitendra/Documents/ReactNativeProjects/otrixcommercelaravelapp/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:16:17-67
+127                android:resource="@xml/share_download_paths" />
+127-->[:react-native-image-picker] /Users/jitendra/Documents/ReactNativeProjects/otrixcommercelaravelapp/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:17:17-67
+128        </provider>
+129
+130        <activity
+130-->[com.facebook.android:facebook-common:8.2.0] /Users/jitendra/.gradle/caches/transforms-3/b9e384a64c7dee4104ff39dac8f87906/transformed/jetified-facebook-common-8.2.0/AndroidManifest.xml:30:9-33:66
+131            android:name="com.facebook.FacebookActivity"
+131-->[com.facebook.android:facebook-common:8.2.0] /Users/jitendra/.gradle/caches/transforms-3/b9e384a64c7dee4104ff39dac8f87906/transformed/jetified-facebook-common-8.2.0/AndroidManifest.xml:31:13-57
+132            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+132-->[com.facebook.android:facebook-common:8.2.0] /Users/jitendra/.gradle/caches/transforms-3/b9e384a64c7dee4104ff39dac8f87906/transformed/jetified-facebook-common-8.2.0/AndroidManifest.xml:32:13-96
+133            android:theme="@style/com_facebook_activity_theme" />
+133-->[com.facebook.android:facebook-common:8.2.0] /Users/jitendra/.gradle/caches/transforms-3/b9e384a64c7dee4104ff39dac8f87906/transformed/jetified-facebook-common-8.2.0/AndroidManifest.xml:33:13-63
+134        <activity android:name="com.facebook.CustomTabMainActivity" />
+134-->[com.facebook.android:facebook-common:8.2.0] /Users/jitendra/.gradle/caches/transforms-3/b9e384a64c7dee4104ff39dac8f87906/transformed/jetified-facebook-common-8.2.0/AndroidManifest.xml:34:9-71
+134-->[com.facebook.android:facebook-common:8.2.0] /Users/jitendra/.gradle/caches/transforms-3/b9e384a64c7dee4104ff39dac8f87906/transformed/jetified-facebook-common-8.2.0/AndroidManifest.xml:34:19-68
+135        <activity
+135-->[com.facebook.android:facebook-common:8.2.0] /Users/jitendra/.gradle/caches/transforms-3/b9e384a64c7dee4104ff39dac8f87906/transformed/jetified-facebook-common-8.2.0/AndroidManifest.xml:35:9-49:20
+136            android:name="com.facebook.CustomTabActivity"
+136-->[com.facebook.android:facebook-common:8.2.0] /Users/jitendra/.gradle/caches/transforms-3/b9e384a64c7dee4104ff39dac8f87906/transformed/jetified-facebook-common-8.2.0/AndroidManifest.xml:36:13-58
+137            android:exported="true" >
+137-->[com.facebook.android:facebook-common:8.2.0] /Users/jitendra/.gradle/caches/transforms-3/b9e384a64c7dee4104ff39dac8f87906/transformed/jetified-facebook-common-8.2.0/AndroidManifest.xml:37:13-36
+138            <intent-filter>
+138-->[com.facebook.android:facebook-common:8.2.0] /Users/jitendra/.gradle/caches/transforms-3/b9e384a64c7dee4104ff39dac8f87906/transformed/jetified-facebook-common-8.2.0/AndroidManifest.xml:39:13-48:29
+139                <action android:name="android.intent.action.VIEW" />
+139-->[com.facebook.android:facebook-common:8.2.0] /Users/jitendra/.gradle/caches/transforms-3/b9e384a64c7dee4104ff39dac8f87906/transformed/jetified-facebook-common-8.2.0/AndroidManifest.xml:40:17-69
+139-->[com.facebook.android:facebook-common:8.2.0] /Users/jitendra/.gradle/caches/transforms-3/b9e384a64c7dee4104ff39dac8f87906/transformed/jetified-facebook-common-8.2.0/AndroidManifest.xml:40:25-66
+140
+141                <category android:name="android.intent.category.DEFAULT" />
+141-->[com.facebook.android:facebook-common:8.2.0] /Users/jitendra/.gradle/caches/transforms-3/b9e384a64c7dee4104ff39dac8f87906/transformed/jetified-facebook-common-8.2.0/AndroidManifest.xml:42:17-76
+141-->[com.facebook.android:facebook-common:8.2.0] /Users/jitendra/.gradle/caches/transforms-3/b9e384a64c7dee4104ff39dac8f87906/transformed/jetified-facebook-common-8.2.0/AndroidManifest.xml:42:27-73
+142                <category android:name="android.intent.category.BROWSABLE" />
+142-->[com.facebook.android:facebook-common:8.2.0] /Users/jitendra/.gradle/caches/transforms-3/b9e384a64c7dee4104ff39dac8f87906/transformed/jetified-facebook-common-8.2.0/AndroidManifest.xml:43:17-78
+142-->[com.facebook.android:facebook-common:8.2.0] /Users/jitendra/.gradle/caches/transforms-3/b9e384a64c7dee4104ff39dac8f87906/transformed/jetified-facebook-common-8.2.0/AndroidManifest.xml:43:27-75
+143
+144                <data
+144-->[com.facebook.android:facebook-common:8.2.0] /Users/jitendra/.gradle/caches/transforms-3/b9e384a64c7dee4104ff39dac8f87906/transformed/jetified-facebook-common-8.2.0/AndroidManifest.xml:45:17-47:50
+145                    android:host="cct.com.otrixcommercelaravel"
+145-->[com.facebook.android:facebook-common:8.2.0] /Users/jitendra/.gradle/caches/transforms-3/b9e384a64c7dee4104ff39dac8f87906/transformed/jetified-facebook-common-8.2.0/AndroidManifest.xml:46:21-56
+146                    android:scheme="fbconnect" />
+146-->[com.facebook.android:facebook-common:8.2.0] /Users/jitendra/.gradle/caches/transforms-3/b9e384a64c7dee4104ff39dac8f87906/transformed/jetified-facebook-common-8.2.0/AndroidManifest.xml:47:21-47
+147            </intent-filter>
+148        </activity>
+149        <!--
+150         The initialization ContentProvider will call FacebookSdk.sdkInitialize automatically
+151         with the application context. This config is merged in with the host app's manifest,
+152         but there can only be one provider with the same authority activated at any given
+153         point; so if the end user has two or more different apps that use Facebook SDK, only the
+154         first one will be able to use the provider. To work around this problem, we use the
+155         following placeholder in the authority to identify each host application as if it was
+156         a completely different provider.
+157        -->
+158        <provider
+158-->[com.facebook.android:facebook-core:8.2.0] /Users/jitendra/.gradle/caches/transforms-3/8fdd27822c5935f10893a81f6ce9d20f/transformed/jetified-facebook-core-8.2.0/AndroidManifest.xml:39:9-42:40
+159            android:name="com.facebook.internal.FacebookInitProvider"
+159-->[com.facebook.android:facebook-core:8.2.0] /Users/jitendra/.gradle/caches/transforms-3/8fdd27822c5935f10893a81f6ce9d20f/transformed/jetified-facebook-core-8.2.0/AndroidManifest.xml:40:13-70
+160            android:authorities="com.otrixcommercelaravel.FacebookInitProvider"
+160-->[com.facebook.android:facebook-core:8.2.0] /Users/jitendra/.gradle/caches/transforms-3/8fdd27822c5935f10893a81f6ce9d20f/transformed/jetified-facebook-core-8.2.0/AndroidManifest.xml:41:13-72
+161            android:exported="false" />
+161-->[com.facebook.android:facebook-core:8.2.0] /Users/jitendra/.gradle/caches/transforms-3/8fdd27822c5935f10893a81f6ce9d20f/transformed/jetified-facebook-core-8.2.0/AndroidManifest.xml:42:13-37
+162
+163        <receiver
+163-->[com.facebook.android:facebook-core:8.2.0] /Users/jitendra/.gradle/caches/transforms-3/8fdd27822c5935f10893a81f6ce9d20f/transformed/jetified-facebook-core-8.2.0/AndroidManifest.xml:44:9-50:20
+164            android:name="com.facebook.CurrentAccessTokenExpirationBroadcastReceiver"
+164-->[com.facebook.android:facebook-core:8.2.0] /Users/jitendra/.gradle/caches/transforms-3/8fdd27822c5935f10893a81f6ce9d20f/transformed/jetified-facebook-core-8.2.0/AndroidManifest.xml:45:13-86
+165            android:exported="false" >
+165-->[com.facebook.android:facebook-core:8.2.0] /Users/jitendra/.gradle/caches/transforms-3/8fdd27822c5935f10893a81f6ce9d20f/transformed/jetified-facebook-core-8.2.0/AndroidManifest.xml:46:13-37
+166            <intent-filter>
+166-->[com.facebook.android:facebook-core:8.2.0] /Users/jitendra/.gradle/caches/transforms-3/8fdd27822c5935f10893a81f6ce9d20f/transformed/jetified-facebook-core-8.2.0/AndroidManifest.xml:47:13-49:29
+167                <action android:name="com.facebook.sdk.ACTION_CURRENT_ACCESS_TOKEN_CHANGED" />
+167-->[com.facebook.android:facebook-core:8.2.0] /Users/jitendra/.gradle/caches/transforms-3/8fdd27822c5935f10893a81f6ce9d20f/transformed/jetified-facebook-core-8.2.0/AndroidManifest.xml:48:17-95
+167-->[com.facebook.android:facebook-core:8.2.0] /Users/jitendra/.gradle/caches/transforms-3/8fdd27822c5935f10893a81f6ce9d20f/transformed/jetified-facebook-core-8.2.0/AndroidManifest.xml:48:25-92
+168            </intent-filter>
+169        </receiver>
+170
+171        <meta-data
+171-->[com.github.bumptech.glide:okhttp3-integration:4.12.0] /Users/jitendra/.gradle/caches/transforms-3/05505214e4196400efd4a9f1a76fe040/transformed/jetified-okhttp3-integration-4.12.0/AndroidManifest.xml:11:9-13:43
+172            android:name="com.bumptech.glide.integration.okhttp3.OkHttpGlideModule"
+172-->[com.github.bumptech.glide:okhttp3-integration:4.12.0] /Users/jitendra/.gradle/caches/transforms-3/05505214e4196400efd4a9f1a76fe040/transformed/jetified-okhttp3-integration-4.12.0/AndroidManifest.xml:12:13-84
+173            android:value="GlideModule" />
+173-->[com.github.bumptech.glide:okhttp3-integration:4.12.0] /Users/jitendra/.gradle/caches/transforms-3/05505214e4196400efd4a9f1a76fe040/transformed/jetified-okhttp3-integration-4.12.0/AndroidManifest.xml:13:13-40
+174
+175        <receiver
+175-->[com.google.firebase:firebase-messaging:23.1.1] /Users/jitendra/.gradle/caches/transforms-3/49caeea695f7c01261b547db803e51cf/transformed/jetified-firebase-messaging-23.1.1/AndroidManifest.xml:31:9-38:20
+176            android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver"
+176-->[com.google.firebase:firebase-messaging:23.1.1] /Users/jitendra/.gradle/caches/transforms-3/49caeea695f7c01261b547db803e51cf/transformed/jetified-firebase-messaging-23.1.1/AndroidManifest.xml:32:13-78
+177            android:exported="true"
+177-->[com.google.firebase:firebase-messaging:23.1.1] /Users/jitendra/.gradle/caches/transforms-3/49caeea695f7c01261b547db803e51cf/transformed/jetified-firebase-messaging-23.1.1/AndroidManifest.xml:33:13-36
+178            android:permission="com.google.android.c2dm.permission.SEND" >
+178-->[com.google.firebase:firebase-messaging:23.1.1] /Users/jitendra/.gradle/caches/transforms-3/49caeea695f7c01261b547db803e51cf/transformed/jetified-firebase-messaging-23.1.1/AndroidManifest.xml:34:13-73
+179            <intent-filter>
+179-->[:react-native-firebase_messaging] /Users/jitendra/Documents/ReactNativeProjects/otrixcommercelaravelapp/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:29:13-31:29
+180                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+180-->[:react-native-firebase_messaging] /Users/jitendra/Documents/ReactNativeProjects/otrixcommercelaravelapp/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:30:17-81
+180-->[:react-native-firebase_messaging] /Users/jitendra/Documents/ReactNativeProjects/otrixcommercelaravelapp/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:30:25-78
+181            </intent-filter>
+182        </receiver>
+183        <!--
+184             FirebaseMessagingService performs security checks at runtime,
+185             but set to not exported to explicitly avoid allowing another app to call it.
+186        -->
+187        <service
+187-->[com.google.firebase:firebase-messaging:23.1.1] /Users/jitendra/.gradle/caches/transforms-3/49caeea695f7c01261b547db803e51cf/transformed/jetified-firebase-messaging-23.1.1/AndroidManifest.xml:44:9-51:19
+188            android:name="com.google.firebase.messaging.FirebaseMessagingService"
+188-->[com.google.firebase:firebase-messaging:23.1.1] /Users/jitendra/.gradle/caches/transforms-3/49caeea695f7c01261b547db803e51cf/transformed/jetified-firebase-messaging-23.1.1/AndroidManifest.xml:45:13-82
+189            android:directBootAware="true"
+189-->[com.google.firebase:firebase-messaging:23.1.1] /Users/jitendra/.gradle/caches/transforms-3/49caeea695f7c01261b547db803e51cf/transformed/jetified-firebase-messaging-23.1.1/AndroidManifest.xml:46:13-43
+190            android:exported="false" >
+190-->[com.google.firebase:firebase-messaging:23.1.1] /Users/jitendra/.gradle/caches/transforms-3/49caeea695f7c01261b547db803e51cf/transformed/jetified-firebase-messaging-23.1.1/AndroidManifest.xml:47:13-37
+191            <intent-filter android:priority="-500" >
+191-->[:react-native-firebase_messaging] /Users/jitendra/Documents/ReactNativeProjects/otrixcommercelaravelapp/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:20:13-22:29
+192                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+192-->[:react-native-firebase_messaging] /Users/jitendra/Documents/ReactNativeProjects/otrixcommercelaravelapp/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:21:17-78
+192-->[:react-native-firebase_messaging] /Users/jitendra/Documents/ReactNativeProjects/otrixcommercelaravelapp/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:21:25-75
+193            </intent-filter>
+194        </service>
+195        <service
+195-->[com.google.android.datatransport:transport-backend-cct:3.1.8] /Users/jitendra/.gradle/caches/transforms-3/392e6b6fba2d531793b82783a528cfdd/transformed/jetified-transport-backend-cct-3.1.8/AndroidManifest.xml:28:9-34:19
+196            android:name="com.google.android.datatransport.runtime.backends.TransportBackendDiscovery"
+196-->[com.google.android.datatransport:transport-backend-cct:3.1.8] /Users/jitendra/.gradle/caches/transforms-3/392e6b6fba2d531793b82783a528cfdd/transformed/jetified-transport-backend-cct-3.1.8/AndroidManifest.xml:29:13-103
+197            android:exported="false" >
+197-->[com.google.android.datatransport:transport-backend-cct:3.1.8] /Users/jitendra/.gradle/caches/transforms-3/392e6b6fba2d531793b82783a528cfdd/transformed/jetified-transport-backend-cct-3.1.8/AndroidManifest.xml:30:13-37
+198            <meta-data
+198-->[com.google.android.datatransport:transport-backend-cct:3.1.8] /Users/jitendra/.gradle/caches/transforms-3/392e6b6fba2d531793b82783a528cfdd/transformed/jetified-transport-backend-cct-3.1.8/AndroidManifest.xml:31:13-33:39
+199                android:name="backend:com.google.android.datatransport.cct.CctBackendFactory"
+199-->[com.google.android.datatransport:transport-backend-cct:3.1.8] /Users/jitendra/.gradle/caches/transforms-3/392e6b6fba2d531793b82783a528cfdd/transformed/jetified-transport-backend-cct-3.1.8/AndroidManifest.xml:32:17-94
+200                android:value="cct" />
+200-->[com.google.android.datatransport:transport-backend-cct:3.1.8] /Users/jitendra/.gradle/caches/transforms-3/392e6b6fba2d531793b82783a528cfdd/transformed/jetified-transport-backend-cct-3.1.8/AndroidManifest.xml:33:17-36
+201        </service>
+202        <service
+202-->[com.google.android.datatransport:transport-runtime:3.1.8] /Users/jitendra/.gradle/caches/transforms-3/1742eac9aa8483db668d7aa7e799e0f6/transformed/jetified-transport-runtime-3.1.8/AndroidManifest.xml:26:9-30:19
+203            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService"
+203-->[com.google.android.datatransport:transport-runtime:3.1.8] /Users/jitendra/.gradle/caches/transforms-3/1742eac9aa8483db668d7aa7e799e0f6/transformed/jetified-transport-runtime-3.1.8/AndroidManifest.xml:27:13-117
+204            android:exported="false"
+204-->[com.google.android.datatransport:transport-runtime:3.1.8] /Users/jitendra/.gradle/caches/transforms-3/1742eac9aa8483db668d7aa7e799e0f6/transformed/jetified-transport-runtime-3.1.8/AndroidManifest.xml:28:13-37
+205            android:permission="android.permission.BIND_JOB_SERVICE" >
+205-->[com.google.android.datatransport:transport-runtime:3.1.8] /Users/jitendra/.gradle/caches/transforms-3/1742eac9aa8483db668d7aa7e799e0f6/transformed/jetified-transport-runtime-3.1.8/AndroidManifest.xml:29:13-69
+206        </service>
+207
+208        <receiver
+208-->[com.google.android.datatransport:transport-runtime:3.1.8] /Users/jitendra/.gradle/caches/transforms-3/1742eac9aa8483db668d7aa7e799e0f6/transformed/jetified-transport-runtime-3.1.8/AndroidManifest.xml:32:9-34:40
+209            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver"
+209-->[com.google.android.datatransport:transport-runtime:3.1.8] /Users/jitendra/.gradle/caches/transforms-3/1742eac9aa8483db668d7aa7e799e0f6/transformed/jetified-transport-runtime-3.1.8/AndroidManifest.xml:33:13-132
+210            android:exported="false" />
+210-->[com.google.android.datatransport:transport-runtime:3.1.8] /Users/jitendra/.gradle/caches/transforms-3/1742eac9aa8483db668d7aa7e799e0f6/transformed/jetified-transport-runtime-3.1.8/AndroidManifest.xml:34:13-37
+211
+212        <activity
+212-->[com.google.firebase:firebase-auth:21.1.0] /Users/jitendra/.gradle/caches/transforms-3/0a4e9d23b78f4c59fce61403d3dc608e/transformed/jetified-firebase-auth-21.1.0/AndroidManifest.xml:27:9-44:20
+213            android:name="com.google.firebase.auth.internal.GenericIdpActivity"
+213-->[com.google.firebase:firebase-auth:21.1.0] /Users/jitendra/.gradle/caches/transforms-3/0a4e9d23b78f4c59fce61403d3dc608e/transformed/jetified-firebase-auth-21.1.0/AndroidManifest.xml:28:13-80
+214            android:excludeFromRecents="true"
+214-->[com.google.firebase:firebase-auth:21.1.0] /Users/jitendra/.gradle/caches/transforms-3/0a4e9d23b78f4c59fce61403d3dc608e/transformed/jetified-firebase-auth-21.1.0/AndroidManifest.xml:29:13-46
+215            android:exported="true"
+215-->[com.google.firebase:firebase-auth:21.1.0] /Users/jitendra/.gradle/caches/transforms-3/0a4e9d23b78f4c59fce61403d3dc608e/transformed/jetified-firebase-auth-21.1.0/AndroidManifest.xml:30:13-36
+216            android:launchMode="singleTask"
+216-->[com.google.firebase:firebase-auth:21.1.0] /Users/jitendra/.gradle/caches/transforms-3/0a4e9d23b78f4c59fce61403d3dc608e/transformed/jetified-firebase-auth-21.1.0/AndroidManifest.xml:31:13-44
+217            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+217-->[com.google.firebase:firebase-auth:21.1.0] /Users/jitendra/.gradle/caches/transforms-3/0a4e9d23b78f4c59fce61403d3dc608e/transformed/jetified-firebase-auth-21.1.0/AndroidManifest.xml:32:13-72
+218            <intent-filter>
+218-->[com.google.firebase:firebase-auth:21.1.0] /Users/jitendra/.gradle/caches/transforms-3/0a4e9d23b78f4c59fce61403d3dc608e/transformed/jetified-firebase-auth-21.1.0/AndroidManifest.xml:33:13-43:29
+219                <action android:name="android.intent.action.VIEW" />
+219-->[com.facebook.android:facebook-common:8.2.0] /Users/jitendra/.gradle/caches/transforms-3/b9e384a64c7dee4104ff39dac8f87906/transformed/jetified-facebook-common-8.2.0/AndroidManifest.xml:40:17-69
+219-->[com.facebook.android:facebook-common:8.2.0] /Users/jitendra/.gradle/caches/transforms-3/b9e384a64c7dee4104ff39dac8f87906/transformed/jetified-facebook-common-8.2.0/AndroidManifest.xml:40:25-66
+220
+221                <category android:name="android.intent.category.DEFAULT" />
+221-->[com.facebook.android:facebook-common:8.2.0] /Users/jitendra/.gradle/caches/transforms-3/b9e384a64c7dee4104ff39dac8f87906/transformed/jetified-facebook-common-8.2.0/AndroidManifest.xml:42:17-76
+221-->[com.facebook.android:facebook-common:8.2.0] /Users/jitendra/.gradle/caches/transforms-3/b9e384a64c7dee4104ff39dac8f87906/transformed/jetified-facebook-common-8.2.0/AndroidManifest.xml:42:27-73
+222                <category android:name="android.intent.category.BROWSABLE" />
+222-->[com.facebook.android:facebook-common:8.2.0] /Users/jitendra/.gradle/caches/transforms-3/b9e384a64c7dee4104ff39dac8f87906/transformed/jetified-facebook-common-8.2.0/AndroidManifest.xml:43:17-78
+222-->[com.facebook.android:facebook-common:8.2.0] /Users/jitendra/.gradle/caches/transforms-3/b9e384a64c7dee4104ff39dac8f87906/transformed/jetified-facebook-common-8.2.0/AndroidManifest.xml:43:27-75
+223
+224                <data
+224-->[com.facebook.android:facebook-common:8.2.0] /Users/jitendra/.gradle/caches/transforms-3/b9e384a64c7dee4104ff39dac8f87906/transformed/jetified-facebook-common-8.2.0/AndroidManifest.xml:45:17-47:50
+225                    android:host="firebase.auth"
+225-->[com.facebook.android:facebook-common:8.2.0] /Users/jitendra/.gradle/caches/transforms-3/b9e384a64c7dee4104ff39dac8f87906/transformed/jetified-facebook-common-8.2.0/AndroidManifest.xml:46:21-56
+226                    android:path="/"
+227                    android:scheme="genericidp" />
+227-->[com.facebook.android:facebook-common:8.2.0] /Users/jitendra/.gradle/caches/transforms-3/b9e384a64c7dee4104ff39dac8f87906/transformed/jetified-facebook-common-8.2.0/AndroidManifest.xml:47:21-47
+228            </intent-filter>
+229        </activity>
+230        <activity
+230-->[com.google.firebase:firebase-auth:21.1.0] /Users/jitendra/.gradle/caches/transforms-3/0a4e9d23b78f4c59fce61403d3dc608e/transformed/jetified-firebase-auth-21.1.0/AndroidManifest.xml:45:9-62:20
+231            android:name="com.google.firebase.auth.internal.RecaptchaActivity"
+231-->[com.google.firebase:firebase-auth:21.1.0] /Users/jitendra/.gradle/caches/transforms-3/0a4e9d23b78f4c59fce61403d3dc608e/transformed/jetified-firebase-auth-21.1.0/AndroidManifest.xml:46:13-79
+232            android:excludeFromRecents="true"
+232-->[com.google.firebase:firebase-auth:21.1.0] /Users/jitendra/.gradle/caches/transforms-3/0a4e9d23b78f4c59fce61403d3dc608e/transformed/jetified-firebase-auth-21.1.0/AndroidManifest.xml:47:13-46
+233            android:exported="true"
+233-->[com.google.firebase:firebase-auth:21.1.0] /Users/jitendra/.gradle/caches/transforms-3/0a4e9d23b78f4c59fce61403d3dc608e/transformed/jetified-firebase-auth-21.1.0/AndroidManifest.xml:48:13-36
+234            android:launchMode="singleTask"
+234-->[com.google.firebase:firebase-auth:21.1.0] /Users/jitendra/.gradle/caches/transforms-3/0a4e9d23b78f4c59fce61403d3dc608e/transformed/jetified-firebase-auth-21.1.0/AndroidManifest.xml:49:13-44
+235            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+235-->[com.google.firebase:firebase-auth:21.1.0] /Users/jitendra/.gradle/caches/transforms-3/0a4e9d23b78f4c59fce61403d3dc608e/transformed/jetified-firebase-auth-21.1.0/AndroidManifest.xml:50:13-72
+236            <intent-filter>
+236-->[com.google.firebase:firebase-auth:21.1.0] /Users/jitendra/.gradle/caches/transforms-3/0a4e9d23b78f4c59fce61403d3dc608e/transformed/jetified-firebase-auth-21.1.0/AndroidManifest.xml:51:13-61:29
+237                <action android:name="android.intent.action.VIEW" />
+237-->[com.facebook.android:facebook-common:8.2.0] /Users/jitendra/.gradle/caches/transforms-3/b9e384a64c7dee4104ff39dac8f87906/transformed/jetified-facebook-common-8.2.0/AndroidManifest.xml:40:17-69
+237-->[com.facebook.android:facebook-common:8.2.0] /Users/jitendra/.gradle/caches/transforms-3/b9e384a64c7dee4104ff39dac8f87906/transformed/jetified-facebook-common-8.2.0/AndroidManifest.xml:40:25-66
+238
+239                <category android:name="android.intent.category.DEFAULT" />
+239-->[com.facebook.android:facebook-common:8.2.0] /Users/jitendra/.gradle/caches/transforms-3/b9e384a64c7dee4104ff39dac8f87906/transformed/jetified-facebook-common-8.2.0/AndroidManifest.xml:42:17-76
+239-->[com.facebook.android:facebook-common:8.2.0] /Users/jitendra/.gradle/caches/transforms-3/b9e384a64c7dee4104ff39dac8f87906/transformed/jetified-facebook-common-8.2.0/AndroidManifest.xml:42:27-73
+240                <category android:name="android.intent.category.BROWSABLE" />
+240-->[com.facebook.android:facebook-common:8.2.0] /Users/jitendra/.gradle/caches/transforms-3/b9e384a64c7dee4104ff39dac8f87906/transformed/jetified-facebook-common-8.2.0/AndroidManifest.xml:43:17-78
+240-->[com.facebook.android:facebook-common:8.2.0] /Users/jitendra/.gradle/caches/transforms-3/b9e384a64c7dee4104ff39dac8f87906/transformed/jetified-facebook-common-8.2.0/AndroidManifest.xml:43:27-75
+241
+242                <data
+242-->[com.facebook.android:facebook-common:8.2.0] /Users/jitendra/.gradle/caches/transforms-3/b9e384a64c7dee4104ff39dac8f87906/transformed/jetified-facebook-common-8.2.0/AndroidManifest.xml:45:17-47:50
+243                    android:host="firebase.auth"
+243-->[com.facebook.android:facebook-common:8.2.0] /Users/jitendra/.gradle/caches/transforms-3/b9e384a64c7dee4104ff39dac8f87906/transformed/jetified-facebook-common-8.2.0/AndroidManifest.xml:46:21-56
+244                    android:path="/"
+245                    android:scheme="recaptcha" />
+245-->[com.facebook.android:facebook-common:8.2.0] /Users/jitendra/.gradle/caches/transforms-3/b9e384a64c7dee4104ff39dac8f87906/transformed/jetified-facebook-common-8.2.0/AndroidManifest.xml:47:21-47
+246            </intent-filter>
+247        </activity>
+248        <activity
+248-->[com.google.android.gms:play-services-auth:20.3.0] /Users/jitendra/.gradle/caches/transforms-3/750928b5e5c17b1e3fffc3d09843a966/transformed/jetified-play-services-auth-20.3.0/AndroidManifest.xml:23:9-27:75
+249            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
+249-->[com.google.android.gms:play-services-auth:20.3.0] /Users/jitendra/.gradle/caches/transforms-3/750928b5e5c17b1e3fffc3d09843a966/transformed/jetified-play-services-auth-20.3.0/AndroidManifest.xml:24:13-93
+250            android:excludeFromRecents="true"
+250-->[com.google.android.gms:play-services-auth:20.3.0] /Users/jitendra/.gradle/caches/transforms-3/750928b5e5c17b1e3fffc3d09843a966/transformed/jetified-play-services-auth-20.3.0/AndroidManifest.xml:25:13-46
+251            android:exported="false"
+251-->[com.google.android.gms:play-services-auth:20.3.0] /Users/jitendra/.gradle/caches/transforms-3/750928b5e5c17b1e3fffc3d09843a966/transformed/jetified-play-services-auth-20.3.0/AndroidManifest.xml:26:13-37
+252            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+252-->[com.google.android.gms:play-services-auth:20.3.0] /Users/jitendra/.gradle/caches/transforms-3/750928b5e5c17b1e3fffc3d09843a966/transformed/jetified-play-services-auth-20.3.0/AndroidManifest.xml:27:13-72
+253        <!--
+254            Service handling Google Sign-In user revocation. For apps that do not integrate with
+255            Google Sign-In, this service will never be started.
+256        -->
+257        <service
+257-->[com.google.android.gms:play-services-auth:20.3.0] /Users/jitendra/.gradle/caches/transforms-3/750928b5e5c17b1e3fffc3d09843a966/transformed/jetified-play-services-auth-20.3.0/AndroidManifest.xml:33:9-37:51
+258            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
+258-->[com.google.android.gms:play-services-auth:20.3.0] /Users/jitendra/.gradle/caches/transforms-3/750928b5e5c17b1e3fffc3d09843a966/transformed/jetified-play-services-auth-20.3.0/AndroidManifest.xml:34:13-89
+259            android:exported="true"
+259-->[com.google.android.gms:play-services-auth:20.3.0] /Users/jitendra/.gradle/caches/transforms-3/750928b5e5c17b1e3fffc3d09843a966/transformed/jetified-play-services-auth-20.3.0/AndroidManifest.xml:35:13-36
+260            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"
+260-->[com.google.android.gms:play-services-auth:20.3.0] /Users/jitendra/.gradle/caches/transforms-3/750928b5e5c17b1e3fffc3d09843a966/transformed/jetified-play-services-auth-20.3.0/AndroidManifest.xml:36:13-107
+261            android:visibleToInstantApps="true" />
+261-->[com.google.android.gms:play-services-auth:20.3.0] /Users/jitendra/.gradle/caches/transforms-3/750928b5e5c17b1e3fffc3d09843a966/transformed/jetified-play-services-auth-20.3.0/AndroidManifest.xml:37:13-48
+262
+263        <activity
+263-->[com.google.android.gms:play-services-base:18.0.1] /Users/jitendra/.gradle/caches/transforms-3/43a47f35034419d56527adc8180d3679/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:20:9-22:45
+264            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+264-->[com.google.android.gms:play-services-base:18.0.1] /Users/jitendra/.gradle/caches/transforms-3/43a47f35034419d56527adc8180d3679/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:20:19-85
+265            android:exported="false"
+265-->[com.google.android.gms:play-services-base:18.0.1] /Users/jitendra/.gradle/caches/transforms-3/43a47f35034419d56527adc8180d3679/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:22:19-43
+266            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+266-->[com.google.android.gms:play-services-base:18.0.1] /Users/jitendra/.gradle/caches/transforms-3/43a47f35034419d56527adc8180d3679/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:21:19-78
+267
+268        <provider
+268-->[com.google.firebase:firebase-common:20.2.0] /Users/jitendra/.gradle/caches/transforms-3/e53c305f1ae64109ecbf31c6f80e3e9d/transformed/jetified-firebase-common-20.2.0/AndroidManifest.xml:25:9-30:39
+269            android:name="com.google.firebase.provider.FirebaseInitProvider"
+269-->[com.google.firebase:firebase-common:20.2.0] /Users/jitendra/.gradle/caches/transforms-3/e53c305f1ae64109ecbf31c6f80e3e9d/transformed/jetified-firebase-common-20.2.0/AndroidManifest.xml:26:13-77
+270            android:authorities="com.otrixcommercelaravel.firebaseinitprovider"
+270-->[com.google.firebase:firebase-common:20.2.0] /Users/jitendra/.gradle/caches/transforms-3/e53c305f1ae64109ecbf31c6f80e3e9d/transformed/jetified-firebase-common-20.2.0/AndroidManifest.xml:27:13-72
+271            android:directBootAware="true"
+271-->[com.google.firebase:firebase-common:20.2.0] /Users/jitendra/.gradle/caches/transforms-3/e53c305f1ae64109ecbf31c6f80e3e9d/transformed/jetified-firebase-common-20.2.0/AndroidManifest.xml:28:13-43
+272            android:exported="false"
+272-->[com.google.firebase:firebase-common:20.2.0] /Users/jitendra/.gradle/caches/transforms-3/e53c305f1ae64109ecbf31c6f80e3e9d/transformed/jetified-firebase-common-20.2.0/AndroidManifest.xml:29:13-37
+273            android:initOrder="100" />
+273-->[com.google.firebase:firebase-common:20.2.0] /Users/jitendra/.gradle/caches/transforms-3/e53c305f1ae64109ecbf31c6f80e3e9d/transformed/jetified-firebase-common-20.2.0/AndroidManifest.xml:30:13-36
+274
+275        <meta-data
+275-->[com.google.android.gms:play-services-basement:18.1.0] /Users/jitendra/.gradle/caches/transforms-3/47b0a75a35b9d53b43a810f4bc8a2582/transformed/jetified-play-services-basement-18.1.0/AndroidManifest.xml:21:9-23:69
+276            android:name="com.google.android.gms.version"
+276-->[com.google.android.gms:play-services-basement:18.1.0] /Users/jitendra/.gradle/caches/transforms-3/47b0a75a35b9d53b43a810f4bc8a2582/transformed/jetified-play-services-basement-18.1.0/AndroidManifest.xml:22:13-58
+277            android:value="@integer/google_play_services_version" />
+277-->[com.google.android.gms:play-services-basement:18.1.0] /Users/jitendra/.gradle/caches/transforms-3/47b0a75a35b9d53b43a810f4bc8a2582/transformed/jetified-play-services-basement-18.1.0/AndroidManifest.xml:23:13-66
+278
+279        <provider
+279-->[androidx.emoji2:emoji2:1.0.0] /Users/jitendra/.gradle/caches/transforms-3/97bc83f13aff2563f29b3d7c47622736/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:26:9-34:20
+280            android:name="androidx.startup.InitializationProvider"
+280-->[androidx.emoji2:emoji2:1.0.0] /Users/jitendra/.gradle/caches/transforms-3/97bc83f13aff2563f29b3d7c47622736/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:27:13-67
+281            android:authorities="com.otrixcommercelaravel.androidx-startup"
+281-->[androidx.emoji2:emoji2:1.0.0] /Users/jitendra/.gradle/caches/transforms-3/97bc83f13aff2563f29b3d7c47622736/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:28:13-68
+282            android:exported="false" >
+282-->[androidx.emoji2:emoji2:1.0.0] /Users/jitendra/.gradle/caches/transforms-3/97bc83f13aff2563f29b3d7c47622736/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:29:13-37
+283            <meta-data
+283-->[androidx.emoji2:emoji2:1.0.0] /Users/jitendra/.gradle/caches/transforms-3/97bc83f13aff2563f29b3d7c47622736/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:31:13-33:52
+284                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+284-->[androidx.emoji2:emoji2:1.0.0] /Users/jitendra/.gradle/caches/transforms-3/97bc83f13aff2563f29b3d7c47622736/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:32:17-75
+285                android:value="androidx.startup" />
+285-->[androidx.emoji2:emoji2:1.0.0] /Users/jitendra/.gradle/caches/transforms-3/97bc83f13aff2563f29b3d7c47622736/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:33:17-49
+286            <meta-data
+286-->[androidx.lifecycle:lifecycle-process:2.4.0] /Users/jitendra/.gradle/caches/transforms-3/d11c85b860290b9cde7acec14be46a2f/transformed/jetified-lifecycle-process-2.4.0/AndroidManifest.xml:31:13-33:52
+287                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+287-->[androidx.lifecycle:lifecycle-process:2.4.0] /Users/jitendra/.gradle/caches/transforms-3/d11c85b860290b9cde7acec14be46a2f/transformed/jetified-lifecycle-process-2.4.0/AndroidManifest.xml:32:17-78
+288                android:value="androidx.startup" />
+288-->[androidx.lifecycle:lifecycle-process:2.4.0] /Users/jitendra/.gradle/caches/transforms-3/d11c85b860290b9cde7acec14be46a2f/transformed/jetified-lifecycle-process-2.4.0/AndroidManifest.xml:33:17-49
+289        </provider> <!-- The activities will be merged into the manifest of the hosting app. -->
+290        <activity
+290-->[com.google.android.play:core-common:2.0.2] /Users/jitendra/.gradle/caches/transforms-3/ca91183f8952dfa68d8ccf30b24d0048/transformed/jetified-core-common-2.0.2/AndroidManifest.xml:14:9-18:65
+291            android:name="com.google.android.play.core.common.PlayCoreDialogWrapperActivity"
+291-->[com.google.android.play:core-common:2.0.2] /Users/jitendra/.gradle/caches/transforms-3/ca91183f8952dfa68d8ccf30b24d0048/transformed/jetified-core-common-2.0.2/AndroidManifest.xml:15:13-93
+292            android:exported="false"
+292-->[com.google.android.play:core-common:2.0.2] /Users/jitendra/.gradle/caches/transforms-3/ca91183f8952dfa68d8ccf30b24d0048/transformed/jetified-core-common-2.0.2/AndroidManifest.xml:16:13-37
+293            android:stateNotNeeded="true"
+293-->[com.google.android.play:core-common:2.0.2] /Users/jitendra/.gradle/caches/transforms-3/ca91183f8952dfa68d8ccf30b24d0048/transformed/jetified-core-common-2.0.2/AndroidManifest.xml:17:13-42
+294            android:theme="@style/Theme.PlayCore.Transparent" />
+294-->[com.google.android.play:core-common:2.0.2] /Users/jitendra/.gradle/caches/transforms-3/ca91183f8952dfa68d8ccf30b24d0048/transformed/jetified-core-common-2.0.2/AndroidManifest.xml:18:13-62
+295    </application>
+296
+297</manifest>
