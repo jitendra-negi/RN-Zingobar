@@ -4,6 +4,7 @@
     "placeholder_password": "Password",
     "placeholder_first_name": "First Name",
     "placeholder_last_name": "Last Name",
+    "placeholder_age": "Age",
     "placeholder_confirm_password": "Confirm Password",
     "placeholder_phone": "Mobile Number",
     "select_country": "Select Country",
@@ -35,7 +36,7 @@
   },
   "registration": {
     "title": "Register Account",
-    "subtitle": "Create account to continue shopping with otrixweb",
+    "subtitle": "Create account to continue shopping with Zingobar",
     "button_register": "Register Now",
     "label_login_info": "Already have an Account?",
     "button_login": "Sign In"

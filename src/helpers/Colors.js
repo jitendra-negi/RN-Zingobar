@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import store from '../redux/store/store';
 
+
 export function Colors() {
 
   // let theme = store.getState().mainScreenInit ? store.getState().mainScreenInit.theme : 'light';

@@ -5,7 +5,7 @@ import {
     TouchableOpacity
 } from "react-native";
 import {
-    OtrixContainer, OtrixHeader, OtrixContent, OtrixDivider, OtrixAlert, OtrixLoader
+    OtrixContainer, OtrixHeader, OtrixContent, OtrixDivider, OtrixAlert, OtrixLoader, TermsAndPrivacyWidget, DateOfBirthPicker
 } from '@component';
 import { Input, Text, FormControl, Button, InfoOutlineIcon } from "native-base"
 import { connect } from 'react-redux';
@@ -16,11 +16,15 @@ import { logfunction } from "@helpers/FunctionHelper";
 import Fonts from "@helpers/Fonts";
 import getApi from "@apis/getApi";
 
+
+
 function RegisterScreen(props) {
     const [formData, setData] = React.useState({ firstName: null, lastName: null, email: null, mobileNumber: null, password: null, cpassword: null, submited: false, type: null, message: null, loading: false });
     const [state, setDatapassword] = React.useState({ secureEntry: true });
     const [errors, setErrors] = React.useState({});
     const { firstName, lastName, mobileNumber, email, password, cpassword, submited, type, message, loading } = formData;
+    const { strings } = props;
+    const [showDatePicker, setShowDatePicker] = React.useState(false);
 
     useEffect(() => {
 
@@ -139,7 +143,17 @@ function RegisterScreen(props) {
         }
     }
 
-    const { strings } = props;
+    
+
+    const handleShowDatePicker = () => {
+        setShowDatePicker(true);
+      };
+    
+      const handleImageSelected = (imageUri) => {
+        // Handle the selected image here
+        console.log('Selected Image:', imageUri);
+        setShowDatePicker(false);
+      };
 
     return (
         <OtrixContainer>
@@ -258,6 +272,36 @@ function RegisterScreen(props) {
                         {errors.cpassword}
                     </FormControl.ErrorMessage>
                 </FormControl>
+                <OtrixDivider size={'sm'} />
+                <FormControl style={{ backgroundColor: Colors().white }} isRequired isInvalid={submited && 'age' in errors}>
+                    <Input variant="outline" placeholder={strings.commoninput.placeholder_age} style={GlobalStyles.textInputStyle}
+                        onChangeText={(value) => { setData({ ...formData, submited: false, age: value }), delete errors.age }}
+                    />
+                    <FormControl.ErrorMessage
+                        leftIcon={<InfoOutlineIcon size="xs" />}
+                    >
+                        {errors.age}
+                    </FormControl.ErrorMessage>
+                </FormControl>
+
+                <OtrixDivider size={'sm'} />
+
+                <View style={styles.container}>
+               
+                {!showDatePicker && (
+               <TouchableOpacity style={styles.button} onPress={handleShowDatePicker}>
+                <Text style={styles.buttonText}>+ Attached DOB Proof</Text>
+                  </TouchableOpacity>
+                 )}
+                {showDatePicker && <DateOfBirthPicker onImageSelected={handleImageSelected} />}
+                 </View>
+
+                <OtrixDivider size={'md'} />
+
+                <TermsAndPrivacyWidget
+                props={ props}
+                />
+
                 <OtrixDivider size={'md'} />
                 <Button
                     size="md"
@@ -270,6 +314,8 @@ function RegisterScreen(props) {
                     <Text style={GlobalStyles.buttonText}>{strings.registration.button_register}</Text>
                 </Button>
                 <OtrixDivider size={'md'} />
+
+
 
                 <View style={styles.registerView}>
                     <Text style={styles.registerTxt}>{strings.registration.label_login_info} </Text>
@@ -318,4 +364,20 @@ const styles = StyleSheet.create({
         fontFamily: Fonts.Font_Semibold,
         color: Colors().link_color
     },
+    container: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+      },
+      button: {
+        backgroundColor: 'blue',
+        padding: 12,
+        borderRadius: 8,
+        marginBottom: 16,
+      },
+      buttonText: {
+        color: 'white',
+        fontSize: 16,
+        fontWeight: 'bold',
+      },
 });

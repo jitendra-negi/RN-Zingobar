@@ -22,6 +22,11 @@
 	<string>????</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string> App needs access to the photo library to pick images for the Date of Birth proof.</string>	
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string> App needs access to the caamera to pick capture images for the Date of Birth proof.</string>
+
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSAppTransportSecurity</key>

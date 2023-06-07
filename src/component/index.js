@@ -32,6 +32,9 @@ import OrdersComponent from './CartComponent/OrdersComponent';
 import WishlistComponent from './WishlistComponent';
 import CreditCartComponent from './CartComponent/CreditCartComponent';
 import PaymentSuccessComponent from './CartComponent/PaymentSuccessComponent';
+import TermsAndPrivacyWidget from "./CustomComponent/TermsAndPrivacyWidget";
+import DateOfBirthPicker from "./CustomComponent/DateOfBirthPicker";
+
 export {
     OtrixContainer,
     HomeSlider,
@@ -66,5 +69,7 @@ export {
     OrdersComponent,
     WishlistComponent,
     CreditCartComponent,
-    PaymentSuccessComponent
+    PaymentSuccessComponent,
+    TermsAndPrivacyWidget,
+    DateOfBirthPicker
 }
