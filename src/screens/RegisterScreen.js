@@ -19,10 +19,12 @@ import getApi from "@apis/getApi";
 
 
 function RegisterScreen(props) {
-    const [formData, setData] = React.useState({ firstName: null, lastName: null, email: null, mobileNumber: null, password: null, cpassword: null, submited: false, type: null, message: null, loading: false });
+    const [formData, setData] = React.useState({ firstName: null, lastName: null, email: null, mobileNumber: null, password: null, cpassword: null, submited: false, type: null, message: null, loading: false, age:null, age_proof:null , address:null,image:null});
     const [state, setDatapassword] = React.useState({ secureEntry: true });
     const [errors, setErrors] = React.useState({});
-    const { firstName, lastName, mobileNumber, email, password, cpassword, submited, type, message, loading } = formData;
+   // const [imageUriPath, setImage] = React.useState({});
+  
+    const { firstName, lastName, mobileNumber, email, password, cpassword, submited, type, message, loading, age, age_proof, address, image } = formData;
     const { strings } = props;
     const [showDatePicker, setShowDatePicker] = React.useState(false);
 
@@ -90,6 +92,14 @@ function RegisterScreen(props) {
             });
             return false;
         }
+        else if (age == null) {
+            logfunction("FIeld ", 'Age is required')
+            setErrors({
+                ...errors,
+                age: 'Age is required'
+            });
+            return false;
+        }
         return true;
 
     }
@@ -106,11 +116,18 @@ function RegisterScreen(props) {
             sendData.append('email', email)
             sendData.append('telephone', mobileNumber)
             sendData.append('password', password)
+            sendData.append('age', age)
+            sendData.append('address', "NA")
+            sendData.append('age_proof', {
+                uri: image,
+                name: 'age_proof.jpg',
+                type: 'image/jpeg',
+              });
             sendData.append('creation', 'D')
 
             try {
                 getApi.postData(
-                    'user/register',
+                    'user/registeruser',
                     sendData,
                 ).then((response => {
                     logfunction("RESPONSE ", response)
@@ -152,6 +169,9 @@ function RegisterScreen(props) {
       const handleImageSelected = (imageUri) => {
         // Handle the selected image here
         console.log('Selected Image:', imageUri);
+      
+      setData({ ...formData, submited: false, image: imageUri })
+
         setShowDatePicker(false);
       };
 
@@ -291,8 +311,7 @@ function RegisterScreen(props) {
                 {!showDatePicker && (
                <TouchableOpacity style={styles.button} onPress={handleShowDatePicker}>
                 <Text style={styles.buttonText}>+ Attached DOB Proof</Text>
-                  </TouchableOpacity>
-                 )}
+                  </TouchableOpacity>)}
                 {showDatePicker && <DateOfBirthPicker onImageSelected={handleImageSelected} />}
                  </View>
 
@@ -370,14 +389,14 @@ const styles = StyleSheet.create({
         alignItems: 'center',
       },
       button: {
-        backgroundColor: 'blue',
+        backgroundColor: 'white',
         padding: 12,
         borderRadius: 8,
         marginBottom: 16,
       },
       buttonText: {
-        color: 'white',
+        color: 'blue',
         fontSize: 16,
-        fontWeight: 'bold',
+    
       },
 });

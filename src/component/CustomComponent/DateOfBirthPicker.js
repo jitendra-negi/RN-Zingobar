@@ -5,17 +5,22 @@ import { View, Text, StyleSheet, TouchableOpacity, Image } from 'react-native';
 import ImageCropPicker from 'react-native-image-crop-picker';
 
 
-const DateOfBirthPicker = () => {
+const DateOfBirthPicker = ({ onImageSelected }) => {
+  
   const [image, setImage] = useState(null);
 
   const handleCameraCapture = () => {
     ImageCropPicker.openCamera({
       mediaType: 'photo',
       cropping: true,
+      multiple: false,
+      
     })
       .then((response) => {
         if (!response.didCancel && !response.error) {
-          setImage(response.path);
+          const imageUri = response.path;
+          setImage(imageUri);
+          onImageSelected(imageUri);
         }
       })
       .catch((error) => {
@@ -26,16 +31,23 @@ const DateOfBirthPicker = () => {
   const handleGalleryPick = () => {
 
 
-    
-
     ImageCropPicker.openPicker({
         
       mediaType: 'photo',
       cropping: true,
+      multiple: false,
+      selectionMode: 'library',
+      maxWidth: 600, // Set the maximum width for compression
+            maxHeight: 300, // Set the maximum height for compression
+            quality: 0.8, // Set the compression quality between 0 and 1
     })
       .then((response) => {
         if (!response.didCancel && !response.error) {
-          setImage(response.path);
+         
+          const imageUri = response.path;
+          setImage(imageUri);
+          console.log(imageUri);
+          onImageSelected(imageUri);
         }
       })
       .catch((error) => {
