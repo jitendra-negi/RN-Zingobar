@@ -30,9 +30,9 @@ import { Colors } from '@helpers'
               width: 20,
               height: 20,
               borderWidth: 1,
-              borderColor: Colors().themeColor,
+              borderColor: Colors().secondaryColor,
               marginRight: 10,
-              backgroundColor: isChecked ? Colors().themeColor : 'transparent',
+              backgroundColor: isChecked ? Colors().secondaryColor : 'transparent',
             }}
           />
           <Text>Accept terms and privacy policy</Text>
@@ -42,11 +42,11 @@ import { Colors } from '@helpers'
       <View style={{ marginTop: 10 }}>
         <Text>
           By checking this box, you agree to our{' '}
-          <Text style={{ color: 'blue' }} onPress={handleTermsLinkPress}>
+          <Text style={{ color: Colors().secondaryColor }} onPress={handleTermsLinkPress}>
             Terms and Conditions
           </Text>{' '}
           and{' '}
-          <Text style={{ color: 'blue' }} onPress={handlePrivacyLinkPress}>
+          <Text style={{ color: Colors().secondaryColor }} onPress={handlePrivacyLinkPress}>
             Privacy Policy
           </Text>
           

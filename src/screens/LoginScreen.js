@@ -32,7 +32,7 @@ import {
     GoogleSigninButton,
     statusCodes,//
 } from '@react-native-google-signin/google-signin';
-import AsyncStorage from "@react-native-community/async-storage";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 GoogleSignin.configure({
     webClientId: '12345789-g2folaog0ck90vhbvbooqthq397qvk5p.apps.googleusercontent.com',
     scopes: ['profile', 'email']
@@ -212,7 +212,7 @@ function LoginScreen(props) {
                             loading: false,
                             verificationView: true
                         });
-                        //  props.navigation.push("VerifyOTPScreen", { VERIFICATION_DATA: confirmation })
+                          props.navigation.push("VerifyOTPScreen", { VERIFICATION_DATA: confirmation })
                     }
                     else {
                         setData({
@@ -499,7 +499,7 @@ function LoginScreen(props) {
                             style={{
                                 flex: 0.20,
                                 height: wp('11%'),
-                                backgroundColor: 'white',
+                                backgroundColor: Colors().lightGray,
                                 padding: 5,
                                 justifyContent: 'center',
                                 alignItems: 'center'
@@ -596,7 +596,7 @@ function LoginScreen(props) {
                         }
                     </FormControl>
                     <OtrixDivider size={'sm'} />
-                    <FormControl isRequired style={{ backgroundColor: Colors().white }} isInvalid={submited && 'password' in errors}>
+                    <FormControl isRequired style={{ backgroundColor: Colors().lightGray }} isInvalid={submited && 'password' in errors}>
                         <Input variant="outline" placeholder={strings.commoninput.placeholder_password} style={[GlobalStyles.textInputStyle]}
                             onChangeText={(value) => { setData({ ...formData, submited: false, password: value }), delete errors.password }}
                             secureTextEntry={state.secureEntry}

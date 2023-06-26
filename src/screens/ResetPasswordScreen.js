@@ -76,9 +76,11 @@ function ResetPasswordScreen(props) {
                             new_password: null,
                             confirm_password: null
                         });
+
                         setShowLoading(true)
                         setTimeout(() => {
                             setShowLoading(false)
+                            props.navigation.navigate('LoginScreen')
                         }, 1500);
                     }
                     else {

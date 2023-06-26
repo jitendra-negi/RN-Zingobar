@@ -1,6 +1,11 @@
 import React, { useState } from 'react';
 
 import { View, Text, StyleSheet, TouchableOpacity, Image } from 'react-native';
+import { GlobalStyles, Colors } from '@helpers'
+import {   Button } from "native-base"
+import {
+  OtrixContainer, OtrixHeader, OtrixContent, OtrixDivider, OtrixAlert, OtrixLoader, TermsAndPrivacyWidget
+} from '@component';
 
 import ImageCropPicker from 'react-native-image-crop-picker';
 
@@ -13,8 +18,8 @@ const DateOfBirthPicker = ({ onImageSelected }) => {
     ImageCropPicker.openCamera({
       mediaType: 'photo',
       cropping: true,
-      multiple: false,
-      
+      width: 320, // Set your desired frame width here
+      height: 200, 
     })
       .then((response) => {
         if (!response.didCancel && !response.error) {
@@ -35,11 +40,8 @@ const DateOfBirthPicker = ({ onImageSelected }) => {
         
       mediaType: 'photo',
       cropping: true,
-      multiple: false,
-      selectionMode: 'library',
-      maxWidth: 600, // Set the maximum width for compression
-            maxHeight: 300, // Set the maximum height for compression
-            quality: 0.8, // Set the compression quality between 0 and 1
+      width: 320, // Set your desired frame width here
+      height: 200, 
     })
       .then((response) => {
         if (!response.didCancel && !response.error) {
@@ -57,13 +59,39 @@ const DateOfBirthPicker = ({ onImageSelected }) => {
 
   return (
     <View style={styles.container}>
-      <TouchableOpacity style={styles.button} onPress={handleCameraCapture}>
+
+  
+    <Button 
+                    size="md"
+                    variant="solid"
+                    bg={Colors().secondaryColor}
+                    style={GlobalStyles.button}
+                    onPress={() => handleCameraCapture()}
+         >
+                    <Text style={GlobalStyles.buttonText}>Capture from Camera</Text>
+                </Button>
+                <OtrixDivider size={'xs'} />
+                <Button 
+                    size="md"
+                    variant="solid"
+                    bg={Colors().secondaryColor}
+                    style={GlobalStyles.button}
+                    onPress={() => handleGalleryPick()}
+         >
+                    <Text style={GlobalStyles.buttonText}>Pick from Gallery</Text>
+                </Button>
+
+      {/* <TouchableOpacity style={styles.button} onPress={handleCameraCapture}>
         <Text style={styles.buttonText}>Capture from Camera</Text>
       </TouchableOpacity>
+      <OtrixDivider size={'xs'} />
       <TouchableOpacity style={styles.button} onPress={handleGalleryPick}>
         <Text style={styles.buttonText}>Pick from Gallery</Text>
-      </TouchableOpacity>
-      {image && <Image source={{ uri: image }} style={styles.image} />}
+      </TouchableOpacity> */}
+      <OtrixDivider size={'xs'} />
+      <View style={styles.image_container}>
+     {image && <Image source={{ uri: image }} style={styles.image} resizeMode='contain'/>}
+      </View>
     </View>
   );
 };
@@ -71,14 +99,29 @@ const DateOfBirthPicker = ({ onImageSelected }) => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+    width:'100%',
+
+  },
+
+  image_container: {
+    flex: 1, alignItems: 'center', justifyContent: 'center' 
+
   },
   image: {
-    width: 200,
+    width: 320,
     height: 200,
-    marginTop: 16,
+   
+  },
+  button: {
+    backgroundColor: '#1C4F91',
+    padding: 12,
+    borderRadius: 5,
+    
+  },
+  buttonText: {
+    color: 'white',
+    fontWeight: 'normal',
+    textAlign: 'center',
   },
 });
 

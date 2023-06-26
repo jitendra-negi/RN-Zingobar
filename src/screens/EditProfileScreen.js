@@ -14,7 +14,7 @@ import { authData } from '@actions';
 import getApi from "@apis/getApi";
 import { logfunction } from "@helpers/FunctionHelper";
 import { GlobalStyles, Colors, isValidMobile } from '@helpers';
-import AsyncStorage from '@react-native-community/async-storage'
+import AsyncStorage from "@react-native-async-storage/async-storage";
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 
 function EditProfileScreen(props) {

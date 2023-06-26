@@ -27,7 +27,7 @@ import { launchCamera, launchImageLibrary } from 'react-native-image-picker';
 import getApi from "@apis/getApi";
 import { ASSETS_DIR } from '@env';
 import { logfunction } from "@helpers/FunctionHelper";
-import AsyncStorage from '@react-native-community/async-storage'
+import AsyncStorage from "@react-native-async-storage/async-storage";
 import auth from '@react-native-firebase/auth';
 
 function ProfileScreen(props) {

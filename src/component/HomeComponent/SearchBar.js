@@ -22,22 +22,25 @@ export default SearchBar = React.memo(Search);
 
 const styles = StyleSheet.create({
     searchView: {
-        height: hp('9%'),
+        height: hp('8%'),
         backgroundColor: Colors().white,
+       
     },
     searchContainer: {
         flexDirection: 'row',
         justifyContent: 'flex-start',
         alignItems: 'center',
         borderRadius: 8,
-        backgroundColor: Colors().light_white,
+        backgroundColor: Colors().lightGray,
         height: hp('6%'),
+        marginLeft: 10,
+        marginRight:10
 
     },
     searchIcon: {
         flex: 0.10,
-        color: Colors().secondry_text_color,
-        fontSize: wp('3.5%'),
+        color: Colors().themeColor,
+        fontSize: wp('4%'),
         alignSelf: 'center',
         textAlign: 'center'
     },
@@ -49,9 +52,10 @@ const styles = StyleSheet.create({
     textInputSearchStyle: {
         flex: 0.90,
         fontFamily: Fonts.Font_Reguler,
-        backgroundColor: Colors().light_white,
+        backgroundColor: Colors().lightGray,
         fontSize: wp('3.2%'),
         color: Colors().secondry_text_color,
+       
 
     },
 });

@@ -3,7 +3,7 @@ import { types } from "@actions/actionTypes";
 import {
     successInt, successCart, successCheckout, authStatus, authData, successWishlist, addRemoveWishlist
 } from "@actions";
-import AsyncStorage from '@react-native-community/async-storage'
+import AsyncStorage from "@react-native-async-storage/async-storage";
 import { logfunction, _getLocalCart } from "@helpers/FunctionHelper";
 import * as RootNavigation from '../../AppNavigator';
 import { changeLanguage, getLanguage } from '../../locales/i18n';

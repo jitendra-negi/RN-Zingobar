@@ -268,7 +268,7 @@ export const GlobalStyles = StyleSheet.create({
   textInputStyle: {
     height: wp('11%'),
     fontFamily: Fonts.Font_Bold,
-    backgroundColor: Colors().white,
+    backgroundColor: Colors().lightGray,
     fontSize: Platform.isPad === true ? wp('3.5%') : wp('3.2%'),
     color: Colors().secondry_text_color,
     padding: 5

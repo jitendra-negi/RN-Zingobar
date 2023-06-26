@@ -62,7 +62,7 @@ export const AppFeatures =
 {
     enableHome: true,
     enableCategoryScreen: true,
-    enableCartScreen: false,
+    enableCartScreen: true,
     enableProfileScreen: true,
     enableSettingScreen: true,
     // Add more feature options as needed

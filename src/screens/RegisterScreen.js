@@ -17,7 +17,6 @@ import Fonts from "@helpers/Fonts";
 import getApi from "@apis/getApi";
 
 
-
 function RegisterScreen(props) {
     const [formData, setData] = React.useState({ firstName: null, lastName: null, email: null, mobileNumber: null, password: null, cpassword: null, submited: false, type: null, message: null, loading: false, age:null, age_proof:null , address:null,image:null});
     const [state, setDatapassword] = React.useState({ secureEntry: true });
@@ -170,9 +169,9 @@ function RegisterScreen(props) {
         // Handle the selected image here
         console.log('Selected Image:', imageUri);
       
-      setData({ ...formData, submited: false, image: imageUri })
+         setData({ ...formData, submited: false, image: imageUri })
 
-        setShowDatePicker(false);
+       // setShowDatePicker(false);
       };
 
     return (
@@ -198,7 +197,7 @@ function RegisterScreen(props) {
 
 
                 {/* Registration Form Start from here */}
-                <FormControl style={{ backgroundColor: Colors().white }} isRequired isInvalid={submited && 'name' in errors}>
+                <FormControl style={{ backgroundColor: Colors().lightWhite }} isRequired isInvalid={submited && 'name' in errors}>
                     <Input variant="outline" placeholder={strings.commoninput.placeholder_first_name} style={GlobalStyles.textInputStyle}
                         onChangeText={(value) => { setData({ ...formData, submited: false, firstName: value }), delete errors.name }}
                     />
@@ -209,13 +208,13 @@ function RegisterScreen(props) {
                     </FormControl.ErrorMessage>
                 </FormControl>
                 <OtrixDivider size={'sm'} />
-                <FormControl style={{ backgroundColor: Colors().white }} isRequired >
+                <FormControl style={{ backgroundColor: Colors().lightWhite }} isRequired >
                     <Input variant="outline" placeholder={strings.commoninput.placeholder_last_name} style={GlobalStyles.textInputStyle}
                         onChangeText={(value) => setData({ ...formData, submited: false, lastName: value })}
                     />
                 </FormControl>
                 <OtrixDivider size={'sm'} />
-                <FormControl style={{ backgroundColor: Colors().white }} isRequired isInvalid={submited && 'email' in errors || 'invalidEmail' in errors}>
+                <FormControl style={{ backgroundColor: Colors().lightWhite }} isRequired isInvalid={submited && 'email' in errors || 'invalidEmail' in errors}>
                     <Input variant="outline" placeholder={strings.commoninput.placeholder_email} style={GlobalStyles.textInputStyle}
                         keyboardType="email-address"
                         onChangeText={(value) => { setData({ ...formData, email: value }), delete errors.email, delete errors.invalidEmail }}
@@ -237,7 +236,7 @@ function RegisterScreen(props) {
 
                 </FormControl>
                 <OtrixDivider size={'sm'} />
-                <FormControl style={{ backgroundColor: Colors().white }} isRequired isInvalid={submited && 'mobileNumber' in errors || 'invalidmobileNumber' in errors}>
+                <FormControl style={{ backgroundColor: Colors().lightWhite }} isRequired isInvalid={submited && 'mobileNumber' in errors || 'invalidmobileNumber' in errors}>
                     <Input variant="outline" keyboardType="number-pad" placeholder={strings.commoninput.placeholder_phone} style={GlobalStyles.textInputStyle}
                         onChangeText={(value) => { setData({ ...formData, submited: false, mobileNumber: value }), delete errors.mobileNumber, delete errors.invalidmobileNumber }}
                     />
@@ -259,12 +258,12 @@ function RegisterScreen(props) {
 
                 </FormControl>
                 <OtrixDivider size={'sm'} />
-                <FormControl style={{ backgroundColor: Colors().white }} isRequired={true} isInvalid={submited && 'password' in errors}>
+                <FormControl style={{ backgroundColor: Colors().lightGray }} isRequired={true} isInvalid={submited && 'password' in errors}>
                     <Input variant="outline" placeholder={strings.commoninput.placeholder_password} style={GlobalStyles.textInputStyle}
                         onChangeText={(value) => { setData({ ...formData, submited: false, password: value }), delete errors.password }}
                         secureTextEntry={state.secureEntry}
                         InputRightElement={
-                            <TouchableOpacity onPress={() => setDatapassword({ ...state, secureEntry: !state.secureEntry })} style={{ marginRight: wp('3%') }}>
+                            <TouchableOpacity onPress={() => setDatapassword({ ...state, secureEntry: !state.secureEntry })} style={{ marginRight: wp('3%')}}>
                                 <Icon name={state.secureEntry == true ? "eye" : "eye-off"} size={18} color={Colors().secondry_text_color} />
                             </TouchableOpacity>
                         }
@@ -276,7 +275,7 @@ function RegisterScreen(props) {
                     </FormControl.ErrorMessage>
                 </FormControl>
                 <OtrixDivider size={'sm'} />
-                <FormControl style={{ backgroundColor: Colors().white }} isRequired isInvalid={submited && 'cpassword' in errors}>
+                <FormControl style={{ backgroundColor: Colors().lightGray }} isRequired isInvalid={submited && 'cpassword' in errors}>
                     <Input variant="outline" placeholder={strings.commoninput.placeholder_confirm_password} style={GlobalStyles.textInputStyle}
                         onChangeText={(value) => { setData({ ...formData, submited: false, cpassword: value }), delete errors.cpassword }}
                         secureTextEntry={state.secureEntry}
@@ -293,7 +292,7 @@ function RegisterScreen(props) {
                     </FormControl.ErrorMessage>
                 </FormControl>
                 <OtrixDivider size={'sm'} />
-                <FormControl style={{ backgroundColor: Colors().white }} isRequired isInvalid={submited && 'age' in errors}>
+                <FormControl style={{ backgroundColor: Colors().lightWhite }} isRequired isInvalid={submited && 'age' in errors}>
                     <Input variant="outline" placeholder={strings.commoninput.placeholder_age} style={GlobalStyles.textInputStyle}
                         onChangeText={(value) => { setData({ ...formData, submited: false, age: value }), delete errors.age }}
                     />
@@ -315,7 +314,7 @@ function RegisterScreen(props) {
                 {showDatePicker && <DateOfBirthPicker onImageSelected={handleImageSelected} />}
                  </View>
 
-                <OtrixDivider size={'md'} />
+                <OtrixDivider size={'xs'} />
 
                 <TermsAndPrivacyWidget
                 props={ props}
@@ -385,17 +384,16 @@ const styles = StyleSheet.create({
     },
     container: {
         flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
+        justifyContent: 'flex-start',
+        alignItems: 'flex-start',
       },
       button: {
-        backgroundColor: 'white',
-        padding: 12,
+        marginTop:8,
         borderRadius: 8,
-        marginBottom: 16,
+        marginBottom: 8,
       },
       buttonText: {
-        color: 'blue',
+        color: '#1C4F91',
         fontSize: 16,
     
       },

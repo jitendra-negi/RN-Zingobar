@@ -7,12 +7,15 @@ export function Colors() {
   // let theme = store.getState().mainScreenInit ? store.getState().mainScreenInit.theme : 'light';
 
   let white = '#fff';
-  let lightWhite = '#f7f7f8';
+  //let lightWhite = '#f7f7f8'; //Header status , categories, product
+  let lightWhite = 'white'; //Header status , categories, product
   let offWhite = 'rgb(255,255,255)';
   let black = 'rgb(0,0,0)';
   let blackTxt = '#000000';
   let lightWhiteTxt = '#FAFAFA';
   let textColor = "#121533";
+  let secondaryColor="#1C4F91";
+  let lightGray = '#f7f7f8';
 
   // if (theme == 'dark') {
   //   white = '#000';
@@ -25,6 +28,7 @@ export function Colors() {
   // }
 
   return {
+    lightGray: lightGray,
     light_white: lightWhite,
     custom_gray: 'rgb(182,182,182)',
     custom_purple: 'rgba(255, 229, 0, 1)',
@@ -32,6 +36,7 @@ export function Colors() {
     secondry_text_color: '#767787',
     link_color: '#CF4222',
     themeColor: "#CF4222",
+    secondaryColor: secondaryColor,
     red: '#ff4848',
     success: '#00A36C',
     arrow_color: 'rgb(200,204,216)',

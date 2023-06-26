@@ -1,6 +1,6 @@
 import { Linking } from 'react-native'
 import Toast from 'react-native-root-toast';
-import AsyncStorage from '@react-native-community/async-storage'
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 export function chatSupport() {
     const link = 'whatsapp://send?text=Hello Otrixweb&phone=9898'
@@ -22,7 +22,7 @@ export function chatSupport() {
         })
 }
 
-const logprint = false;
+const logprint = true;
 
 export function logfunction(tag, message) {
     if (logprint) {

@@ -24,7 +24,7 @@ import Rate, { AndroidMarket } from 'react-native-rate';
 import { shipping, refund } from '@common';
 import Share from 'react-native-share';
 import { Switch } from "native-base";
-import AsyncStorage from "@react-native-community/async-storage";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 import RNRestart from 'react-native-restart';
 import { useEffect } from "react";
 const shareOptions = {
