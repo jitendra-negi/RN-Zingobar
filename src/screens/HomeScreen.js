@@ -90,26 +90,28 @@ function HomeScreen(props) {
 
 
 
-        if (!firebase.apps.length) {
-
-            firebase.initializeApp({
-
-                apiKey: 'AIzaSyBiWkpoLjN5kZY2cxphsM1v2wC12345678',
-
-                authDomain: 'otrixcommerce.firebaseapp.com',
-
-                databaseURL: '',
-
-                projectId: 'otrix-commerce',
-
-                storageBucket: '',
-
-                appId: "1:123456789978:ios:a5e57cfc08ff88df6cb6c4",
-
-                messagingSenderId: '1234567897'
-
-            });
-
+        try {
+            if (!firebase.apps.length) {
+                firebase.initializeApp({
+                    // apiKey: 'AIzaSyBiWkpoLjN5kZY2cxphsM1v20000000000',
+                    // authDomain: 'otrixcommerce123.firebaseapp.com',
+                    // databaseURL: '',
+                    // projectId: 'otrix-commerce',
+                    // storageBucket: '',
+                    // appId: "1:123123123123:ios:a5e57cfc08ff88df6cb6c4",
+                    // messagingSenderId: '123123123123'
+                    apiKey: "AIzaSyBGGK_7IrjsZfqDmaaQKovQ9D1EE6sUv-o",
+                    authDomain: "zingobar-d2dd6.firebaseapp.com",
+                    databaseURL: '',
+                    projectId: "zingobar-d2dd6",
+                    storageBucket: '',
+                    appId: "1:750908141751:web:1d0837a004f1e4bd7c1d32",
+                    messagingSenderId: "750908141751",
+                });
+            }
+        } catch (err) {
+            // ignore app already initialized error in snack
+            console.log("initializeApp error : ", err)
         }
 
 
@@ -252,8 +254,6 @@ function HomeScreen(props) {
                     await AsyncStorage.setItem('FCM_TOKEN', fcmToken);
 
                     props.storeFCM(fcmToken);
-
-
 
 
                 }

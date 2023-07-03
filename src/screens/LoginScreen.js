@@ -41,13 +41,28 @@ GoogleSignin.configure({
 try {
     if (!firebase.apps.length) {
         firebase.initializeApp({
-            apiKey: 'AIzaSyBiWkpoLjN5kZY2cxphsM1v20000000000',
-            authDomain: 'otrixcommerce123.firebaseapp.com',
+            // apiKey: 'AIzaSyBiWkpoLjN5kZY2cxphsM1v20000000000',
+            // authDomain: 'otrixcommerce123.firebaseapp.com',
+            // databaseURL: '',
+            // projectId: 'otrix-commerce',
+            // storageBucket: '',
+            // appId: "1:123123123123:ios:a5e57cfc08ff88df6cb6c4",
+            // messagingSenderId: '123123123123'
+
+
+            apiKey: "AIzaSyBGGK_7IrjsZfqDmaaQKovQ9D1EE6sUv-o",
+            authDomain: "zingobar-d2dd6.firebaseapp.com",
             databaseURL: '',
-            projectId: 'otrix-commerce',
+            projectId: "zingobar-d2dd6",
             storageBucket: '',
-            appId: "1:123123123123:ios:a5e57cfc08ff88df6cb6c4",
-            messagingSenderId: '123123123123'
+            appId: "1:750908141751:web:1d0837a004f1e4bd7c1d32",
+            messagingSenderId: "750908141751",
+
+            // storageBucket: "zingobar-d2dd6.appspot.com",
+            // messagingSenderId: "750908141751",
+            // appId: "1:750908141751:web:1d0837a004f1e4bd7c1d32",
+            // measurementId: "G-RZ88XDSQRT"
+
         });
     }
 } catch (err) {
@@ -194,18 +209,19 @@ function LoginScreen(props) {
             });
 
             let sendData = new FormData();
-            sendData.append('phone_number', mobileNumber);
-            sendData.append('firebase_token', props.FCM_TOKEN)
-
+            sendData.append('mobileNumber', mobileNumber);
+           // sendData.append('firebase_token', props.FCM_TOKEN)
+           // 'user/checkcustomer',
             try {
                 getApi.postData(
-                    'user/checkcustomer',
+                    'user/loginverifyOTP',
                     sendData,
                 ).then((async response => {
                     console.log("SEND RESPONSE ", response)
                     logfunction("RESPONSE ", response)
+                    response.status=1
                     if (response.status == 1) {
-                        const confirmation = await auth().signInWithPhoneNumber(countryCode + '' + mobileNumber);
+                      //  const confirmation = await auth().signInWithPhoneNumber(countryCode + '' + mobileNumber);
                         setConfirm(confirmation);
                         setData({
                             ...formData,

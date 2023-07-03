@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.otrixcommercelaravel.app-mergeDebugResources-41:/values-zh-rTW/values-zh-rTW.xml",
+            "outputFile": "com.zingobar.app-mergeDebugResources-43:/values-zh-rTW/values-zh-rTW.xml",
             "map": [
                 {
                     "source": "/Users/jitendra/.gradle/caches/transforms-3/47b0a75a35b9d53b43a810f4bc8a2582/transformed/jetified-play-services-basement-18.1.0/res/values-zh-rTW/values.xml",
@@ -103,6 +103,23 @@
                         "startOffsets": "6709,6793,6885,6986",
                         "endColumns": "83,91,100,92",
                         "endOffsets": "6788,6880,6981,7074"
+                    }
+                },
+                {
+                    "source": "/Users/jitendra/.gradle/caches/transforms-3/c71292433d1b368d798679fd90d5520d/transformed/jetified-ucrop-2.2.6-native/res/values-zh-rTW/values-zh-rTW.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6",
+                        "startColumns": "4,4,4,4,4",
+                        "startOffsets": "55,132,186,240,287",
+                        "endColumns": "76,53,53,46,116",
+                        "endOffsets": "127,181,235,282,399"
+                    },
+                    "to": {
+                        "startLines": "76,77,78,79,80",
+                        "startColumns": "4,4,4,4,4",
+                        "startOffsets": "7259,7336,7390,7444,7491",
+                        "endColumns": "76,53,53,46,116",
+                        "endOffsets": "7331,7385,7439,7486,7603"
                     }
                 }
             ]

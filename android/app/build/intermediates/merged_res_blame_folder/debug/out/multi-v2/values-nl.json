@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.otrixcommercelaravel.app-mergeDebugResources-41:/values-nl/values-nl.xml",
+            "outputFile": "com.zingobar.app-mergeDebugResources-43:/values-nl/values-nl.xml",
             "map": [
                 {
                     "source": "/Users/jitendra/.gradle/caches/transforms-3/f1af0dac56fe1ec775e4cee70f60ad03/transformed/browser-1.4.0/res/values-nl/values-nl.xml",
@@ -18,6 +18,23 @@
                         "startOffsets": "7675,7778,7879,7990",
                         "endColumns": "102,100,110,98",
                         "endOffsets": "7773,7874,7985,8084"
+                    }
+                },
+                {
+                    "source": "/Users/jitendra/.gradle/caches/transforms-3/c71292433d1b368d798679fd90d5520d/transformed/jetified-ucrop-2.2.6-native/res/values-nl/values-nl.xml",
+                    "from": {
+                        "startLines": "2,3,4",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "55,120,179",
+                        "endColumns": "64,58,54",
+                        "endOffsets": "115,174,229"
+                    },
+                    "to": {
+                        "startLines": "76,77,78",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "8273,8338,8397",
+                        "endColumns": "64,58,54",
+                        "endOffsets": "8333,8392,8447"
                     }
                 },
                 {

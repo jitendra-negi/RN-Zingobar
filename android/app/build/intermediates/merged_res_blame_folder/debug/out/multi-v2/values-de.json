@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.otrixcommercelaravel.app-mergeDebugResources-41:/values-de/values-de.xml",
+            "outputFile": "com.zingobar.app-mergeDebugResources-43:/values-de/values-de.xml",
             "map": [
                 {
                     "source": "/Users/jitendra/.gradle/caches/transforms-3/a5e7c8d50fe7ab087249bb6821978034/transformed/jetified-facebook-login-8.2.0/res/values-de/values-de.xml",
@@ -86,6 +86,23 @@
                         "startOffsets": "6470",
                         "endColumns": "144",
                         "endOffsets": "6610"
+                    }
+                },
+                {
+                    "source": "/Users/jitendra/.gradle/caches/transforms-3/c71292433d1b368d798679fd90d5520d/transformed/jetified-ucrop-2.2.6-native/res/values-de/values-de.xml",
+                    "from": {
+                        "startLines": "2,3,4",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "55,121,179",
+                        "endColumns": "65,57,55",
+                        "endOffsets": "116,174,230"
+                    },
+                    "to": {
+                        "startLines": "76,77,78",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "8358,8424,8482",
+                        "endColumns": "65,57,55",
+                        "endOffsets": "8419,8477,8533"
                     }
                 },
                 {

@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.otrixcommercelaravel.app-mergeDebugResources-41:/values-v23/values-v23.xml",
+            "outputFile": "com.zingobar.app-mergeDebugResources-43:/values-v23/values-v23.xml",
             "map": [
                 {
                     "source": "/Users/jitendra/.gradle/caches/transforms-3/e2a06fbf1db0940d3045823cb1a36aed/transformed/appcompat-1.4.1/res/values-v23/values-v23.xml",

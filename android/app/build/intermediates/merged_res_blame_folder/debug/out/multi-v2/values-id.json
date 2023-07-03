@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.otrixcommercelaravel.app-mergeDebugResources-41:/values-id/values-id.xml",
+            "outputFile": "com.zingobar.app-mergeDebugResources-43:/values-id/values-id.xml",
             "map": [
                 {
                     "source": "/Users/jitendra/.gradle/caches/transforms-3/b9e384a64c7dee4104ff39dac8f87906/transformed/jetified-facebook-common-8.2.0/res/values-id/values-id.xml",

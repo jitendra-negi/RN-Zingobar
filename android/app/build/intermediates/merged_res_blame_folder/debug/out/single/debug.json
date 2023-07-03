@@ -1,90 +1,86 @@
 [
     {
-        "merged": "com.otrixcommercelaravel.app-merged_res-43:/mipmap-hdpi_ic_launcher.png.flat",
-        "source": "com.otrixcommercelaravel.app-main-45:/mipmap-hdpi/ic_launcher.png"
+        "merged": "com.zingobar.app-merged_res-45:/drawable_ic_launcher_web.png.flat",
+        "source": "com.zingobar.app-main-47:/drawable/ic_launcher_web.png"
     },
     {
-        "merged": "com.otrixcommercelaravel.app-merged_res-43:/mipmap-xxxhdpi_ic_launcher.png.flat",
-        "source": "com.otrixcommercelaravel.app-main-45:/mipmap-xxxhdpi/ic_launcher.png"
+        "merged": "com.zingobar.app-merged_res-45:/mipmap-xxxhdpi_ic_launcher_foreground.png.flat",
+        "source": "com.zingobar.app-main-47:/mipmap-xxxhdpi/ic_launcher_foreground.png"
     },
     {
-        "merged": "com.otrixcommercelaravel.app-merged_res-43:/mipmap-xxhdpi_ic_launcher.png.flat",
-        "source": "com.otrixcommercelaravel.app-main-45:/mipmap-xxhdpi/ic_launcher.png"
+        "merged": "com.zingobar.app-merged_res-45:/mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "com.zingobar.app-main-47:/mipmap-xhdpi/ic_launcher_round.png"
     },
     {
-        "merged": "com.otrixcommercelaravel.app-merged_res-43:/mipmap-xxhdpi_ic_launcher_round.png.flat",
-        "source": "com.otrixcommercelaravel.app-main-45:/mipmap-xxhdpi/ic_launcher_round.png"
+        "merged": "com.zingobar.app-merged_res-45:/mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "com.zingobar.app-main-47:/mipmap-mdpi/ic_launcher_round.png"
     },
     {
-        "merged": "com.otrixcommercelaravel.app-merged_res-43:/drawable_rn_edit_text_material.xml.flat",
-        "source": "com.otrixcommercelaravel.app-main-45:/drawable/rn_edit_text_material.xml"
+        "merged": "com.zingobar.app-merged_res-45:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "com.zingobar.app-main-47:/mipmap-anydpi-v26/ic_launcher_round.xml"
     },
     {
-        "merged": "com.otrixcommercelaravel.app-merged_res-43:/mipmap-xhdpi_ic_launcher_round_adaptive_back.png.flat",
-        "source": "com.otrixcommercelaravel.app-main-45:/mipmap-xhdpi/ic_launcher_round_adaptive_back.png"
+        "merged": "com.zingobar.app-merged_res-45:/mipmap-mdpi_ic_launcher_foreground.png.flat",
+        "source": "com.zingobar.app-main-47:/mipmap-mdpi/ic_launcher_foreground.png"
     },
     {
-        "merged": "com.otrixcommercelaravel.app-merged_res-43:/mipmap-xxxhdpi_ic_launcher_round_adaptive_fore.png.flat",
-        "source": "com.otrixcommercelaravel.app-main-45:/mipmap-xxxhdpi/ic_launcher_round_adaptive_fore.png"
+        "merged": "com.zingobar.app-merged_res-45:/mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "com.zingobar.app-main-47:/mipmap-xhdpi/ic_launcher.png"
     },
     {
-        "merged": "com.otrixcommercelaravel.app-merged_res-43:/mipmap-hdpi_ic_launcher_round_adaptive_back.png.flat",
-        "source": "com.otrixcommercelaravel.app-main-45:/mipmap-hdpi/ic_launcher_round_adaptive_back.png"
+        "merged": "com.zingobar.app-merged_res-45:/mipmap-ldpi_ic_launcher.png.flat",
+        "source": "com.zingobar.app-main-47:/mipmap-ldpi/ic_launcher.png"
     },
     {
-        "merged": "com.otrixcommercelaravel.app-merged_res-43:/mipmap-xhdpi_ic_launcher.png.flat",
-        "source": "com.otrixcommercelaravel.app-main-45:/mipmap-xhdpi/ic_launcher.png"
+        "merged": "com.zingobar.app-merged_res-45:/mipmap-xxhdpi_ic_launcher_foreground.png.flat",
+        "source": "com.zingobar.app-main-47:/mipmap-xxhdpi/ic_launcher_foreground.png"
     },
     {
-        "merged": "com.otrixcommercelaravel.app-merged_res-43:/mipmap-hdpi_ic_launcher_round.png.flat",
-        "source": "com.otrixcommercelaravel.app-main-45:/mipmap-hdpi/ic_launcher_round.png"
+        "merged": "com.zingobar.app-merged_res-45:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "com.zingobar.app-main-47:/mipmap-anydpi-v26/ic_launcher.xml"
     },
     {
-        "merged": "com.otrixcommercelaravel.app-merged_res-43:/mipmap-xxxhdpi_ic_launcher_round.png.flat",
-        "source": "com.otrixcommercelaravel.app-main-45:/mipmap-xxxhdpi/ic_launcher_round.png"
+        "merged": "com.zingobar.app-merged_res-45:/drawable_playstore_icon.png.flat",
+        "source": "com.zingobar.app-main-47:/drawable/playstore_icon.png"
     },
     {
-        "merged": "com.otrixcommercelaravel.app-merged_res-43:/mipmap-mdpi_ic_launcher.png.flat",
-        "source": "com.otrixcommercelaravel.app-main-45:/mipmap-mdpi/ic_launcher.png"
+        "merged": "com.zingobar.app-merged_res-45:/mipmap-hdpi_ic_launcher.png.flat",
+        "source": "com.zingobar.app-main-47:/mipmap-hdpi/ic_launcher.png"
     },
     {
-        "merged": "com.otrixcommercelaravel.app-merged_res-43:/mipmap-xxhdpi_ic_launcher_round_adaptive_back.png.flat",
-        "source": "com.otrixcommercelaravel.app-main-45:/mipmap-xxhdpi/ic_launcher_round_adaptive_back.png"
+        "merged": "com.zingobar.app-merged_res-45:/mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "com.zingobar.app-main-47:/mipmap-xxhdpi/ic_launcher_round.png"
     },
     {
-        "merged": "com.otrixcommercelaravel.app-merged_res-43:/mipmap-xxhdpi_ic_launcher_round_adaptive_fore.png.flat",
-        "source": "com.otrixcommercelaravel.app-main-45:/mipmap-xxhdpi/ic_launcher_round_adaptive_fore.png"
+        "merged": "com.zingobar.app-merged_res-45:/mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "com.zingobar.app-main-47:/mipmap-hdpi/ic_launcher_round.png"
     },
     {
-        "merged": "com.otrixcommercelaravel.app-merged_res-43:/mipmap-xhdpi_ic_launcher_round.png.flat",
-        "source": "com.otrixcommercelaravel.app-main-45:/mipmap-xhdpi/ic_launcher_round.png"
+        "merged": "com.zingobar.app-merged_res-45:/mipmap-mdpi_ic_launcher.png.flat",
+        "source": "com.zingobar.app-main-47:/mipmap-mdpi/ic_launcher.png"
     },
     {
-        "merged": "com.otrixcommercelaravel.app-merged_res-43:/mipmap-hdpi_ic_launcher_round_adaptive_fore.png.flat",
-        "source": "com.otrixcommercelaravel.app-main-45:/mipmap-hdpi/ic_launcher_round_adaptive_fore.png"
+        "merged": "com.zingobar.app-merged_res-45:/mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "com.zingobar.app-main-47:/mipmap-xxxhdpi/ic_launcher.png"
     },
     {
-        "merged": "com.otrixcommercelaravel.app-merged_res-43:/mipmap-mdpi_ic_launcher_round_adaptive_fore.png.flat",
-        "source": "com.otrixcommercelaravel.app-main-45:/mipmap-mdpi/ic_launcher_round_adaptive_fore.png"
+        "merged": "com.zingobar.app-merged_res-45:/mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "com.zingobar.app-main-47:/mipmap-xxhdpi/ic_launcher.png"
     },
     {
-        "merged": "com.otrixcommercelaravel.app-merged_res-43:/mipmap-xxxhdpi_ic_launcher_round_adaptive_back.png.flat",
-        "source": "com.otrixcommercelaravel.app-main-45:/mipmap-xxxhdpi/ic_launcher_round_adaptive_back.png"
+        "merged": "com.zingobar.app-merged_res-45:/mipmap-xhdpi_ic_launcher_foreground.png.flat",
+        "source": "com.zingobar.app-main-47:/mipmap-xhdpi/ic_launcher_foreground.png"
     },
     {
-        "merged": "com.otrixcommercelaravel.app-merged_res-43:/mipmap-xhdpi_ic_launcher_round_adaptive_fore.png.flat",
-        "source": "com.otrixcommercelaravel.app-main-45:/mipmap-xhdpi/ic_launcher_round_adaptive_fore.png"
+        "merged": "com.zingobar.app-merged_res-45:/mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "com.zingobar.app-main-47:/mipmap-xxxhdpi/ic_launcher_round.png"
     },
     {
-        "merged": "com.otrixcommercelaravel.app-merged_res-43:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
-        "source": "com.otrixcommercelaravel.app-main-45:/mipmap-anydpi-v26/ic_launcher_round.xml"
+        "merged": "com.zingobar.app-merged_res-45:/drawable_rn_edit_text_material.xml.flat",
+        "source": "com.zingobar.app-main-47:/drawable/rn_edit_text_material.xml"
     },
     {
-        "merged": "com.otrixcommercelaravel.app-merged_res-43:/mipmap-mdpi_ic_launcher_round_adaptive_back.png.flat",
-        "source": "com.otrixcommercelaravel.app-main-45:/mipmap-mdpi/ic_launcher_round_adaptive_back.png"
-    },
-    {
-        "merged": "com.otrixcommercelaravel.app-merged_res-43:/mipmap-mdpi_ic_launcher_round.png.flat",
-        "source": "com.otrixcommercelaravel.app-main-45:/mipmap-mdpi/ic_launcher_round.png"
+        "merged": "com.zingobar.app-merged_res-45:/mipmap-hdpi_ic_launcher_foreground.png.flat",
+        "source": "com.zingobar.app-main-47:/mipmap-hdpi/ic_launcher_foreground.png"
     }
 ]

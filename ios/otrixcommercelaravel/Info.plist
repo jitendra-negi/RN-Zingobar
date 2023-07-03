@@ -22,11 +22,6 @@
 	<string>????</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string> App needs access to the photo library to pick images for the Date of Birth proof.</string>	
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string> App needs access to the caamera to pick capture images for the Date of Birth proof.</string>
-
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSAppTransportSecurity</key>
@@ -42,6 +37,8 @@
 	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string></string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string> App needs access to the caamera to pick capture images for the Date of Birth proof.</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Roboto-Black.ttf</string>
@@ -68,6 +65,11 @@
 		<string>Droid Arabic Kufi.ttf</string>
 		<string>DroidKufi-Bold.ttf</string>
 		<string>DroidKufi-Regular.ttf</string>
+	</array>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>fetch</string>
+		<string>remote-notification</string>
 	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>

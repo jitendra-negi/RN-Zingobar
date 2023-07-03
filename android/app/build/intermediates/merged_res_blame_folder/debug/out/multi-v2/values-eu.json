@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.otrixcommercelaravel.app-mergeDebugResources-41:/values-eu/values-eu.xml",
+            "outputFile": "com.zingobar.app-mergeDebugResources-43:/values-eu/values-eu.xml",
             "map": [
                 {
                     "source": "/Users/jitendra/.gradle/caches/transforms-3/43a47f35034419d56527adc8180d3679/transformed/jetified-play-services-base-18.0.1/res/values-eu/values.xml",

@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.otrixcommercelaravel.app-mergeDebugResources-41:/values-pt-rBR/values-pt-rBR.xml",
+            "outputFile": "com.zingobar.app-mergeDebugResources-43:/values-pt-rBR/values-pt-rBR.xml",
             "map": [
                 {
                     "source": "/Users/jitendra/.gradle/caches/transforms-3/f1af0dac56fe1ec775e4cee70f60ad03/transformed/browser-1.4.0/res/values-pt-rBR/values-pt-rBR.xml",

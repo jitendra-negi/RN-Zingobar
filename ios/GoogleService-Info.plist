@@ -3,23 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>435474097745-a5caniof2dkrpefebbepq805706uathu.apps.googleusercontent.com</string>
+	<string>750908141751-ekmfgrs2fdqjq6k12akl18ue9qamd0lv.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.435474097745-a5caniof2dkrpefebbepq805706uathu</string>
-	<key>ANDROID_CLIENT_ID</key>
-	<string>435474097745-16ko2gd1hssruqk66hb7hjjm9c2ku5e1.apps.googleusercontent.com</string>
+	<string>com.googleusercontent.apps.750908141751-ekmfgrs2fdqjq6k12akl18ue9qamd0lv</string>
 	<key>API_KEY</key>
-	<string>AIzaSyDl0xctiXVBSVYkU9mgekmGYdeEKqcaRrw</string>
+	<string>AIzaSyAw2jQAwu_4yU_YQxh81lzVGy3PE2V2w1o</string>
 	<key>GCM_SENDER_ID</key>
-	<string>435474097745</string>
+	<string>750908141751</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.otrixapp.ios</string>
+	<string>com.zingobar.ios</string>
 	<key>PROJECT_ID</key>
-	<string>testproject-69d1f</string>
+	<string>zingobar-d2dd6</string>
 	<key>STORAGE_BUCKET</key>
-	<string>testproject-69d1f.appspot.com</string>
+	<string>zingobar-d2dd6.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -31,8 +29,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:435474097745:ios:48d86dc4bb73423605fa70</string>
-	<key>DATABASE_URL</key>
-	<string>https://testproject-69d1f.firebaseio.com</string>
+	<string>1:750908141751:ios:8ae75aedb157565b7c1d32</string>
 </dict>
 </plist>

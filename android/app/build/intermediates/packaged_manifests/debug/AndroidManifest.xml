@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.otrixcommercelaravel"
+    package="com.zingobar"
     android:versionCode="1"
     android:versionName="1.0" >
 
@@ -10,15 +10,24 @@
 
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <queries>
+        <intent>
+            <action android:name="android.media.action.IMAGE_CAPTURE" />
+        </intent>
+    </queries>
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" /> <!-- Required by older versions of Google Play services to create IID tokens -->
     <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
     <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" />
 
     <application
-        android:name="com.otrixcommercelaravel.MainApplication"
+        android:name="com.zingobar.MainApplication"
         android:allowBackup="false"
         android:appComponentFactory="androidx.core.app.CoreComponentFactory"
         android:debuggable="true"
@@ -32,7 +41,7 @@
             android:name="com.facebook.react.devsupport.DevSettingsActivity"
             android:exported="false" />
         <activity
-            android:name="com.otrixcommercelaravel.MainActivity"
+            android:name="com.zingobar.MainActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode"
             android:exported="true"
             android:label="@string/app_name"
@@ -105,12 +114,26 @@
 
         <provider
             android:name="io.invertase.firebase.app.ReactNativeFirebaseAppInitProvider"
-            android:authorities="com.otrixcommercelaravel.reactnativefirebaseappinitprovider"
+            android:authorities="com.zingobar.reactnativefirebaseappinitprovider"
             android:exported="false"
             android:initOrder="99" />
         <provider
+            android:name="com.reactnative.ivpusic.imagepicker.IvpusicImagePickerFileProvider"
+            android:authorities="com.zingobar.provider"
+            android:exported="false"
+            android:grantUriPermissions="true" >
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/ivpusic_imagepicker_provider_paths" />
+        </provider>
+
+        <activity
+            android:name="com.yalantis.ucrop.UCropActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+
+        <provider
             android:name="com.imagepicker.ImagePickerProvider"
-            android:authorities="com.otrixcommercelaravel.imagepickerprovider"
+            android:authorities="com.zingobar.imagepickerprovider"
             android:exported="false"
             android:grantUriPermissions="true" >
             <meta-data
@@ -119,7 +142,7 @@
         </provider>
         <provider
             android:name="cl.json.RNShareFileProvider"
-            android:authorities="com.otrixcommercelaravel.rnshare.fileprovider"
+            android:authorities="com.zingobar.rnshare.fileprovider"
             android:exported="false"
             android:grantUriPermissions="true" >
             <meta-data
@@ -142,7 +165,7 @@
                 <category android:name="android.intent.category.BROWSABLE" />
 
                 <data
-                    android:host="cct.com.otrixcommercelaravel"
+                    android:host="cct.com.zingobar"
                     android:scheme="fbconnect" />
             </intent-filter>
         </activity>
@@ -157,7 +180,7 @@
         -->
         <provider
             android:name="com.facebook.internal.FacebookInitProvider"
-            android:authorities="com.otrixcommercelaravel.FacebookInitProvider"
+            android:authorities="com.zingobar.FacebookInitProvider"
             android:exported="false" />
 
         <receiver
@@ -210,6 +233,21 @@
             android:exported="false" />
 
         <activity
+            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
+            android:excludeFromRecents="true"
+            android:exported="false"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <!--
+            Service handling Google Sign-In user revocation. For apps that do not integrate with
+            Google Sign-In, this service will never be started.
+        -->
+        <service
+            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
+            android:exported="true"
+            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"
+            android:visibleToInstantApps="true" />
+
+        <activity
             android:name="com.google.firebase.auth.internal.GenericIdpActivity"
             android:excludeFromRecents="true"
             android:exported="true"
@@ -246,28 +284,13 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
-            android:excludeFromRecents="true"
-            android:exported="false"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-        <!--
-            Service handling Google Sign-In user revocation. For apps that do not integrate with
-            Google Sign-In, this service will never be started.
-        -->
-        <service
-            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
-            android:exported="true"
-            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"
-            android:visibleToInstantApps="true" />
-
-        <activity
             android:name="com.google.android.gms.common.api.GoogleApiActivity"
             android:exported="false"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
 
         <provider
             android:name="com.google.firebase.provider.FirebaseInitProvider"
-            android:authorities="com.otrixcommercelaravel.firebaseinitprovider"
+            android:authorities="com.zingobar.firebaseinitprovider"
             android:directBootAware="true"
             android:exported="false"
             android:initOrder="100" />
@@ -278,7 +301,7 @@
 
         <provider
             android:name="androidx.startup.InitializationProvider"
-            android:authorities="com.otrixcommercelaravel.androidx-startup"
+            android:authorities="com.zingobar.androidx-startup"
             android:exported="false" >
             <meta-data
                 android:name="androidx.emoji2.text.EmojiCompatInitializer"
