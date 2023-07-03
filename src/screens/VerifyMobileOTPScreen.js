@@ -10,13 +10,15 @@ import { connect } from 'react-redux';
 import { GlobalStyles, Colors } from '@helpers'
 import OTPInputView from '@twotalltotems/react-native-otp-input'
 import { logfunction } from "@helpers/FunctionHelper";
+import { bindActionCreators } from 'redux';
+import { doLogin } from '@actions';
 import getApi from "@apis/getApi";
 
 function VerifyMobileOTPScreen(props) {
-    const [formData, setData] = React.useState({ submited: false, loading: false, type: null, message: null });
+    const [formData, setData] = React.useState({ submited: false, loading: false, type: null, message: null,navTo: 'HomeScreen' });
     const [errors, setErrors] = React.useState({});
-    const { loading, submited, message, type } = formData;
-    const { email } = props.route.params;
+    const { loading, submited, message, type, navTo } = formData;
+    const { mobile } = props.route.params;
 
 
     const verifyOTP = (otp) => {
@@ -27,28 +29,36 @@ function VerifyMobileOTPScreen(props) {
 
         let sendData = new FormData();
         sendData.append('otp', otp);
-        sendData.append('email', email);
+        sendData.append('mobileNumber', mobile);
         try {
             getApi.postData(
-                'user/verifyOTP',
+                'user/loginverifyOTP',
                 sendData,
             ).then((response => {
                 logfunction("RESPONSE ", response)
+
+               // setOTPLoading(false)
+                
+
                 if (response.status == 1) {
-                    logfunction("RESPONSE ", 'Success')
+
                     setData({
                         ...formData,
-                        otp: null,
-                        loading: false
+                        type: 'error',
+                        message: response.message,
+                        loading: false,
+                        type: 'success',
                     });
-                    props.navigation.push('ResetPasswordScreen', { token: response.otpToken, email: email });
+
+                    props.doLogin(response, navTo);
                 }
                 else {
                     setData({
                         ...formData,
                         type: 'error',
                         message: response.message,
-                        loading: false
+                        loading: false,
+                       
                     });
                     setTimeout(() => {
                         setData({
@@ -75,7 +85,7 @@ function VerifyMobileOTPScreen(props) {
             {/* Header */}
             <OtrixHeader customStyles={GlobalStyles.authHeader}>
                 <Text style={[GlobalStyles.authtabbarText]}>Verify OTP</Text>
-                <Text style={GlobalStyles.authSubText}>We send you otp on your email address!</Text>
+                <Text style={GlobalStyles.authSubText}>We send you otp on your phone number!</Text>
             </OtrixHeader>
             <OtrixDivider size={'md'} />
 
@@ -85,7 +95,7 @@ function VerifyMobileOTPScreen(props) {
 
                 <OTPInputView
                     style={{ width: '100%', height: 100, backgroundColor: 'white', paddingHorizontal: 20 }}
-                    pinCount={6}
+                    pinCount={4}
                     // code={this.state.code} //You can supply this prop or not. The component will be used as a controlled / uncontrolled component respectively.
                     autoFocusOnLoad={true}
                     codeInputFieldStyle={styles.underlineStyleBase}
@@ -122,7 +132,13 @@ function mapStateToProps(state) {
     }
 }
 
-export default connect(mapStateToProps)(VerifyMobileOTPScreen);
+const mapDispatchToProps = dispatch => (
+    bindActionCreators({
+        doLogin
+    }, dispatch)
+);
+
+export default connect(mapStateToProps,mapDispatchToProps)(VerifyMobileOTPScreen);
 
 const styles = StyleSheet.create({
     underlineStyleBase: {

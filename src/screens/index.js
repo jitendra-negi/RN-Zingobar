@@ -28,5 +28,6 @@ export { default as UnauthorizeScreen } from './UnauthorizeScreen.js';
 export { default as RefundScreen } from './RefundScreen.js';
 export { default as ShippingDeliveryScreen } from './ShippingDeliveryScreen.js';
 export { default as VerifyOTPScreen } from './VerifyOTPScreen.js';
+export { default as VerifyMobileOTPScreen } from './VerifyMobileOTPScreen.js';
 export { default as ResetPasswordScreen } from './ResetPasswordScreen.js';
 

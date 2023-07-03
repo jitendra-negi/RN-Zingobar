@@ -8,6 +8,13 @@ import Fonts from './Fonts';
 import { isRTL } from './Constants';
 import { _roundDimensions } from '@helpers/util'
 
+
+const fontSize = Platform.select({
+  ios: Platform.isPad ? wp('3%') : wp('4.5%'), // Font size for iOS and iPad
+  android: Platform.isTablet ? wp('3%') : wp('4.5%'), // Font size for Android and Android tablet
+  default: wp('6%') // Default font size for other platforms
+});
+
 export const GlobalStyles = StyleSheet.create({
   mainView: {
     backgroundColor: Colors().light_white,
@@ -161,9 +168,9 @@ export const GlobalStyles = StyleSheet.create({
     height:
       Platform.OS === 'ios'
         ? wp('22%')
-        : wp('15%'),
+        : wp('17%'),
     flexDirection: 'row',
-    marginTop: hp('1%')
+    //marginTop: hp('1%')
   },
   tabbarText: {
     alignSelf: 'center',
@@ -176,13 +183,15 @@ export const GlobalStyles = StyleSheet.create({
 
   authtabbarText: {
     alignSelf: 'flex-start',
-    fontSize: Platform.isPad === true ? wp('3%') : wp('6%'),
+    fontSize,
     marginLeft: wp('5%'),
     fontFamily: Fonts.Font_Bold,
     flex: 1,
     color: Colors().text_color,
     lineHeight: hp('5%')
   },
+
+
 
   authSubText: {
     fontSize: Platform.isPad === true ? wp('3%') : wp('3.5%'),

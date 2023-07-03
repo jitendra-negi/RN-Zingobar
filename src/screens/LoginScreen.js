@@ -128,6 +128,72 @@ function LoginScreen(props) {
 
     }
 
+    const loginWithPhoneNo = () => {
+        if (validateMobile()) {
+            setData({
+                ...formData,
+                loading: true
+            });
+
+            let sendData = new FormData();
+            sendData.append('mobileNumber', mobileNumber);
+            sendData.append('firebase_token', props.FCM_TOKEN)
+
+            try {
+                getApi.postData(
+                    'user/loginUsingMobile',
+                    sendData,
+                ).then((response => {
+                    logfunction("RESPONSE ", response)
+
+                    setData({
+                        ...formData,
+                        email: null,
+                        loading: false
+                    });
+                    if (response.status == 1) {
+                       // props.doLogin(response, navTo);
+                        props.navigation.push("VerifyMobileOTPScreen", { mobile: mobileNumber })
+                    }
+
+
+                    // if (response.status == 1) {
+                    //     logfunction("RESPONSE ", 'Success')
+                    //     setData({
+                    //         ...formData,
+                    //         email: null,
+                    //         password: null,
+                    //         loading: false
+                    //     });
+                    // }
+                    else {
+                        setData({
+                            ...formData,
+                            type: 'error',
+                            message: response.message,
+                            loading: false
+                        });
+                        setTimeout(() => {
+                            setData({
+                                ...formData,
+                                message: null,
+                                loading: false
+                            })
+                            props.navigation.push("RegisterScreen")
+                        }, 3000);
+                    }
+                   // props.doLogin(response, navTo);
+                }));
+            } catch (error) {
+                logfunction("Error", error)
+                setData({
+                    ...formData,
+                    loading: false
+                });
+            }
+        }
+    }
+
     const login = () => {
         if (validate()) {
             setData({
@@ -210,7 +276,7 @@ function LoginScreen(props) {
 
             let sendData = new FormData();
             sendData.append('mobileNumber', mobileNumber);
-           // sendData.append('firebase_token', props.FCM_TOKEN)
+            sendData.append('firebase_token', props.FCM_TOKEN)
            // 'user/checkcustomer',
             try {
                 getApi.postData(
@@ -567,7 +633,7 @@ function LoginScreen(props) {
                         bg={Colors().themeColor}
                         style={GlobalStyles.button}
                         isLoading={loading}
-                        onPress={() => sendOtp()}
+                        onPress={() => loginWithPhoneNo()}
                     >
                         <Text style={GlobalStyles.buttonText}>{strings.login.button_login}</Text>
                     </Button>
