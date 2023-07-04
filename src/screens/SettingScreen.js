@@ -28,7 +28,7 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import RNRestart from 'react-native-restart';
 import { useEffect } from "react";
 const shareOptions = {
-    title: 'Otrixapp',
+    title: 'ZingoBar',
     url: Platform.OS == 'android' ? 'https://play.google.com/store/apps/details?id=com.otrixcommercelaravel' : 'iOS url',
 };
 
@@ -92,7 +92,7 @@ function SettingScreen(props) {
                         />
                     </View>
                 </TouchableOpacity> */}
-                <TouchableOpacity style={styles.listView} onPress={() => props.navigation.navigate('LanguageScreen')}>
+                {/* <TouchableOpacity style={styles.listView} onPress={() => props.navigation.navigate('LanguageScreen')}>
                     <View style={[styles.leftSide, { left: wp('1%') }]}>
                         <FIcon name="language" style={styles.icon} />
                     </View>
@@ -102,7 +102,7 @@ function SettingScreen(props) {
                     <View style={styles.rightSide}>
                         <MatIcon name="arrow-forward-ios" style={[styles.rightIcon, { transform: [{ rotateY: I18nManager.isRTL == true ? '180deg' : '0deg' }] }]} />
                     </View>
-                </TouchableOpacity>
+                </TouchableOpacity> */}
 
                 <TouchableOpacity style={styles.listView} onPress={() => props.navigation.navigate('NotificationScreen')}>
                     <View style={styles.leftSide}>
@@ -165,19 +165,19 @@ function SettingScreen(props) {
                     </View>
                 </TouchableOpacity>
 
-
+{/* 
                 <TouchableOpacity style={styles.listView}
                     onPress={() => {
                         const options = {
                             AppleAppID: "",
-                            GooglePackageName: "com.otrixcommercelaravel",
+                            GooglePackageName: "com.zingobar",
                             AmazonPackageName: "",
                             OtherAndroidURL: "",
                             preferredAndroidMarket: AndroidMarket.Google,
                             preferInApp: false,
                             inAppDelay: 5.0,
                             openAppStoreIfInAppFails: false,
-                            fallbackPlatformURL: "ms-windows-store:review?PFN:com.otrixcommercelaravel",
+                            fallbackPlatformURL: "ms-windows-store:review?PFN:com.zingobar",
                         }
                         Rate.rate(options, (success, errorMessage) => {
                             if (success) {
@@ -212,7 +212,7 @@ function SettingScreen(props) {
                     <View style={styles.rightSide}>
                         <MatIcon name="arrow-forward-ios" style={[styles.rightIcon, { transform: [{ rotateY: I18nManager.isRTL == true ? '180deg' : '0deg' }] }]} />
                     </View>
-                </TouchableOpacity>
+                </TouchableOpacity> */}
 
             </OtrixContent>
 

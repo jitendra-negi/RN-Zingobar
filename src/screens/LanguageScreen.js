@@ -65,9 +65,9 @@ function LanguageScreen(props) {
             <TouchableOpacity style={[styles.langBox, { borderWidth: language == 'en' ? 1 : 0.1, borderColor: language == 'en' ? Colors().themeColor : Colors().custom_gray }]} onPress={() => setLanguage('en')}>
                 <Text style={[styles.langTxt, { color: language == 'en' ? Colors().themeColor : Colors().text_color }]}> {strings.language_screen.english}</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={[styles.langBox, { borderWidth: language == 'ar' ? 1 : 0.1, borderColor: language == 'ar' ? Colors().themeColor : Colors().custom_gray }]} onPress={() => setLanguage('ar')}>
+            {/* <TouchableOpacity style={[styles.langBox, { borderWidth: language == 'ar' ? 1 : 0.1, borderColor: language == 'ar' ? Colors().themeColor : Colors().custom_gray }]} onPress={() => setLanguage('ar')}>
                 <Text style={[styles.langTxt, { color: language == 'ar' ? Colors().themeColor : Colors().text_color }]}> {strings.language_screen.arabic}</Text>
-            </TouchableOpacity>
+            </TouchableOpacity> */}
             <OtrixDivider size={'md'} />
             <Button
                 size="md"
