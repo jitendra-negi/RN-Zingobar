@@ -99,6 +99,17 @@ function MyTabs(props) {
                         />
                     ),
                 }} />
+                 {/* <BottomTab.Screen name="ProductListScreen" component={AppFeatures.enableCategoryScreen? CategoryScreen : EmptyComponent } options={{ headerShown: false }}
+                options={{
+                    headerShown: false,
+                    tabBarIcon: ({ focused, tintColor }) => (
+                        <Image
+                            square
+                            source={focused ? bottomCategoryFill : bottomCategory}
+                            style={[styles.bottomTabIcon]}
+                        />
+                    ),
+                }} /> */}
             <BottomTab.Screen name="CartScreen" component={authStatus == true ? AppFeatures.enableCartScreen? CartScreen : EmptyComponent : AuthNavigator} options={{ headerShown: false }}
                 options={{
                     headerShown: false,
