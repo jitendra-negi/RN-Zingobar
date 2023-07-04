@@ -294,7 +294,7 @@ function LoginScreen(props) {
                             loading: false,
                             verificationView: true
                         });
-                          props.navigation.push("VerifyOTPScreen", { VERIFICATION_DATA: confirmation })
+                        props.navigation.push("VerifyOTPScreen", { VERIFICATION_DATA: confirmation })
                     }
                     else {
                         setData({
@@ -557,14 +557,28 @@ function LoginScreen(props) {
 
             {/* Header */}
             <OtrixHeader >
-                <TouchableOpacity style={[GlobalStyles.headerLeft,{flex:0.10}]} onPress={() => props.navigation.push('MainScreen')}>
+                <TouchableOpacity style={{
+                    justifyContent: 'center',
+                    alignItems: 'center', flex: 0.10,
+                }} onPress={() => props.navigation.push('MainScreen')}>
                     <OtirxBackButton />
                 </TouchableOpacity>
-                <View style={[GlobalStyles.headerCenter, { flex: 0.90,justifyContent:'center',alignContent:'flex-start' }]}>
-                <View style={GlobalStyles.authHeader}>
-                    <Text style={[GlobalStyles.authtabbarText]}>{strings.login.welcome}</Text>
-                     <Text style={GlobalStyles.authSubText}>Login with Mobile</Text>
-                </View>
+                <View style={[GlobalStyles.headerCenter, { justifyContent: 'center', alignItems: 'center', marginLeft: 0 }]}>
+                    {/* <View style={GlobalStyles.authHeader}> */}
+                    <Text style={{
+                        fontSize: Platform.isPad === true ? wp('3%') : wp('6%'),
+
+                        fontFamily: Fonts.Font_Bold,
+
+                        color: Colors().text_color,
+                        lineHeight: hp('5%')
+                    }}>{strings.login.welcome}</Text>
+                    <Text style={{
+                        fontSize: Platform.isPad === true ? wp('3%') : wp('3.5%'),
+                        fontFamily: Fonts.Font_Reguler,
+                        color: '#767787',
+                    }}>Login with Mobile</Text>
+                    {/* </View> */}
                 </View>
             </OtrixHeader>
             <OtrixDivider size={'md'} />
@@ -717,7 +731,7 @@ function LoginScreen(props) {
                             <Text style={styles.signupTxt}> {strings.login.button_registration} </Text>
                         </TouchableOpacity>
                     </View>
-                    
+
 
                     {AppFunctions.socialLogin && <OtrixDivider size={'md'} />}
                     {AppFunctions.socialLogin && <OtrixSocialContainer facebookLogin={_fbAuth} googleLogin={_googleAuth} />}
@@ -787,7 +801,7 @@ const styles = StyleSheet.create({
         fontSize: wp('3%'),
         textAlign: 'right',
         fontFamily: Fonts.Font_Reguler,
-        color: mode === 'dark' ? '#000' : Colors().link_color,
+        color: mode === 'dark' ? '#000' : Colors().secondaryColor,
         padding: 5
     },
     registerView: {

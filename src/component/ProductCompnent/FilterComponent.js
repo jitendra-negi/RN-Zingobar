@@ -1,5 +1,5 @@
-import React, { useCallback } from 'react';
-import { View, I18nManager, StyleSheet, Text, TouchableOpacity, Image } from 'react-native';
+import React, { useCallback,useState } from 'react';
+import { View, I18nManager, StyleSheet, Text, TouchableOpacity, Image, ScrollView } from 'react-native';
 import { GlobalStyles, Colors } from '@helpers'
 import OtrixHeader from '../OtrixComponent/OtrixHeader';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
@@ -9,19 +9,33 @@ import { _roundDimensions } from '@helpers/util';
 import OtrixDivider from '../OtrixComponent/OtrixDivider';
 import PriceList from '../items/PriceList';
 import RateList from '../items/RateList';
+import QuantityList from '../items/QuantityList';
+import BrandList from '../items/BrandList';
+import ProductNameList from '../items/ProductNameList';
 import FilterTags from './FilterTags';
 import RangeSlider from './RangeSlider';
 import { Button } from "native-base"
+import CheckIcon from 'react-native-vector-icons/Fontisto';
+import ionIcon from 'react-native-vector-icons/Ionicons';
 let minSlider = 0;
 let maxSlider = 0;
 function FilterComponent(props) {
 
     const { strings } = props;
+    const [select, setselection] = useState(false);
 
+    const checkSelection = () =>{
+        if (!select) {
+            setselection(true)
+        } else {
+            setselection(false)
+        }
+        
+    }
     return (
-        <View>
+        <ScrollView style={{ flex: 1, bottom: 0 }}>
             {Platform.OS === 'ios' &&
-                <View style={{ height: hp('5%') }}></View>
+                <View style={{ height: hp('2%') }}></View>
             }
             <View style={styles.modelView}>
 
@@ -45,7 +59,6 @@ function FilterComponent(props) {
 
 
                 <View style={styles.filterView}>
-
                     {/* Brand View  */}
                     <Text style={styles.titleTxt}>{strings.filter.price}:</Text>
                     <OtrixDivider size={'sm'} />
@@ -58,22 +71,65 @@ function FilterComponent(props) {
                         }
                     </View>
 
+                    <Text style={[styles.titleTxt, { marginTop: 20 }]}>{"Quantity"}:</Text>
+                    <OtrixDivider size={'sm'} />
+
+                    <View style={{ flexDirection: 'row', flexWrap: 'wrap', marginHorizontal: wp('1%') }}>
+                        {
+                            QuantityList.map((item, index) =>
+                                <FilterTags tagName={item.name} tagID={item.value} type="price" key={item.id} selectedPrice={props.filterPriceVal} selectedRating={props.filterRatingVal} onFilterPress={props.onFilterPress} />
+                            )
+                        }
+                    </View>
+
                     <OtrixDivider size={I18nManager.isRTL == true ? 'sm' : 'md'} />
                     <View style={GlobalStyles.horizontalLine}></View>
                     <OtrixDivider size={I18nManager.isRTL == true ? 'sm' : 'md'} />
 
                     {/* Price Range View  */}
-                    <Text style={styles.titleTxt}>{strings.filter.price_range}:</Text>
-                    <View style={styles.rangeView}>
-                        <RangeSlider
-                            name="Price"
-                            icon="ticket-percent-outline"
-                            boundaryMin={0} boundaryMax={1000}
-                            initValMin={props.filterPriceRangeVal ? props.filterPriceRangeVal.min : 40} initValMax={props.filterPriceRangeVal ? props.filterPriceRangeVal.max : 600}
-                            onChange={(min, max) => { minSlider = min, maxSlider = max }}
-                        />
+                    <Text style={styles.titleTxt}>{"Brands"}:</Text>
+                    <View style={{ flexDirection: 'row', flexWrap: 'wrap', marginHorizontal: wp('1%') }}>
+                        {
+                            BrandList.map((item, index) =>
+                                <FilterTags tagName={item.name} tagID={item.value} type="brands" key={item.id} selectedPrice={props.filterPriceVal} selectedRating={props.filterRatingVal} onFilterPress={props.onFilterPress} />
+                            )
+                        }
                     </View>
+                    <OtrixDivider size={I18nManager.isRTL == true ? 'sm' : 'md'} />
+                    <View style={GlobalStyles.horizontalLine}></View>
+                    <OtrixDivider size={I18nManager.isRTL == true ? 'sm' : 'md'} />
+                    <Text style={styles.titleTxt}>{"Stock"}:</Text>
+                    <TouchableOpacity onPress={() => checkSelection()} style={{ flexDirection: 'row', flexWrap: 'wrap', marginHorizontal: wp('1%'), top: 10,marginBottom:10 }}>
+                      {select ? 
+                        <CheckIcon name="checkbox-active" color={'#1E508F'} size={wp('4%')} />
+                        :
+                        <CheckIcon name="checkbox-passive" color={'#00000014'} size={wp('4%')} />
+                      }
+                        <Text style={[styles.titleTxt, { marginLeft: 10 }]}>{"In Stock"}:</Text>
 
+                    </TouchableOpacity>
+
+                    <OtrixDivider size={I18nManager.isRTL == true ? 'sm' : 'md'} />
+                    <View style={GlobalStyles.horizontalLine}></View>
+                    <OtrixDivider size={I18nManager.isRTL == true ? 'sm' : 'md'} />
+
+                    <Text style={styles.titleTxt}>{"Product name"}:</Text>
+
+                    <ScrollView contentContainerStyle={{ flexDirection: 'row' }} horizontal={true} directionalLockEnabled={true} showsHorizontalScrollIndicator={false} style={{ width: '100%', height: '10%', marginTop: '4%', marginHorizontal: '2.33%', backgroundColor: 'transparent', flexDirection: 'row' }}>
+                        {ProductNameList.map((item, index) =>
+                            <TouchableOpacity style={{ width: 50, height: 50, overflow: "hidden", marginHorizontal: 5, marginVertical: 5, backgroundColor: 'white', borderRadius: 6, justifyContent: 'space-evenly', alignItems: 'center', flexDirection: 'row', padding: 5, borderWidth: 1.0, borderColor: '#00000014' }}>
+                                <Text style={[{ fontSize: 14, color: 'black' }]}>{item.name}</Text>
+                            </TouchableOpacity>
+                        )}
+                    </ScrollView>
+                    <View style={{ flexDirection: 'row', flexWrap: 'wrap', marginHorizontal: wp('1%') }}>
+                        {
+                            BrandList.map((item, index) =>
+                                <FilterTags tagName={item.name} tagID={item.value} type="brands" key={item.id} selectedPrice={props.filterPriceVal} selectedRating={props.filterRatingVal} onFilterPress={props.onFilterPress} />
+                            )
+                        }
+                    </View>
+                
                     <OtrixDivider size={I18nManager.isRTL == true ? 'sm' : 'md'} />
                     <View style={GlobalStyles.horizontalLine}></View>
                     <OtrixDivider size={I18nManager.isRTL == true ? 'sm' : 'md'} />
@@ -128,8 +184,8 @@ function FilterComponent(props) {
                     <Text style={GlobalStyles.buttonText}>{strings.filter.apply_filter}</Text>
                 </Button>
             </View>
-
-        </View>
+            <View style={{ height: 350 }}></View>
+        </ScrollView>
     )
 }
 

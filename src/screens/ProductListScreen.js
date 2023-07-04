@@ -1,4 +1,4 @@
-import React, { useEffect, } from "react";
+import React, { useEffect, useState } from "react";
 import {
     View,
     TouchableOpacity,
@@ -11,7 +11,7 @@ import {
 } from "react-native";
 import { connect } from 'react-redux';
 import {
-    OtrixContainer, OtrixHeader, OtrixContent, OtrixLoader, OtrixDivider, FlatListProductView, OtirxBackButton, OtrixNotfoundComponent, FilterTags, FilterComponent
+    OtrixContainer,OtrixMenuButton,OtrixHeader, OtrixContent, OtrixLoader, OtrixDivider, FlatListProductView, OtirxBackButton, OtrixNotfoundComponent, FilterTags, FilterComponent
 } from '@component';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import { GlobalStyles, Colors } from '@helpers';
@@ -19,16 +19,19 @@ import { _roundDimensions } from '@helpers/util';
 import { addToWishList } from '@actions';
 import { emptyBox } from '@common/config';
 import { bindActionCreators } from "redux";
-import { filter } from '@common';
+import { filter,cancel } from '@common';
 import { _addToWishlist, _getWishlist, logfunction } from "@helpers/FunctionHelper";
 import { ProductListSkeleton } from '@skeleton';
+import Fonts from '@helpers/Fonts';
+import CategoryList from '../component/items/CategoryList';
+import {menu } from '@common';
 import getApi from "@apis/getApi";
 
 function ProductListScreen(props) {
     const { title, id, type, childerns, productList } = props.route.params;
-    const [state, setState] = React.useState({ data: [], loader: false, currentPage: 1, totalPages: 1, childCategories: childerns != undefined ? childerns : [], selectedTag: id, selectedFilters: [id], wishlistArr: [], filterModelVisible: false, loading: true, filterLoading: false, filterPrice: null, filterPriceRange: null, filterRating: null, filterAplied: false });
+    const [state, setState] = React.useState({  categoryData: [],data: [], loader: false, currentPage: 1, totalPages: 1, childCategories: childerns != undefined ? childerns : [], selectedTag: id, selectedFilters: [id], wishlistArr: [], filterModelVisible: false, loading: true, filterLoading: false, filterPrice: null, filterPriceRange: null, filterRating: null, filterAplied: false });
     const { selectedFilters, selectedTag, filterPrice, filterPriceRange, filterRating, data, totalPages, loading, loader, filterModelVisible, currentPage, childCategories, headingTitle, filterAplied } = state;
-
+    const [open, setOpen] = useState(false);
     const fetchData = (ID, page, filterApplied = false, range, fprice = null, frating = null) => {
 
         let url = '';
@@ -140,6 +143,33 @@ function ProductListScreen(props) {
         fetchData(value, 1)
     }
 
+   // const [state, setState] = React.useState({ data: [], loading: true });
+
+    useEffect(() => {
+
+        try {
+            const unsubscribe = getApi.getData(
+                "getCategories",
+                [],
+            ).then((response => {
+                if (response.status == 1) {
+                    setState({
+                        ...state,
+                        categoryData: response.data,
+                        loading: false
+                    });
+                }
+            }));
+            return unsubscribe; //unsubscribe
+
+        } catch (error) {
+
+        }
+
+    }, []);
+
+     const { categoryData} = state;
+
     const addToWishlist = async (id) => {
         logfunction("IDD ", id)
         if (props.USER_AUTH == true) {
@@ -239,6 +269,66 @@ function ProductListScreen(props) {
         );
     };
 
+    const renderCategoryList = () => {
+
+        if (open) {
+            return (
+                <View style={{ width: '100%', height: '100%', backgroundColor: '#BBBBBB', position: 'absolute', zIndex: 10, top: 0, left: 0, right: 0, bottom: 0,opacity:0.9 }} >
+                <View style={{ width: '60%', height: '100%', backgroundColor: 'white', position: 'absolute', zIndex: 10, top: 0, left: 0, right: 0, bottom: 0 }} >
+                   
+                    <OtrixHeader customStyles={{width:'100%' }}>
+
+                <View style={{
+                        flex: 0.80,
+                      
+                        justifyContent:'center',
+                        alignItems: 'center',
+                    }}>
+                        <Text style={GlobalStyles.headingTxt}>{"Categories"}</Text>
+                    </View>
+
+                 <TouchableOpacity style={GlobalStyles.headerRight} onPress={() => setOpen(false)}>
+                        <Image source={cancel} style={styles.filter} />
+                    </TouchableOpacity>
+            
+
+            </OtrixHeader>
+
+
+
+                    <OtrixDivider size={'sm'} />
+
+                    <FlatList
+                style={{ padding: wp('0.4%') }}
+                data={categoryData}
+                scrollEnabled={false}
+                contentContainerStyle={{
+                    flex: 1,
+                }}
+                horizontal={false}
+                numColumns={1}
+                onEndReachedThreshold={0.7}
+                showsVerticalScrollIndicator={false}
+                keyExtractor={(contact, index) => String(index)}
+                renderItem={({ item, index }) =>
+                    <TouchableOpacity key={index} style={styles.categoryBox} onPress={() => props.navigation.navigate('ProductListScreen', { type: 'category', id: item.category_id, childerns: item.children != undefined ? item.children : [], title: item.category_description.name })}>
+                       
+                        <View style={styles.infromationView}>
+                            <Text style={styles.categoryName}>{item.category_description.name}</Text>
+                        </View>
+                    </TouchableOpacity>
+                }>
+            </FlatList>
+
+                </View >
+                </View>
+            );
+        }
+
+
+    };
+
+
     const { wishlistData, strings } = props;
 
     return (
@@ -246,8 +336,13 @@ function ProductListScreen(props) {
 
             {/* Header */}
             <OtrixHeader customStyles={{ backgroundColor: Colors().light_white }}>
-                <TouchableOpacity style={GlobalStyles.headerLeft} onPress={() => props.navigation.goBack()}>
-                    <OtirxBackButton />
+                <TouchableOpacity style={GlobalStyles.headerLeft} onPress={() => setOpen(true)}>
+                    {/* <OtirxBackButton /> */}
+
+                    <View style={styles.backRound}>
+            <Image source={menu} style={styles.backButton} />
+        </View>
+
                 </TouchableOpacity>
                 <View style={[GlobalStyles.headerCenter]}>
                     <Text style={GlobalStyles.headingTxt}>{title}</Text>
@@ -308,6 +403,8 @@ function ProductListScreen(props) {
                 <FilterComponent strings={strings} selectedFilter={selectedFilters} applyFilter={applyFilter} onFilterPress={filterClick} closeFilter={closeFilterModel} filterPriceVal={filterPrice} filterRatingVal={filterRating} filterPriceRangeVal={filterPriceRange} />
             </Modal>
 
+            {renderCategoryList()}
+
         </OtrixContainer >
     )
 }
@@ -352,5 +449,55 @@ const styles = StyleSheet.create({
         width: wp('100%'),
         backgroundColor: Colors().light_white,
     },
+    categoryBox: {
+        justifyContent: 'center',
+        alignItems: 'center',
+        height: hp('5%'),
+        width: wp('43%'),
+        maxWidth: wp('44%'),
+        marginHorizontal: wp('8%'),
+       
+        backgroundColor: Colors().lightGray,
+        marginBottom: wp('3%'),
+        borderRadius: wp('2%'),
+        shadowColor: 'grey',
+        shadowOffset: { width: 0, height: 0.4 },
+        shadowOpacity: 0.30,
+        shadowRadius: 3,
+        elevation: 6,
+        //flexDirection: 'column',
+
+    },
+
+    infromationView: {
+       // flex: 0.15,
+        width: wp('36%'),
+        
+    },
+    categoryName: {
+        textAlign: 'center',
+        fontSize: wp('4.5%'),
+        fontFamily: Fonts.Font_Semibold,
+        color: Colors().black
+    },
+    backRound: {
+        justifyContent: 'center',
+        alignItems: 'center',
+        height: _roundDimensions()._height * 0.062,
+        width: _roundDimensions()._height * 0.050,
+        borderRadius: _roundDimensions()._borderRadius,
+        backgroundColor: Colors().white,
+        shadowColor: 'grey',
+        shadowOffset: { width: 0, height: 0.2 },
+        shadowOpacity: 0.10,
+        shadowRadius: 3,
+        elevation: 2,
+        padding: 10
+    },
+    backButton: {
+        height: _roundDimensions()._height * 0.035,
+        width: _roundDimensions()._height * 0.035,
+    }
+
 
 });

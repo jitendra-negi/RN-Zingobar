@@ -34,6 +34,7 @@
     "react": "18.1.0",
     "react-native": "0.70.5",
     "react-native-awesome-alerts": "^2.0.0",
+    "react-native-collapsible": "^1.6.1",
     "react-native-country-codes-picker": "^2.2.0",
     "react-native-dotenv": "^3.4.2",
     "react-native-element-dropdown": "^2.3.1",

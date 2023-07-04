@@ -38,6 +38,7 @@ export const menu = require('../assets/images/menu.png');
 export const offerBanner = require('../assets/images/banner2.jpg');
 export const back = require('../assets/images/back.png');
 export const filter = require('../assets/images/filter.png');
+export const cancel = require('../assets/images/cancel.png');
 export const checkaround = require('../assets/images/check.png');
 export const close = require('../assets/images/cancel.png');
 export const checkround2 = require('../assets/images/check2.png');

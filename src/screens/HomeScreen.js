@@ -1,78 +1,41 @@
 import React, { useEffect, useState } from "react";
 
 import {
-
     View,
-
     TouchableOpacity,
-
     Text,
-
     StyleSheet,
-
     Image,
-
     ScrollView,
-
     I18nManager,
-
     Appearance
-
 } from "react-native";
-
 import { connect } from 'react-redux';
-
 import {
-
     OtrixHeader, OtrixContainer, OtrixContent, OtrixDivider, HomeSlider, HomeManufacturerView,
-
     HomeCategoryView, SearchBar, NewProduct, TrendingProduct, BestDeal
-
 } from '@component';
-
-
-
-
 import { HomeSkeleton } from '@skeleton';
-
 import { addToWishList, storeFCM } from '@actions';
-
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
-
 import { Colors, GlobalStyles } from '@helpers';
-
 import { bindActionCreators } from 'redux';
-
 import { Badge, Avatar } from "native-base";
-
 import { heart, offerBanner, avatarImg, avatarImg2 } from '@common';
-
 import Fonts from "@helpers/Fonts";
-
 import { _roundDimensions } from '@helpers/util';
-
 import { _addToWishlist, logfunction } from "@helpers/FunctionHelper";
-
 import getApi from "@apis/getApi";
-
 import { ASSETS_DIR } from "@env";
-
 import AsyncStorage from "@react-native-async-storage/async-storage";
-
 import messaging from '@react-native-firebase/messaging';
-
 import firebase from '@react-native-firebase/app';
 import { logo } from '@common';
-
-
 
 
 function HomeScreen(props) {
 
     const [state, setState] = React.useState({ homePageData: [], loading: true, profileImageURL: null });
-
-
-
 
     const addToWish = async (id) => {
 
@@ -81,10 +44,6 @@ function HomeScreen(props) {
         props.addToWishList(wishlistData, id);
 
     }
-
-
-
-
     useEffect(() => {
 
 
@@ -113,10 +72,6 @@ function HomeScreen(props) {
             // ignore app already initialized error in snack
             console.log("initializeApp error : ", err)
         }
-
-
-
-
         (async () => {
 
             // await AsyncStorage.removeItem('FCM_TOKEN');
@@ -127,28 +82,15 @@ function HomeScreen(props) {
 
             checkPermission(getFCMTOKEN)
 
-
-
-
         })();
 
         messaging()
-
             .subscribeToTopic('otrixcommercelaravelpromotion')
-
             .then(() => console.log('Subscribed to topic!'));
-
-
-
-
 
         async function fetchData() {
 
             let getLangauge = await AsyncStorage.getItem('Language');
-
-
-
-
             let language = 'en';
 
             if (getLangauge) {
@@ -157,55 +99,28 @@ function HomeScreen(props) {
 
             }
 
-
-
-
             getApi.getData(
-
                 "getHomePage?language=" + language,
-
                 [],
 
             ).then((response => {
-
                 logfunction("RESPONSEEE ", response)
-
-
-
-
                 if (response.status == 1) {
-
                     logfunction("RESPONSEEE ", response)
-
                     setState({
-
                         ...state,
-
                         homePageData: response.data,
-
                         loading: false
-
                     });
-
                 }
 
             }));
 
         }
 
-
-
-
         fetchData();
 
-
-
-
     }, []);
-
-
-
-
 
     const requestUserPermission = async () => {
 
@@ -216,9 +131,6 @@ function HomeScreen(props) {
             authStatus === messaging.AuthorizationStatus.AUTHORIZED ||
 
             authStatus === messaging.AuthorizationStatus.PROVISIONAL;
-
-
-
 
         if (enabled) {
 
