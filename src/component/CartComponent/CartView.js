@@ -37,7 +37,13 @@ function CartView(props) {
                                     <Text style={styles.name}>{data.name}</Text>
                                 </TouchableOpacity>
                                 <Text style={styles.price}>{CURRENCY}{data.special > 0 ? data.special : data.price} </Text>
-                                <View style={styles.plusminus}>
+                               
+                            </View>
+                            <View style={{justifyContent:'center',alignItems:'center'}} >
+                            <TouchableOpacity style={styles.deleteIcon} onPress={() => props.deleteItem(data.cart_id)}>
+                            <MatIcon name="trash" style={styles.delete} />
+                        </TouchableOpacity>
+                            <View style={styles.plusminus}>
                                     <TouchableOpacity style={{ marginRight: wp('2.5%'), padding: 4 }} onPress={() => data.quantity != 1 && props.decrementItem(data.cart_id, data.id, data.quantity)}>
                                         <Icon name="minus" style={styles.plusminusTxt} />
                                     </TouchableOpacity>
@@ -48,9 +54,7 @@ function CartView(props) {
                                 </View>
                             </View>
                         </View>
-                        <TouchableOpacity style={styles.deleteIcon} onPress={() => props.deleteItem(data.cart_id)}>
-                            <MatIcon name="trash" style={styles.delete} />
-                        </TouchableOpacity>
+                       
                     </View>
                 )
             }
@@ -81,6 +85,7 @@ const styles = StyleSheet.create({
         height: hp('14%'),
         width: wp('100%'),
         flex: 0.90,
+       
     },
     imageView: {
         flex: 0.30,
@@ -118,28 +123,34 @@ const styles = StyleSheet.create({
     },
     plusminus: {
         justifyContent: 'center',
-        alignItems: 'flex-end',
+        alignItems: 'center',
         flexDirection: 'row',
-        marginTop: hp('1%')
+        marginTop: hp('2%'),
+        height:wp('8%'),
+        backgroundColor:Colors().secondaryColor,
+        borderRadius:6,
+        marginLeft:wp('10%')
     },
     plusminusTxt: {
         fontSize: wp('3%'),
-        color: Colors().secondry_text_color,
+        color: Colors().white,
         textAlign: 'center',
+        padding:2
+       
     },
     quantityTxt: {
         fontSize: wp('4%'),
-        color: Colors().text_color,
-        marginHorizontal: wp('1%'),
+        color: Colors().white,
+       // marginHorizontal: wp('1%'),
         fontFamily: Fonts.Font_Bold,
         textAlign: 'center',
     },
     deleteIcon: {
-        flex: 0.10,
-        justifyContent: 'flex-end',
-        alignItems: 'flex-end',
-        marginRight: wp('2%'),
-        padding: 4
+         marginLeft:wp('5%'),
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginTop:wp('1%')
+       
     },
     delete: {
         fontSize: wp('3.6%'),

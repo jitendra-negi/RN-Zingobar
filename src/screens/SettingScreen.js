@@ -92,7 +92,7 @@ function SettingScreen(props) {
                         />
                     </View>
                 </TouchableOpacity> */}
-                <TouchableOpacity style={styles.listView} onPress={() => props.navigation.navigate('LanguageScreen')}>
+                <TouchableOpacity style={styles.listView} onPress={() => props.navigation.navigate('ProductListScreen')}>
                     <View style={[styles.leftSide, { left: wp('1%') }]}>
                         <FIcon name="language" style={styles.icon} />
                     </View>

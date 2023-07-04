@@ -2,7 +2,8 @@ import React, { useEffect } from "react";
 import {
     View,
     StyleSheet,
-    TouchableOpacity
+    TouchableOpacity,
+    Platform
 } from "react-native";
 import {
     OtrixContainer, OtrixHeader, OtrixContent, OtrixDivider, OtrixAlert, OtrixLoader, TermsAndPrivacyWidget, DateOfBirthPicker
@@ -13,6 +14,7 @@ import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-nat
 import { GlobalStyles, Colors, isValidEmail, isValidMobile, isValidpassword, isValidConfirmPassword } from '@helpers'
 import Icon from 'react-native-vector-icons/Ionicons';
 import { logfunction } from "@helpers/FunctionHelper";
+
 import Fonts from "@helpers/Fonts";
 import getApi from "@apis/getApi";
 
@@ -179,15 +181,30 @@ function RegisterScreen(props) {
 
             {/* Header */}
             <OtrixHeader >
-                <TouchableOpacity style={[GlobalStyles.headerLeft,{flex:0.05}]} onPress={() => props.navigation.goBack()}>
+            <TouchableOpacity style={{
+                    justifyContent: 'center',
+                    alignItems: 'center', flex: 0.10,
+                }} onPress={() => props.navigation.push('MainScreen')}>
                     <OtirxBackButton />
                 </TouchableOpacity>
-                <View style={[GlobalStyles.headerCenter, { flex: 0.95,justifyContent:'center',alignContent:'flex-start' }]}>
-                    <View style={GlobalStyles.authHeader}>
-                        <Text style={[GlobalStyles.authtabbarText]}>{strings.registration.title}</Text>
-                        <Text style={GlobalStyles.authSubText}>{strings.registration.subtitle}</Text>
-                    </View>
+                <View style={[GlobalStyles.headerCenter, { justifyContent: 'center', alignItems: 'center', marginLeft: 0 }]}>
+                    {/* <View style={GlobalStyles.authHeader}> */}
+                    <Text style={{
+                        fontSize: Platform.isPad === true ? wp('3%') : wp('6%'),
+
+                        fontFamily: Fonts.Font_Bold,
+
+                        color: Colors().text_color,
+                        lineHeight: hp('5%')
+                    }}>{strings.registration.title}</Text>
+                    <Text style={{
+                        fontSize: Platform.isPad === true ? wp('3%') : wp('3.5%'),
+                        fontFamily: Fonts.Font_Reguler,
+                        color: '#767787',
+                    }}>{strings.registration.subtitle}</Text>
+                    {/* </View> */}
                 </View>
+                
             </OtrixHeader>
 
             <OtrixDivider size={'md'} />

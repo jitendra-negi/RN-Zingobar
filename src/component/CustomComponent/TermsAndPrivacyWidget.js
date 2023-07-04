@@ -1,11 +1,16 @@
 import React, { useState } from 'react';
 import { View, Text, TouchableOpacity, Linking } from 'react-native';
 import { Colors } from '@helpers'
+import CheckIcon from 'react-native-vector-icons/Fontisto';
+import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 
   const TermsAndPrivacyWidget = ({props}) => {
 
   const { strings } = props;
-  const [isChecked, setIsChecked] = useState(true);
+  const [isChecked, setIsChecked] = useState(false);
+
+
+  
 
   const handleCheckboxToggle = () => {
     setIsChecked(!isChecked);
@@ -25,17 +30,12 @@ import { Colors } from '@helpers'
     <View>
       <TouchableOpacity onPress={handleCheckboxToggle}>
         <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-          <View
-            style={{
-              width: 20,
-              height: 20,
-              borderWidth: 1,
-              borderColor: Colors().secondaryColor,
-              marginRight: 10,
-              backgroundColor: isChecked ? Colors().secondaryColor : 'transparent',
-            }}
-          />
-          <Text>Accept terms and privacy policy</Text>
+        {isChecked ? 
+                        <CheckIcon name="checkbox-active" color={'#1E508F'} size={wp('4%')} />
+                        :
+                        <CheckIcon name="checkbox-passive" color={'#1E508F'} size={wp('4%')} />
+                      }
+          <Text style={{marginLeft:5}}>Accept terms and privacy policy</Text>
         </View>
       </TouchableOpacity>
 

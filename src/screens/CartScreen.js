@@ -292,7 +292,7 @@ function CheckoutScreen(props) {
 
             {!noRecord && !loading && <View style={styles.checkoutView}>
                 <View style={styles.couponInput}>
-                    <Input variant="outline" placeholder={strings.cart.coupon_code + ' (use otrixweb)'} style={[GlobalStyles.textInputStyle, styles.inputStyle]}
+                    <Input variant="outline" placeholder={strings.cart.coupon_code} style={[GlobalStyles.textInputStyle, styles.inputStyle]}
                         onChangeText={(couponCode) => setState({ ...state, couponCode })}
                         InputRightElement={
                             <View style={{ flexDirection: 'row', marginRight: wp('3%'), justifyContent: 'center', alignItems: 'center' }}>
@@ -400,7 +400,7 @@ const styles = StyleSheet.create({
         backgroundColor: Colors().light_white
     },
     applyTxt: {
-        color: Colors().link_color,
+        color: Colors().secondaryColor,
         fontFamily: Fonts.Font_Semibold,
         fontSize: wp('4%'),
     },

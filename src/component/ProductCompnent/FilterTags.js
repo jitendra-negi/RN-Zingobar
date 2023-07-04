@@ -5,6 +5,8 @@ import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-nat
 import Fonts from '@helpers/Fonts';
 import { checkaround } from '@common';
 import Icon from 'react-native-vector-icons/Entypo';
+import CheckIcon from 'react-native-vector-icons/Fontisto';
+
 
 function FilterTags(props) {
 
@@ -21,7 +23,17 @@ function FilterTags(props) {
                     <Text style={styles.tagStyle}>
                         {props.tagID == 1 ? <Icon name="star" color={'#ffd12d'} size={wp('4%')} /> : props.tagID == 2 ? <> <Icon name="star" color={'#ffd12d'} size={wp('4%')} />  <Icon name="star" color={'#ffd12d'} size={wp('4%')} /></> : props.tagID == 3 ? <> <Icon name="star" color={'#ffd12d'} size={wp('4%')} /> <Icon name="star" color={'#ffd12d'} size={wp('4%')} /> <Icon name="star" color={'#ffd12d'} size={wp('4%')} /> </> : props.tagID == 4 ? <> <Icon name="star" color={'#ffd12d'} size={wp('4%')} /> <Icon name="star" color={'#ffd12d'} size={wp('4%')} /> <Icon name="star" color={'#ffd12d'} size={wp('4%')} /> <Icon name="star" color={'#ffd12d'} size={wp('4%')} /></> : props.tagID == 5 ? <> <Icon name="star" color={'#ffd12d'} size={wp('4%')} /> <Icon name="star" color={'#ffd12d'} size={wp('4%')} /> <Icon name="star" color={'#ffd12d'} size={wp('4%')} /> <Icon name="star" color={'#ffd12d'} size={wp('4%')} /> <Icon name="star" color={'#ffd12d'} size={wp('4%')} /></> : null}
                     </Text>
-                </TouchableOpacity> : <TouchableOpacity style={[styles.filterBox, props.selectedPrice == props.tagID ? styles.borderBox : styles.unborderBox]} onPress={() => props.onFilterPress(props.type, props.tagID)}>
+                </TouchableOpacity> : 
+                 props.type == 'brands' ?
+                <TouchableOpacity style={[styles.filterBox,{borderWidth:0}]} onPress={() => props.onFilterPress(props.type, props.tagID)}>
+                    {/* {props.selectedPrice == props.tagID && <Image source={checkaround} style={styles.imageView} />} */}
+                    <CheckIcon name="checkbox-passive" color={'#00000014'} size={wp('4%')} />
+                    <Text style={[styles.tagStyle,{marginLeft:5}]}>
+                        {props.tagName}
+                    </Text>
+                </TouchableOpacity>
+                :
+                <TouchableOpacity style={[styles.filterBox, props.selectedPrice == props.tagID ? styles.borderBox : styles.unborderBox]} onPress={() => props.onFilterPress(props.type, props.tagID)}>
                     {props.selectedPrice == props.tagID && <Image source={checkaround} style={styles.imageView} />}
                     <Text style={styles.tagStyle}>
                         {props.tagName}
