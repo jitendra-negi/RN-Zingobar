@@ -601,7 +601,7 @@ function ProductDetailScreen(props) {
 
                             {/* <Text style={styles.description}>{productDescription.description}</Text> */}
 
-                            {/* {Object.keys(productAttributes).length > 0 &&
+                            {Object.keys(productAttributes).length > 0 &&
                                 <View>
                                     <OtrixDivider size={'md'} />
                                     <View style={GlobalStyles.horizontalLine}></View>
@@ -627,7 +627,7 @@ function ProductDetailScreen(props) {
                                         )
                                     }
                                 </View>
-                            } */}
+                            }
 
                             <OtrixDivider size={'md'} />
                             <View style={GlobalStyles.horizontalLine}></View>
