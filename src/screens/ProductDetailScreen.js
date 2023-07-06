@@ -526,14 +526,29 @@ function ProductDetailScreen(props) {
 
                             <View style={GlobalStyles.horizontalLine}></View>
                             <OtrixDivider size={'sm'} />
+                            {Object.keys(productAttributes).length > 0 &&
                             <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
                                 <Text style={[styles.headingTxt, { fontSize: wp('3.8%') }]}>{"Product Details"}</Text>
                                 <Text onPress={() => expandDetailView()} style={[styles.headingTxt, { fontSize: wp('5.8%'), marginRight: wp('2%') }]}>{isProductDetails ? "-" : "+"}</Text>
 
                             </View>
+}
                             <OtrixDivider size={'sm'} />
+                            {
+                                        Object.keys(productAttributes).map((item, index) =>
+                                            <>
                             <Collapsible style={styles.subItemContainer} collapsed={!isProductDetails} >
+                            {productAttributes[item].map((attribute, attIndex) =>
                                 <View style={{ backgroundColor: 'white', marginVertical: hp('1%'),flexDirection: 'row' }}>
+                                    <View style={{ backgroundColor: Colors().light_gray, marginVertical: hp('1%'),borderColor:Colors().light_gray, borderWidth: 1,flex:0.5,borderBottomLeftRadius:6,borderTopLeftRadius:6,justifyContent:'center',alignItems:'center' }}>
+                                        <Text style={[styles.headingtext, { marginHorizontal: wp('1%'), padding: 2 }]}>{attribute.name}</Text>
+                                    </View>
+                                    <View style={{ backgroundColor:'white', marginVertical: hp('1%'), borderColor:Colors().light_gray, borderWidth: 1,flex:0.5,borderTopRightRadius:6,borderBottomLeftRadius:6 ,justifyContent:'center',alignItems:'center' }}>
+                                        <Text style={[styles.headingtext, { marginHorizontal: wp('1%'), padding: 2 }]}>{attribute.text}</Text>
+                                    </View>
+                                </View>
+                            )}
+                                {/* <View style={{ backgroundColor: 'white', marginVertical: hp('1%'),flexDirection: 'row' }}>
                                     <View style={{ backgroundColor: Colors().light_gray, marginVertical: hp('1%'),borderColor:Colors().light_gray, borderWidth: 1,flex:0.5,borderBottomLeftRadius:6,borderTopLeftRadius:6,justifyContent:'center',alignItems:'center' }}>
                                         <Text style={[styles.headingtext, { marginHorizontal: wp('1%'), padding: 2 }]}>{"item"}</Text>
                                     </View>
@@ -588,20 +603,16 @@ function ProductDetailScreen(props) {
                                     <View style={{ backgroundColor:'white', marginVertical: hp('1%'), borderColor:Colors().light_gray, borderWidth: 1,flex:0.5,borderTopRightRadius:6,borderBottomLeftRadius:6 ,justifyContent:'center',alignItems:'center' }}>
                                         <Text style={[styles.headingtext, { marginHorizontal: wp('1%'), padding: 2 }]}>{"item"}</Text>
                                     </View>
-                                </View>
-                                <View style={{ backgroundColor: 'white', marginVertical: hp('1%'),flexDirection: 'row' }}>
-                                    <View style={{ backgroundColor: Colors().light_gray, marginVertical: hp('1%'),borderColor:Colors().light_gray, borderWidth: 1,flex:0.5,borderBottomLeftRadius:6,borderTopLeftRadius:6,justifyContent:'center',alignItems:'center' }}>
-                                        <Text style={[styles.headingtext, { marginHorizontal: wp('1%'), padding: 2 }]}>{"item"}</Text>
-                                    </View>
-                                    <View style={{ backgroundColor:'white', marginVertical: hp('1%'), borderColor:Colors().light_gray, borderWidth: 1,flex:0.5,borderTopRightRadius:6,borderBottomLeftRadius:6 ,justifyContent:'center',alignItems:'center' }}>
-                                        <Text style={[styles.headingtext, { marginHorizontal: wp('1%'), padding: 2 }]}>{"item"}</Text>
-                                    </View>
-                                </View>
+                                </View> */}
                             </Collapsible>
 
+    </>
+
+                                        )
+                                    }
                             {/* <Text style={styles.description}>{productDescription.description}</Text> */}
 
-                            {/* {Object.keys(productAttributes).length > 0 &&
+                             {/* {Object.keys(productAttributes).length > 0 &&
                                 <View>
                                     <OtrixDivider size={'md'} />
                                     <View style={GlobalStyles.horizontalLine}></View>
@@ -627,7 +638,7 @@ function ProductDetailScreen(props) {
                                         )
                                     }
                                 </View>
-                            } */}
+                            }  */}
 
                             <OtrixDivider size={'md'} />
                             <View style={GlobalStyles.horizontalLine}></View>

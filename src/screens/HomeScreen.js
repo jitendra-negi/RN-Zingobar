@@ -21,7 +21,7 @@ import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-nat
 import { Colors, GlobalStyles } from '@helpers';
 import { bindActionCreators } from 'redux';
 import { Badge, Avatar } from "native-base";
-import { heart, offerBanner, avatarImg, avatarImg2 } from '@common';
+import { heart, offerBanner, avatarImg, avatarImg2,menu } from '@common';
 import Fonts from "@helpers/Fonts";
 import { _roundDimensions } from '@helpers/util';
 import { _addToWishlist, logfunction } from "@helpers/FunctionHelper";
@@ -373,7 +373,7 @@ function HomeScreen(props) {
 
                         <TouchableOpacity style={styles.headerRight} onPress={() => { USER_AUTH ? props.navigation.navigate('WishlistScreen') : props.navigation.navigate('LoginScreen') }}>
 
-                            <Image source={heart} style={styles.heartIcon}></Image>
+                            <Image source={menu} style={styles.heartIcon}></Image>
 
                             {
 

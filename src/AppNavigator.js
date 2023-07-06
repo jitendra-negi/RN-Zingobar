@@ -12,7 +12,7 @@ import {
     NotificationScreen, SearchScreen, UnauthorizeScreen, MenufecturerScreen, SocialRegisterScreen, RefundScreen, ShippingDeliveryScreen,
     VerifyOTPScreen, ResetPasswordScreen
 } from './screens/index';
-import { bottomHome, bottomHomeFill, bottomCategory, bottomCategoryFill, bottomCart, bottomProfile, bottomProfileFill, bottomSetting, bottomSettingFill } from '@common';
+import { bottomSearch1,bottomSearchFill1,heart,bottomHome, bottomHomeFill, bottomCategory, bottomCategoryFill, bottomCart, bottomProfile, bottomProfileFill, bottomSetting, bottomSettingFill } from '@common';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import { Colors, GlobalStyles } from '@helpers';
 import { Badge } from "native-base"
@@ -22,7 +22,7 @@ import VerifyMobileOTPScreen from './screens/VerifyMobileOTPScreen';
 const SettingStack = createStackNavigator();
 export const navigationRef = createNavigationContainerRef()
 let cartCount = 0;
-import config, { AppFeatures } from './common/config';
+import config, { AppFeatures, bottomSearch, bottomSearchFill } from './common/config';
 import { isConfigured } from 'react-native-reanimated/lib/reanimated2/core';
 
 export function navigate(name, params) {
@@ -76,18 +76,24 @@ function MyTabs(props) {
                 lazy: false,
                 // tabBarStyle: styles.tabbarStyle
             }}>
-            <BottomTab.Screen name="HomeScreen" component={AppFeatures.enableSettingScreen? HomeScreen : EmptyComponent} options={{ headerShown: false }}
+
+
+
+<BottomTab.Screen name="SearchScreen" component={AppFeatures.enableSettingScreen? HomeScreen : EmptyComponent} options={{ headerShown: false }}
                 options={{
                     headerShown: false,
                     cardStyleInterpolator: CardStyleInterpolators.forScaleFromCenterAndroid,
                     tabBarIcon: ({ focused, tintColor }) => (
                         <Image
                             square
-                            source={focused ? bottomHomeFill : bottomHome}
+                            resizeMode='contain'
+                            source={focused ? bottomSearchFill1 : bottomSearch1}
                             style={[styles.bottomTabIcon]}
                         />
                     ),
                 }} />
+
+            
             <BottomTab.Screen name="CategoryScreen" component={AppFeatures.enableCategoryScreen? CategoryScreen : EmptyComponent } options={{ headerShown: false }}
                 options={{
                     headerShown: false,
@@ -110,7 +116,20 @@ function MyTabs(props) {
                         />
                     ),
                 }} /> */}
-            <BottomTab.Screen name="CartScreen" component={authStatus == true ? AppFeatures.enableCartScreen? CartScreen : EmptyComponent : AuthNavigator} options={{ headerShown: false }}
+                <BottomTab.Screen name="HomeScreen" component={AppFeatures.enableSettingScreen? HomeScreen : EmptyComponent} options={{ headerShown: false }}
+                options={{
+                    headerShown: false,
+                    cardStyleInterpolator: CardStyleInterpolators.forScaleFromCenterAndroid,
+                    tabBarIcon: ({ focused, tintColor }) => (
+                        <Image
+                            square
+                            resizeMode='contain'
+                            source={focused ? bottomHomeFill : bottomHome}
+                            style={[styles.bottomTabIcon]}
+                        />
+                    ),
+                }} />
+            {/* <BottomTab.Screen name="CartScreen" component={authStatus == true ? AppFeatures.enableCartScreen? CartScreen : EmptyComponent : AuthNavigator} options={{ headerShown: false }}
                 options={{
                     headerShown: false,
                     cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
@@ -142,7 +161,21 @@ function MyTabs(props) {
 
                         </View>
                     ),
+                }} /> */}
+
+< BottomTab.Screen name="WishlistScreen" component={WishlistScreen} options={{ headerShown: false }}
+                options={{
+                    headerShown: false,
+                    cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
+                    tabBarIcon: ({ focused, tintColor }) => (
+                        <Image
+                            square
+                            source={focused ? heart : heart}
+                            style={[styles.bottomTabIcon]}
+                        />
+                    ),
                 }} />
+
             <BottomTab.Screen name="ProfileScreen" component={authStatus == true ? AppFeatures.enableProfileScreen? ProfileScreen : EmptyComponent : AuthNavigator} options={{ headerShown: false }}
                 options={{
                     headerShown: false,
@@ -156,18 +189,7 @@ function MyTabs(props) {
                         />
                     ),
                 }} />
-            < BottomTab.Screen name="SettingScreen" component={SettingStackNavigation} options={{ headerShown: false }}
-                options={{
-                    headerShown: false,
-                    cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
-                    tabBarIcon: ({ focused, tintColor }) => (
-                        <Image
-                            square
-                            source={focused ? bottomSettingFill : bottomSetting}
-                            style={[styles.bottomTabIcon]}
-                        />
-                    ),
-                }} />
+            
 
         </BottomTab.Navigator >
     );
@@ -215,9 +237,9 @@ function AppNavigator(props) {
                 <Stack.Screen name="ManageAddressScreen" component={ManageAddressScreen} options={{
                     headerShown: false, cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
                 }} />
-                <Stack.Screen name="WishlistScreen" component={WishlistScreen} options={{
+                {/* <Stack.Screen name="WishlistScreen" component={WishlistScreen} options={{
                     headerShown: false, cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
-                }} />
+                }} /> */}
                 <Stack.Screen name="OrderScreen" component={OrderScreen} options={{
                     headerShown: false, cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
                 }} />
@@ -236,9 +258,9 @@ function AppNavigator(props) {
                 <Stack.Screen name="NotificationScreen" component={NotificationScreen} options={{
                     headerShown: false, cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
                 }} />
-                <Stack.Screen name="SearchScreen" component={SearchScreen} options={{
+                {/* <Stack.Screen name="SearchScreen" component={SearchScreen} options={{
                     headerShown: false, cardStyleInterpolator: CardStyleInterpolators.forModalPresentationIOS,
-                }} />
+                }} /> */}
                 <Stack.Screen name="UnauthorizeScreen" component={UnauthorizeScreen} options={{
                     headerShown: false, cardStyleInterpolator: CardStyleInterpolators.forModalPresentationIOS,
                 }} />
