@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import {
     View,
     TouchableOpacity,
@@ -35,8 +36,15 @@ import { Dropdown } from 'react-native-element-dropdown';
 import moment from 'moment';
 import Collapsible from "react-native-collapsible"
 import { white } from "react-native-paper/lib/typescript/styles/colors";
+import Collapsible from "react-native-collapsible"
+import { white } from "react-native-paper/lib/typescript/styles/colors";
 
 function ProductDetailScreen(props) {
+    const QuantityList = [
+        { id: "22", name: '180', value: '2' },
+        { id: "23", name: '375', value: '3' },
+        { id: "24", name: '750ml', value: '4' },
+    ];
     const QuantityList = [
         { id: "22", name: '180', value: '2' },
         { id: "23", name: '375', value: '3' },
@@ -46,6 +54,8 @@ function ProductDetailScreen(props) {
 
     const [state, setState] = React.useState({ loading: true, productPrice: 0, productCount: 1, productDetail: null, value: null, isFocus: false, productDescription: null, productSpecial: null, productAttributes: null, productImages: null, productRelated: null, productOption: [], fetchCart: false, productReview: null, optionColor: 0, optionSelect: 0, optionSize: 0, showZoom: false, zoomImages: [], message: null, type: 'error', optionColorPrice: 0, optionSelectPrice: 0, optionSizePrice: 0, });
     const { loading, productDetail, productOption, productPrice, fetchCart, productReview, productImages, productAttributes, productDescription, isFocus, productRelated, productSpecial, optionColor, optionSelect, optionSize, productCount, zoomImages, showZoom, msg, optionColorPrice, optionSelectPrice, optionSizePrice, message, type } = state;
+    const [isCollasped, setIsCollasped] = useState(false)
+    const [isProductDetails, setIsProduct] = useState(false)
     const [isCollasped, setIsCollasped] = useState(false)
     const [isProductDetails, setIsProduct] = useState(false)
     const _CartData = () => {
@@ -302,6 +312,22 @@ function ProductDetailScreen(props) {
         }
     }
 
+
+    const expandView = () => {
+        if (!isCollasped) {
+            setIsCollasped(true)
+        } else {
+            setIsCollasped(false)
+        }
+    }
+    const expandDetailView = () => {
+        if (!isProductDetails) {
+            setIsProduct(true)
+        } else {
+            setIsProduct(false)
+        }
+    }
+
     const { strings } = props;
     return (
         <OtrixContainer customStyles={{ backgroundColor: Colors().light_white }}>
@@ -366,6 +392,7 @@ function ProductDetailScreen(props) {
                             <OtirxBackButton />
                         </TouchableOpacity>
                         {/* <TouchableOpacity style={[GlobalStyles.headerRight, { zIndex: 999999999, flex: 0.10, backgroundColor: 'transparent', alignItems: 'center', alignSelf: 'flex-end' }]} onPress={() => props.navigation.navigate('CartScreen')}>
+                        {/* <TouchableOpacity style={[GlobalStyles.headerRight, { zIndex: 999999999, flex: 0.10, backgroundColor: 'transparent', alignItems: 'center', alignSelf: 'flex-end' }]} onPress={() => props.navigation.navigate('CartScreen')}>
                             <Image source={bottomCart} style={styles.menuImage} />
                             {
                                 cartCount > 0 && <Badge style={[GlobalStyles.badge, {
@@ -379,6 +406,7 @@ function ProductDetailScreen(props) {
                                 </Badge>
                             }
 
+                        </TouchableOpacity> */}
                         </TouchableOpacity> */}
                     </View>
 
@@ -488,6 +516,25 @@ function ProductDetailScreen(props) {
                                             </TouchableOpacity> : <TouchableOpacity style={[GlobalStyles.unFavCircle, { left: wp('80%'), top: 8 }]} onPress={() => props.USER_AUTH ? addToWish(productDetail.id) : props.navigation.navigate("LoginScreen")}>
                                                 <FontAwesomeIcon name="heart-o" style={GlobalStyles.unFavIcon} color={Colors().secondry_text_color} />
                                             </TouchableOpacity>
+                                    <View style={{ flexDirection: 'row', marginHorizontal: wp('1%') }}>
+                                        {
+                                            QuantityList.map((item, index) =>
+                                                <TouchableOpacity style={styles.filterBox}>
+
+                                                    <Text style={styles.tagStyle}>
+                                                        {item.name}
+                                                    </Text>
+                                                </TouchableOpacity>
+                                            )
+                                        }
+                                    </View>
+                                    {
+                                        wishlistData && wishlistData.length > 0 && wishlistData.includes(productDetail.id) ?
+                                            <TouchableOpacity style={[GlobalStyles.FavCircle, { left: wp('80%'), top: 8 }]} onPress={() => props.USER_AUTH ? addToWish(productDetail.id) : props.navigation.navigate("LoginScreen")} >
+                                                <FontAwesomeIcon name="heart" style={GlobalStyles.unFavIcon} color={Colors().white} />
+                                            </TouchableOpacity> : <TouchableOpacity style={[GlobalStyles.unFavCircle, { left: wp('80%'), top: 8 }]} onPress={() => props.USER_AUTH ? addToWish(productDetail.id) : props.navigation.navigate("LoginScreen")}>
+                                                <FontAwesomeIcon name="heart-o" style={GlobalStyles.unFavIcon} color={Colors().secondry_text_color} />
+                                            </TouchableOpacity>
                                     }
                                 </View>
 
@@ -513,6 +560,11 @@ function ProductDetailScreen(props) {
                                 <Text onPress={() => expandView()} style={[styles.headingTxt, { fontSize: wp('5.8%'), marginRight: wp('2%') }]}>{isCollasped ? "-" : "+"}</Text>
 
                             </View>
+                            <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
+                                <Text style={[styles.headingTxt, { fontSize: wp('3.8%') }]}>{strings.product_details.description}</Text>
+                                <Text onPress={() => expandView()} style={[styles.headingTxt, { fontSize: wp('5.8%'), marginRight: wp('2%') }]}>{isCollasped ? "-" : "+"}</Text>
+
+                            </View>
                             <OtrixDivider size={'sm'} />
                             <Collapsible style={styles.subItemContainer} collapsed={!isCollasped} >
                                 <RenderHtml
@@ -526,14 +578,29 @@ function ProductDetailScreen(props) {
 
                             <View style={GlobalStyles.horizontalLine}></View>
                             <OtrixDivider size={'sm'} />
+                            {Object.keys(productAttributes).length > 0 &&
                             <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
                                 <Text style={[styles.headingTxt, { fontSize: wp('3.8%') }]}>{"Product Details"}</Text>
                                 <Text onPress={() => expandDetailView()} style={[styles.headingTxt, { fontSize: wp('5.8%'), marginRight: wp('2%') }]}>{isProductDetails ? "-" : "+"}</Text>
 
                             </View>
+}
                             <OtrixDivider size={'sm'} />
+                            {
+                                        Object.keys(productAttributes).map((item, index) =>
+                                            <>
                             <Collapsible style={styles.subItemContainer} collapsed={!isProductDetails} >
+                            {productAttributes[item].map((attribute, attIndex) =>
                                 <View style={{ backgroundColor: 'white', marginVertical: hp('1%'),flexDirection: 'row' }}>
+                                    <View style={{ backgroundColor: Colors().light_gray, marginVertical: hp('1%'),borderColor:Colors().light_gray, borderWidth: 1,flex:0.5,borderBottomLeftRadius:6,borderTopLeftRadius:6,justifyContent:'center',alignItems:'center' }}>
+                                        <Text style={[styles.headingtext, { marginHorizontal: wp('1%'), padding: 2 }]}>{attribute.name}</Text>
+                                    </View>
+                                    <View style={{ backgroundColor:'white', marginVertical: hp('1%'), borderColor:Colors().light_gray, borderWidth: 1,flex:0.5,borderTopRightRadius:6,borderBottomLeftRadius:6 ,justifyContent:'center',alignItems:'center' }}>
+                                        <Text style={[styles.headingtext, { marginHorizontal: wp('1%'), padding: 2 }]}>{attribute.text}</Text>
+                                    </View>
+                                </View>
+                            )}
+                                {/* <View style={{ backgroundColor: 'white', marginVertical: hp('1%'),flexDirection: 'row' }}>
                                     <View style={{ backgroundColor: Colors().light_gray, marginVertical: hp('1%'),borderColor:Colors().light_gray, borderWidth: 1,flex:0.5,borderBottomLeftRadius:6,borderTopLeftRadius:6,justifyContent:'center',alignItems:'center' }}>
                                         <Text style={[styles.headingtext, { marginHorizontal: wp('1%'), padding: 2 }]}>{"item"}</Text>
                                     </View>
@@ -588,20 +655,16 @@ function ProductDetailScreen(props) {
                                     <View style={{ backgroundColor:'white', marginVertical: hp('1%'), borderColor:Colors().light_gray, borderWidth: 1,flex:0.5,borderTopRightRadius:6,borderBottomLeftRadius:6 ,justifyContent:'center',alignItems:'center' }}>
                                         <Text style={[styles.headingtext, { marginHorizontal: wp('1%'), padding: 2 }]}>{"item"}</Text>
                                     </View>
-                                </View>
-                                <View style={{ backgroundColor: 'white', marginVertical: hp('1%'),flexDirection: 'row' }}>
-                                    <View style={{ backgroundColor: Colors().light_gray, marginVertical: hp('1%'),borderColor:Colors().light_gray, borderWidth: 1,flex:0.5,borderBottomLeftRadius:6,borderTopLeftRadius:6,justifyContent:'center',alignItems:'center' }}>
-                                        <Text style={[styles.headingtext, { marginHorizontal: wp('1%'), padding: 2 }]}>{"item"}</Text>
-                                    </View>
-                                    <View style={{ backgroundColor:'white', marginVertical: hp('1%'), borderColor:Colors().light_gray, borderWidth: 1,flex:0.5,borderTopRightRadius:6,borderBottomLeftRadius:6 ,justifyContent:'center',alignItems:'center' }}>
-                                        <Text style={[styles.headingtext, { marginHorizontal: wp('1%'), padding: 2 }]}>{"item"}</Text>
-                                    </View>
-                                </View>
+                                </View> */}
                             </Collapsible>
 
+    </>
+
+                                        )
+                                    }
                             {/* <Text style={styles.description}>{productDescription.description}</Text> */}
 
-                            {Object.keys(productAttributes).length > 0 &&
+                             {/* {Object.keys(productAttributes).length > 0 &&
                                 <View>
                                     <OtrixDivider size={'md'} />
                                     <View style={GlobalStyles.horizontalLine}></View>
@@ -627,7 +690,7 @@ function ProductDetailScreen(props) {
                                         )
                                     }
                                 </View>
-                            }
+                            }  */}
 
                             <OtrixDivider size={'md'} />
                             <View style={GlobalStyles.horizontalLine}></View>

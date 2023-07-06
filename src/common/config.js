@@ -17,8 +17,8 @@ export const splashlogo = require('../assets/images/splash_logo.png')
 
 
 //bottom tab images
-export const bottomHome = require('../assets/images/bottomtab/Bottom_Home.png')
-export const bottomHomeFill = require('../assets/images/bottomtab/Botto_Home_Fill.png')
+export const bottomHome = require('../assets/images/bottomtab/Bottom_Home_Icon.png')
+export const bottomHomeFill = require('../assets/images/bottomtab/Bottom_Home_Icon.png')
 export const bottomCategory = require('../assets/images/bottomtab/Bottom_Category.png')
 export const bottomCategoryFill = require('../assets/images/bottomtab/Bottom_Category_Fill.png')
 export const bottomCart = require('../assets/images/bottomtab/Bottom_cart.png')
@@ -27,6 +27,8 @@ export const bottomProfile = require('../assets/images/bottomtab/Bottom_Profile.
 export const bottomProfileFill = require('../assets/images/bottomtab/Bottom_Profile_Fill.png')
 export const bottomSetting = require('../assets/images/bottomtab/Bottom_Setting.png')
 export const bottomSettingFill = require('../assets/images/bottomtab/Bottom_Setting_Fill.png')
+export const bottomSearch1 = require('../assets/images/bottomtab/Bottom_Search_Icon.png')
+export const bottomSearchFill1 = require('../assets/images/bottomtab/Bottom_Search_Icon.png')
 
 //social images
 export const google = require('../assets/images/google.png');
