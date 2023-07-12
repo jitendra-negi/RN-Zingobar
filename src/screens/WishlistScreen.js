@@ -1,137 +1,175 @@
-import React, { useEffect } from "react";
+import React, { useCallback, useEffect } from "react";
+import { View, TouchableOpacity, Text, StyleSheet } from "react-native";
+import { connect } from "react-redux";
+import { Button } from "native-base";
 import {
-    View,
-    TouchableOpacity,
-    Text,
-    StyleSheet,
-} from "react-native";
-import { connect } from 'react-redux';
-import { Button } from 'native-base';
+  OtrixContainer,
+  OtrixHeader,
+  OtrixContent,
+  OtrixLoader,
+  OtirxBackButton,
+  WishlistComponent,
+} from "@component";
 import {
-    OtrixContainer, OtrixHeader, OtrixContent, OtrixLoader, OtirxBackButton, WishlistComponent
-} from '@component';
-import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
-import { GlobalStyles, Colors } from '@helpers';
-import { _roundDimensions } from '@helpers/util';
-import Icon from 'react-native-vector-icons/Ionicons';
+  widthPercentageToDP as wp,
+  heightPercentageToDP as hp,
+} from "react-native-responsive-screen";
+import { GlobalStyles, Colors } from "@helpers";
+import { _roundDimensions } from "@helpers/util";
+import Icon from "react-native-vector-icons/Ionicons";
 import Fonts from "@helpers/Fonts";
 import { bindActionCreators } from "redux";
-import { addToWishList } from '@actions';
-import { _getWishlist, _addToWishlist, logfunction } from "@helpers/FunctionHelper";
+import { addToWishList } from "@actions";
+import {
+  _getWishlist,
+  _addToWishlist,
+  logfunction,
+} from "@helpers/FunctionHelper";
 import getApi from "@apis/getApi";
+import { useFocusEffect } from "@react-navigation/native";
+import { delay } from "redux-saga/effects";
 
 function WishlistScreen(props) {
-    const [state, setState] = React.useState({ loading: true, noRecord: false, wishlistArr: [] });
+  const [state, setState] = React.useState({
+    loading: true,
+    noRecord: false,
+    wishlistArr: [],
+  });
 
-    const wishlistGetData = () => {
-        getApi.getData(
-            "user/getWishlist",
-            [],
-        ).then((response => {
-            if (response.status == 1) {
-                logfunction("RESPONSEEE ", response.data)
-                setState({
-                    ...state,
-                    noRecord: response.data.length > 0 ? false : true,
-                    wishlistArr: response.data,
-                    loading: false
-                });
-            }
-            else {
-                setState({
-                    ...state,
-                    noRecord: true,
-                    loading: false
-                });
-            }
-        }));
-    }
+  useFocusEffect(
 
-    const onDeleteItem = async (id) => {
+    useCallback(() => {
+      wishlistGetData();
+    }, []),
+
+);
+
+  const wishlistGetData = () => {
+    getApi.getData("user/getWishlist", []).then((response) => {
+      if (response.status == 1) {
+        logfunction("RESPONSEEE ", response.data);
         setState({
-            ...state,
-            loading: true
+          ...state,
+          noRecord: response.data.length > 0 ? false : true,
+          wishlistArr: response.data,
+          loading: false,
         });
-        let wishlistData = await _addToWishlist(id);
-        props.addToWishList(wishlistData, id);
-        wishlistGetData()
-    }
+      } else {
+        setState({
+          ...state,
+          noRecord: true,
+          loading: false,
+        });
+      }
+    });
+  };
 
-    useEffect(() => {
-        wishlistGetData()
-    }, []);
+  const onDeleteItem = async (id) => {
+    setState({
+      ...state,
+      loading: true,
+    });
+    let wishlistData = await _addToWishlist(id);
+    props.addToWishList(wishlistData, id);
+   // delay(100);
+    wishlistGetData();
+  };
 
-    const { wishlistArr, loading, noRecord } = state;
-    const { strings } = props;
+  useEffect(() => {
+    //wishlistGetData();
+  }, [wishlistArr]);
 
-    return (
-        <OtrixContainer customStyles={{ backgroundColor: Colors().light_white }}>
+  const { wishlistArr, loading, noRecord } = state;
+  const { strings } = props;
 
-            {/* Header */}
-            <OtrixHeader customStyles={{ backgroundColor: Colors().light_white }}>
-                <TouchableOpacity style={GlobalStyles.headerLeft} onPress={() => props.navigation.goBack()}>
-                    <OtirxBackButton />
-                </TouchableOpacity>
-                <View style={[GlobalStyles.headerCenter, { flex: 1 }]}>
-                    <Text style={GlobalStyles.headingTxt}>  {strings.account.label_wishlist}</Text>
-                </View>
-            </OtrixHeader>
+  return (
+    <OtrixContainer customStyles={{ backgroundColor: Colors().light_white }}>
+      {/* Header */}
+      <OtrixHeader customStyles={{ backgroundColor: Colors().light_white }}>
+        {/* <TouchableOpacity
+          style={GlobalStyles.headerLeft}
+          onPress={() => props.navigation.goBack()}
+        >
+          <OtirxBackButton />
+        </TouchableOpacity> */}
+        <View style={[GlobalStyles.headerCenter, { flex: 1 }]}>
+          <Text style={GlobalStyles.headingTxt}>
+            {" "}
+            {strings.account.label_wishlist}
+          </Text>
+        </View>
+      </OtrixHeader>
 
-            {/* Content Start from here */}
-            <OtrixContent >
+      {/* Content Start from here */}
+      <OtrixContent>
+        {!noRecord && !loading && (
+          <WishlistComponent
+            navigation={props.navigation}
+            products={wishlistArr}
+            deleteItem={onDeleteItem}
+          />
+        )}
+        {!loading && noRecord && (
+          <View style={styles.noRecord}>
+            <Text style={styles.emptyTxt}>Wishlist is empty!</Text>
+            <Button
+              size="lg"
+              variant="solid"
+              bg={Colors().themeColor}
+              style={[
+                GlobalStyles.button,
                 {
-                    !noRecord && !loading &&
-                    <WishlistComponent navigation={props.navigation} products={wishlistArr} deleteItem={onDeleteItem} />
-                }
-                {
-                    !loading && noRecord && <View style={styles.noRecord}>
-                        <Text style={styles.emptyTxt}>Wishlist is empty!</Text>
-                        <Button
-                            size="lg"
-                            variant="solid"
-                            bg={Colors().themeColor}
-                            style={[GlobalStyles.button, { marginHorizontal: wp('2%'), marginBottom: hp('2.5%'), marginTop: hp('1%') }]}
-                            onPress={() => props.navigation.navigate('HomeScreen')}
-                        >
-                            <Text style={GlobalStyles.buttonText}><Icon name={"md-heart"} color={Colors().white} style={{ fontSize: wp('4.5%') }} />  Add Now</Text>
-                        </Button>
-                    </View>
-                }
-                {
-                    loading ? <OtrixLoader /> : null
-                }
-            </OtrixContent>
-
-        </OtrixContainer >
-    )
+                  marginHorizontal: wp("2%"),
+                  marginBottom: hp("2.5%"),
+                  marginTop: hp("1%"),
+                },
+              ]}
+              onPress={() => props.navigation.navigate("HomeScreen")}
+            >
+              <Text style={GlobalStyles.buttonText}>
+                <Icon
+                  name={"md-heart"}
+                  color={Colors().white}
+                  style={{ fontSize: wp("4.5%") }}
+                />{" "}
+                Add Now
+              </Text>
+            </Button>
+          </View>
+        )}
+        {loading ? <OtrixLoader /> : null}
+      </OtrixContent>
+    </OtrixContainer>
+  );
 }
-
 
 function mapStateToProps(state) {
-    return {
-        strings: state.mainScreenInit.strings,
-        cartData: state.cart.cartData,
-    }
+  return {
+    strings: state.mainScreenInit.strings,
+    cartData: state.cart.cartData,
+  };
 }
 
-const mapDispatchToProps = dispatch => (
-    bindActionCreators({
-        addToWishList
-    }, dispatch)
-);
+const mapDispatchToProps = (dispatch) =>
+  bindActionCreators(
+    {
+      addToWishList,
+    },
+    dispatch
+  );
 export default connect(mapStateToProps, mapDispatchToProps)(WishlistScreen);
 
 const styles = StyleSheet.create({
-    noRecord: {
-        justifyContent: 'center',
-        alignItems: 'center',
-        flex: 1,
-        marginTop: hp('25%')
-    },
-    emptyTxt: {
-        fontSize: wp('6%'),
-        marginVertical: hp('1.5%'),
-        fontFamily: Fonts.Font_Semibold,
-        color: Colors().secondry_text_color
-    }
+  noRecord: {
+    justifyContent: "center",
+    alignItems: "center",
+    flex: 1,
+    marginTop: hp("25%"),
+  },
+  emptyTxt: {
+    fontSize: wp("6%"),
+    marginVertical: hp("1.5%"),
+    fontFamily: Fonts.Font_Semibold,
+    color: Colors().secondry_text_color,
+  },
 });

@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from "react";
-import React, { useEffect, useRef, useState } from "react";
 import {
     View,
     TouchableOpacity,
@@ -11,7 +10,7 @@ import {
 } from "react-native";
 import { connect } from 'react-redux';
 import {
-    OtrixContainer, OtrixContent, OtrixDivider, OtirxBackButton, OtrixLoader, SimilarProduct, OtrixAlert, RatingComponent
+    OtrixContainer, OtrixContent, OtrixDivider, OtirxBackButton, OtrixLoader, SimilarProduct, OtrixAlert, RatingComponent, SizeContainerComponent
 } from '@component';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import { GlobalStyles, Colors } from '@helpers';
@@ -36,28 +35,17 @@ import { Dropdown } from 'react-native-element-dropdown';
 import moment from 'moment';
 import Collapsible from "react-native-collapsible"
 import { white } from "react-native-paper/lib/typescript/styles/colors";
-import Collapsible from "react-native-collapsible"
-import { white } from "react-native-paper/lib/typescript/styles/colors";
+import { log } from "react-native-reanimated";
 
 function ProductDetailScreen(props) {
-    const QuantityList = [
-        { id: "22", name: '180', value: '2' },
-        { id: "23", name: '375', value: '3' },
-        { id: "24", name: '750ml', value: '4' },
-    ];
-    const QuantityList = [
-        { id: "22", name: '180', value: '2' },
-        { id: "23", name: '375', value: '3' },
-        { id: "24", name: '750ml', value: '4' },
-    ];
+
     const scrollRight = useRef();
 
     const [state, setState] = React.useState({ loading: true, productPrice: 0, productCount: 1, productDetail: null, value: null, isFocus: false, productDescription: null, productSpecial: null, productAttributes: null, productImages: null, productRelated: null, productOption: [], fetchCart: false, productReview: null, optionColor: 0, optionSelect: 0, optionSize: 0, showZoom: false, zoomImages: [], message: null, type: 'error', optionColorPrice: 0, optionSelectPrice: 0, optionSizePrice: 0, });
     const { loading, productDetail, productOption, productPrice, fetchCart, productReview, productImages, productAttributes, productDescription, isFocus, productRelated, productSpecial, optionColor, optionSelect, optionSize, productCount, zoomImages, showZoom, msg, optionColorPrice, optionSelectPrice, optionSizePrice, message, type } = state;
     const [isCollasped, setIsCollasped] = useState(false)
     const [isProductDetails, setIsProduct] = useState(false)
-    const [isCollasped, setIsCollasped] = useState(false)
-    const [isProductDetails, setIsProduct] = useState(false)
+
     const _CartData = () => {
         // setState({ ...state, fetchCart: false })
     }
@@ -313,58 +301,43 @@ function ProductDetailScreen(props) {
     }
 
 
-    const expandView = () => {
-        if (!isCollasped) {
-            setIsCollasped(true)
-        } else {
-            setIsCollasped(false)
-        }
-    }
-    const expandDetailView = () => {
-        if (!isProductDetails) {
-            setIsProduct(true)
-        } else {
-            setIsProduct(false)
-        }
-    }
-
     const { strings } = props;
     return (
         <OtrixContainer customStyles={{ backgroundColor: Colors().light_white }}>
+            <ScrollView style={styles.childView} showsVerticalScrollIndicator={false}>
+                {
+                    loading ? <OtrixLoader /> : <>
 
-            {
-                loading ? <OtrixLoader /> : <>
-
-                    {/* Product Detail View */}
-                    {
-                        productImages && productImages.length > 0 &&
-                        <View style={styles.container} >
-                            <Carousel
-                                loop
-                                width={width}
-                                pagingEnabled={true}
-                                snapEnabled={true}
-                                mode="parallax"
-                                modeConfig={{
-                                    parallaxScrollingScale: 0.9,
-                                    parallaxScrollingOffset: 50,
-                                }}
-                                height={width / 1.4}
-                                autoPlay={true}
-                                data={productImages}
-                                scrollAnimationDuration={1500}
-                                renderItem={({ item, index }) => (
-                                    <View
-                                        key={index}
-                                        style={{
-                                            justifyContent: 'center',
-                                        }}
-                                    >
-                                        <Image source={{ uri: item }} resizeMode="contain" style={{ height: undefined, aspectRatio: 1, width: '100%' }} />
-                                    </View>
-                                )}
-                            />
-                            {/* <SliderBox images={productImages}
+                        {/* Product Detail View */}
+                        {
+                            productImages && productImages.length > 0 &&
+                            <View style={styles.container} >
+                                <Carousel
+                                    loop
+                                    width={width}
+                                    pagingEnabled={true}
+                                    snapEnabled={true}
+                                    mode="parallax"
+                                    modeConfig={{
+                                        parallaxScrollingScale: 0.9,
+                                        parallaxScrollingOffset: 50,
+                                    }}
+                                    height={width / 1.4}
+                                    autoPlay={true}
+                                    data={productImages}
+                                    scrollAnimationDuration={1500}
+                                    renderItem={({ item, index }) => (
+                                        <View
+                                            key={index}
+                                            style={{
+                                                justifyContent: 'center',
+                                            }}
+                                        >
+                                            <Image source={{ uri: item }} resizeMode="contain" style={{ height: undefined, aspectRatio: 1, width: '100%' }} />
+                                        </View>
+                                    )}
+                                />
+                                {/* <SliderBox images={productImages}
                                 onCurrentImagePressed={index => setState({ ...state, showZoom: true })}
                                 dotColor={Colors().themeColor}
                                 inactiveDotColor="#90A4AE"
@@ -383,46 +356,44 @@ function ProductDetailScreen(props) {
                                     margin: 0
                                 }}
                             /> */}
+                            </View>
+                        }
+
+                        {/* Header */}
+                        <View style={{ flexDirection: 'row', position: 'absolute', marginTop: hp('2%'), zIndex: 99999999 }}>
+                            <TouchableOpacity style={[GlobalStyles.headerLeft, { zIndex: 999999999, flex: 0.90, alignItems: 'flex-start' }]} onPress={() => props.navigation.goBack()}>
+                                <OtirxBackButton />
+                            </TouchableOpacity>
+                            <TouchableOpacity style={[GlobalStyles.headerRight, { zIndex: 999999999, flex: 0.10, backgroundColor: 'transparent', alignItems: 'center', alignSelf: 'flex-end' }]} onPress={() => props.navigation.navigate('CartScreen')}>
+                                <Image source={bottomCart} style={styles.menuImage} />
+                                {
+                                    cartCount > 0 && <Badge style={[GlobalStyles.badge, {
+                                        left: wp('4.4%'),
+                                        top: - hp('1.4%'),
+                                        height: cartCount > 9 ? 28 : 24,
+                                        width: cartCount > 9 ? 28 : 24,
+                                        backgroundColor: Colors().white
+                                    }]}>
+                                        <Text style={[GlobalStyles.badgeText, { color: Colors().themeColor, fontSize: cartCount > 9 ? wp('2.5%') : wp('3%'), }]}>{cartCount}</Text>
+                                    </Badge>
+                                }
+
+                            </TouchableOpacity>
                         </View>
-                    }
 
-                    {/* Header */}
-                    <View style={{ flexDirection: 'row', position: 'absolute', marginTop: hp('2%'), zIndex: 99999999 }}>
-                        <TouchableOpacity style={[GlobalStyles.headerLeft, { zIndex: 999999999, flex: 0.90, alignItems: 'flex-start' }]} onPress={() => props.navigation.goBack()}>
-                            <OtirxBackButton />
-                        </TouchableOpacity>
-                        {/* <TouchableOpacity style={[GlobalStyles.headerRight, { zIndex: 999999999, flex: 0.10, backgroundColor: 'transparent', alignItems: 'center', alignSelf: 'flex-end' }]} onPress={() => props.navigation.navigate('CartScreen')}>
-                        {/* <TouchableOpacity style={[GlobalStyles.headerRight, { zIndex: 999999999, flex: 0.10, backgroundColor: 'transparent', alignItems: 'center', alignSelf: 'flex-end' }]} onPress={() => props.navigation.navigate('CartScreen')}>
-                            <Image source={bottomCart} style={styles.menuImage} />
-                            {
-                                cartCount > 0 && <Badge style={[GlobalStyles.badge, {
-                                    left: wp('4.4%'),
-                                    top: - hp('1.4%'),
-                                    height: cartCount > 9 ? 28 : 24,
-                                    width: cartCount > 9 ? 28 : 24,
-                                    backgroundColor: Colors().white
-                                }]}>
-                                    <Text style={[GlobalStyles.badgeText, { color: Colors().themeColor, fontSize: cartCount > 9 ? wp('2.5%') : wp('3%'), }]}>{cartCount}</Text>
-                                </Badge>
-                            }
+                        {/* Content Start from here */}
+                        <OtrixContent customStyles={styles.productDetailView}>
+                            <OtrixDivider size={'sm'} />
 
-                        </TouchableOpacity> */}
-                        </TouchableOpacity> */}
-                    </View>
-
-                    {/* Content Start from here */}
-                    <OtrixContent customStyles={styles.productDetailView}>
-                        <OtrixDivider size={'lg'} />
-                        <ScrollView style={styles.childView} showsVerticalScrollIndicator={false}>
 
                             {/* Name Container*/}
                             <View style={styles.subContainer}>
-                                <Text style={styles.headingTxt}>{productDescription.name}</Text>
+                                <Text style={styles.titleTxt}>{productDescription.name}</Text>
                                 <Text style={[styles.stock, {
                                     color: productDetail.quantity > 0 ? '#5ddb79' : '#fe151b'
                                 }]}>{productDetail.quantity > 0 ? 'In Stock' : 'Out of stock'}</Text>
                             </View>
-                            <OtrixDivider size={'md'} />
+                            <OtrixDivider size={'sm'} />
 
                             {/* Price Container*/}
                             <View style={styles.subContainer}>
@@ -450,6 +421,10 @@ function ProductDetailScreen(props) {
                             </View>
                             <OtrixDivider size={'md'} />
 
+
+
+
+
                             {/* Options And Heart Icon */}
                             <View style={styles.colorView}>
 
@@ -459,35 +434,52 @@ function ProductDetailScreen(props) {
                                         Object.keys(productOption).length > 0 && Object.keys(productOption).map((item, index) =>
                                             <View key={item.toString()}>
                                                 <View style={styles.colorContainer} >
-                                                    <Text style={styles.containerTxt}>{item}:</Text>
-                                                    <ScrollView ref={scrollRight} horizontal={true} showsHorizontalScrollIndicator={false} style={{ flexDirection: 'row', marginHorizontal: wp('1%') }}>
-                                                        {
-                                                            productOption[item].map((childItem, index) =>
-                                                                childItem.type == 'Color' ? <View style={{ flexDirection: 'column' }} key={childItem.product_option_id.toString()}>
-                                                                    <TouchableOpacity style={[styles.box, { backgroundColor: childItem.color_code }]} onPress={() => colorChange(childItem)}>
-                                                                        {optionColor != null && childItem.product_option_id == optionColor && <Image source={checkround2} style={styles.colorimageView} />}
-                                                                    </TouchableOpacity>
-                                                                    {
-                                                                        childItem.price != null && <Text style={styles.optionPrice}>+{childItem.price}</Text>
-                                                                    }
-                                                                </View>
-                                                                    : childItem.type == 'Radio' || childItem.type == 'Checkbox' ?
-                                                                        <View style={{ flexDirection: 'column' }} key={childItem.product_option_id.toString()}>
-                                                                            <TouchableOpacity style={[styles.box, styles.sizeBox, { borderColor: optionSize == childItem.product_option_id ? Colors().themeColor : 'rgb(225, 225, 225)' }]} key={index} onPress={() => sizeChange(childItem)}>
-                                                                                <Text style={[styles.sizeTxt, { color: optionSize == childItem.product_option_id ? Colors().themeColor : Colors().secondry_text_color }]}>{childItem.label}</Text>
-                                                                            </TouchableOpacity>
-                                                                            {
-                                                                                childItem.price != null ? <Text style={styles.optionPrice}>+{childItem.price}</Text> : null
-                                                                            }
-                                                                        </View> : buildSelect(childItem, index)
-                                                            )
-                                                        }
-                                                    </ScrollView>
-                                                    <TouchableOpacity style={{ justifyContent: 'center', top: hp('1%') }} onPress={() => {
-                                                        scrollRight.current.scrollTo({ x: 1500 })
-                                                    }}>
-                                                        <Icon name="right" style={styles.arrowRight} ></Icon>
-                                                    </TouchableOpacity>
+                                                    <Text style={styles.containerTxt}>{"Select " + item}:</Text>
+                                                    <OtrixDivider size={'sm'} />
+
+                                                    <View style={styles.componentContainer} >
+
+                                                        <ScrollView ref={scrollRight} horizontal={true} showsHorizontalScrollIndicator={false} style={{ flexDirection: 'row', marginHorizontal: wp('1%') }}>
+                                                            {
+                                                                productOption[item].map((childItem, index) =>
+                                                                    childItem.type == 'Color' ? <View style={{ flexDirection: 'column' }} key={childItem.product_option_id.toString()}>
+                                                                        <TouchableOpacity style={[styles.box, { backgroundColor: childItem.color_code }]} onPress={() => colorChange(childItem)}>
+                                                                            {optionColor != null && childItem.product_option_id == optionColor && <Image source={checkround2} style={styles.colorimageView} />}
+                                                                        </TouchableOpacity>
+                                                                        {/* {
+                                                                            childItem.price != null && <Text style={styles.optionPrice}>+{childItem.price}</Text>
+                                                                        } */}
+                                                                    </View>
+                                                                        : childItem.type == 'Radio' || childItem.type == 'Checkbox' ?
+                                                                            <View style={{ flexDirection: 'column' }} key={childItem.product_option_id.toString()}>
+                                                                                <TouchableOpacity style={[styles.box, styles.sizeBox, { borderColor: optionSize == childItem.product_option_id ? Colors().themeColor : 'rgb(225, 225, 225)' }]} key={index} onPress={() => sizeChange(childItem)}>
+                                                                                    <Text style={[styles.sizeTxt, { color: optionSize == childItem.product_option_id ? Colors().themeColor : Colors().secondry_text_color }]}>{childItem.label}</Text>
+                                                                                </TouchableOpacity>
+                                                                                {/* {
+                                                                                    childItem.price != null ? <Text style={styles.optionPrice}>+{childItem.price}</Text> : null
+                                                                                } */}
+                                                                            </View> : buildSelect(childItem, index)
+                                                                )
+                                                            }
+                                                        </ScrollView>
+                                                        <TouchableOpacity style={{ justifyContent: 'center', top: hp('1%') }} onPress={() => {
+                                                            scrollRight.current.scrollTo({ x: 1500 })
+                                                        }}>
+                                                            <Icon name="right" style={styles.arrowRight} ></Icon>
+                                                        </TouchableOpacity>
+
+                                                        {/* Heart Icon */}
+                                                        {index == 0 && (<View style={styles.heartIconView}>
+                                                            {
+                                                                wishlistData && wishlistData.length > 0 && wishlistData.includes(productDetail.id) ? <TouchableOpacity style={[GlobalStyles.FavCircle, { left: wp('4%'), top: 0 }]} onPress={() => props.USER_AUTH ? addToWish(productDetail.id) : props.navigation.navigate("LoginScreen")} >
+                                                                    <FontAwesomeIcon name="heart" style={GlobalStyles.unFavIcon} color={Colors().white} />
+                                                                </TouchableOpacity> : <TouchableOpacity style={[GlobalStyles.unFavCircle, { left: wp('4%'), top: 0 }]} onPress={() => props.USER_AUTH ? addToWish(productDetail.id) : props.navigation.navigate("LoginScreen")}>
+                                                                    <FontAwesomeIcon name="heart-o" style={GlobalStyles.unFavIcon} color={Colors().secondry_text_color} />
+                                                                </TouchableOpacity>
+                                                            }
+                                                        </View>)}
+
+                                                    </View>
                                                 </View>
                                                 <OtrixDivider size={'md'} />
                                             </View>
@@ -495,48 +487,7 @@ function ProductDetailScreen(props) {
                                     }
                                 </View>
 
-                                {/* Heart Icon */}
-                                <View style={styles.heartIconView}>
-                                    <View style={{ flexDirection: 'row', marginHorizontal: wp('1%') }}>
-                                        {
-                                            QuantityList.map((item, index) =>
-                                                <TouchableOpacity style={styles.filterBox}>
 
-                                                    <Text style={styles.tagStyle}>
-                                                        {item.name}
-                                                    </Text>
-                                                </TouchableOpacity>
-                                            )
-                                        }
-                                    </View>
-                                    {
-                                        wishlistData && wishlistData.length > 0 && wishlistData.includes(productDetail.id) ?
-                                            <TouchableOpacity style={[GlobalStyles.FavCircle, { left: wp('80%'), top: 8 }]} onPress={() => props.USER_AUTH ? addToWish(productDetail.id) : props.navigation.navigate("LoginScreen")} >
-                                                <FontAwesomeIcon name="heart" style={GlobalStyles.unFavIcon} color={Colors().white} />
-                                            </TouchableOpacity> : <TouchableOpacity style={[GlobalStyles.unFavCircle, { left: wp('80%'), top: 8 }]} onPress={() => props.USER_AUTH ? addToWish(productDetail.id) : props.navigation.navigate("LoginScreen")}>
-                                                <FontAwesomeIcon name="heart-o" style={GlobalStyles.unFavIcon} color={Colors().secondry_text_color} />
-                                            </TouchableOpacity>
-                                    <View style={{ flexDirection: 'row', marginHorizontal: wp('1%') }}>
-                                        {
-                                            QuantityList.map((item, index) =>
-                                                <TouchableOpacity style={styles.filterBox}>
-
-                                                    <Text style={styles.tagStyle}>
-                                                        {item.name}
-                                                    </Text>
-                                                </TouchableOpacity>
-                                            )
-                                        }
-                                    </View>
-                                    {
-                                        wishlistData && wishlistData.length > 0 && wishlistData.includes(productDetail.id) ?
-                                            <TouchableOpacity style={[GlobalStyles.FavCircle, { left: wp('80%'), top: 8 }]} onPress={() => props.USER_AUTH ? addToWish(productDetail.id) : props.navigation.navigate("LoginScreen")} >
-                                                <FontAwesomeIcon name="heart" style={GlobalStyles.unFavIcon} color={Colors().white} />
-                                            </TouchableOpacity> : <TouchableOpacity style={[GlobalStyles.unFavCircle, { left: wp('80%'), top: 8 }]} onPress={() => props.USER_AUTH ? addToWish(productDetail.id) : props.navigation.navigate("LoginScreen")}>
-                                                <FontAwesomeIcon name="heart-o" style={GlobalStyles.unFavIcon} color={Colors().secondry_text_color} />
-                                            </TouchableOpacity>
-                                    }
-                                </View>
 
                             </View>
 
@@ -548,18 +499,26 @@ function ProductDetailScreen(props) {
                                 Object.keys(productOption).length == 0 && <OtrixDivider size={'md'} />
                             }
 
+
+
+
+
+
+
+
+
+
+
+
+
                             {/* Sizes Container */}
                             {/* <SizeContainerComponent productData={productDetail} /> */}
 
 
                             {/* Description Container*/}
+                            <OtrixDivider size={'md'} />
                             <View style={GlobalStyles.horizontalLine}></View>
                             <OtrixDivider size={'sm'} />
-                            <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
-                                <Text style={[styles.headingTxt, { fontSize: wp('3.8%') }]}>{strings.product_details.description}</Text>
-                                <Text onPress={() => expandView()} style={[styles.headingTxt, { fontSize: wp('5.8%'), marginRight: wp('2%') }]}>{isCollasped ? "-" : "+"}</Text>
-
-                            </View>
                             <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
                                 <Text style={[styles.headingTxt, { fontSize: wp('3.8%') }]}>{strings.product_details.description}</Text>
                                 <Text onPress={() => expandView()} style={[styles.headingTxt, { fontSize: wp('5.8%'), marginRight: wp('2%') }]}>{isCollasped ? "-" : "+"}</Text>
@@ -576,123 +535,41 @@ function ProductDetailScreen(props) {
                                 />
                             </Collapsible>
 
+                            {/* Product Details*/}
                             <View style={GlobalStyles.horizontalLine}></View>
                             <OtrixDivider size={'sm'} />
                             {Object.keys(productAttributes).length > 0 &&
-                            <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
-                                <Text style={[styles.headingTxt, { fontSize: wp('3.8%') }]}>{"Product Details"}</Text>
-                                <Text onPress={() => expandDetailView()} style={[styles.headingTxt, { fontSize: wp('5.8%'), marginRight: wp('2%') }]}>{isProductDetails ? "-" : "+"}</Text>
+                                <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
+                                    <Text style={[styles.headingTxt, { fontSize: wp('3.8%') }]}>{"Product Details"}</Text>
+                                    <Text onPress={() => expandDetailView()} style={[styles.headingTxt, { fontSize: wp('5.8%'), marginRight: wp('2%') }]}>{isProductDetails ? "-" : "+"}</Text>
 
-                            </View>
-}
+                                </View>
+                            }
                             <OtrixDivider size={'sm'} />
                             {
-                                        Object.keys(productAttributes).map((item, index) =>
-                                            <>
-                            <Collapsible style={styles.subItemContainer} collapsed={!isProductDetails} >
-                            {productAttributes[item].map((attribute, attIndex) =>
-                                <View style={{ backgroundColor: 'white', marginVertical: hp('1%'),flexDirection: 'row' }}>
-                                    <View style={{ backgroundColor: Colors().light_gray, marginVertical: hp('1%'),borderColor:Colors().light_gray, borderWidth: 1,flex:0.5,borderBottomLeftRadius:6,borderTopLeftRadius:6,justifyContent:'center',alignItems:'center' }}>
-                                        <Text style={[styles.headingtext, { marginHorizontal: wp('1%'), padding: 2 }]}>{attribute.name}</Text>
-                                    </View>
-                                    <View style={{ backgroundColor:'white', marginVertical: hp('1%'), borderColor:Colors().light_gray, borderWidth: 1,flex:0.5,borderTopRightRadius:6,borderBottomLeftRadius:6 ,justifyContent:'center',alignItems:'center' }}>
-                                        <Text style={[styles.headingtext, { marginHorizontal: wp('1%'), padding: 2 }]}>{attribute.text}</Text>
-                                    </View>
-                                </View>
-                            )}
-                                {/* <View style={{ backgroundColor: 'white', marginVertical: hp('1%'),flexDirection: 'row' }}>
-                                    <View style={{ backgroundColor: Colors().light_gray, marginVertical: hp('1%'),borderColor:Colors().light_gray, borderWidth: 1,flex:0.5,borderBottomLeftRadius:6,borderTopLeftRadius:6,justifyContent:'center',alignItems:'center' }}>
-                                        <Text style={[styles.headingtext, { marginHorizontal: wp('1%'), padding: 2 }]}>{"item"}</Text>
-                                    </View>
-                                    <View style={{ backgroundColor:'white', marginVertical: hp('1%'), borderColor:Colors().light_gray, borderWidth: 1,flex:0.5,borderTopRightRadius:6,borderBottomLeftRadius:6 ,justifyContent:'center',alignItems:'center' }}>
-                                        <Text style={[styles.headingtext, { marginHorizontal: wp('1%'), padding: 2 }]}>{"item"}</Text>
-                                    </View>
-                                </View>
-                                <View style={{ backgroundColor: 'white', marginVertical: hp('1%'),flexDirection: 'row' }}>
-                                    <View style={{ backgroundColor: Colors().light_gray, marginVertical: hp('1%'),borderColor:Colors().light_gray, borderWidth: 1,flex:0.5,borderBottomLeftRadius:6,borderTopLeftRadius:6,justifyContent:'center',alignItems:'center' }}>
-                                        <Text style={[styles.headingtext, { marginHorizontal: wp('1%'), padding: 2 }]}>{"item"}</Text>
-                                    </View>
-                                    <View style={{ backgroundColor:'white', marginVertical: hp('1%'), borderColor:Colors().light_gray, borderWidth: 1,flex:0.5,borderTopRightRadius:6,borderBottomLeftRadius:6 ,justifyContent:'center',alignItems:'center' }}>
-                                        <Text style={[styles.headingtext, { marginHorizontal: wp('1%'), padding: 2 }]}>{"item"}</Text>
-                                    </View>
-                                </View>
-                                <View style={{ backgroundColor: 'white', marginVertical: hp('1%'),flexDirection: 'row' }}>
-                                    <View style={{ backgroundColor: Colors().light_gray, marginVertical: hp('1%'),borderColor:Colors().light_gray, borderWidth: 1,flex:0.5,borderBottomLeftRadius:6,borderTopLeftRadius:6,justifyContent:'center',alignItems:'center' }}>
-                                        <Text style={[styles.headingtext, { marginHorizontal: wp('1%'), padding: 2 }]}>{"item"}</Text>
-                                    </View>
-                                    <View style={{ backgroundColor:'white', marginVertical: hp('1%'), borderColor:Colors().light_gray, borderWidth: 1,flex:0.5,borderTopRightRadius:6,borderBottomLeftRadius:6 ,justifyContent:'center',alignItems:'center' }}>
-                                        <Text style={[styles.headingtext, { marginHorizontal: wp('1%'), padding: 2 }]}>{"item"}</Text>
-                                    </View>
-                                </View>
-                                <View style={{ backgroundColor: 'white', marginVertical: hp('1%'),flexDirection: 'row' }}>
-                                    <View style={{ backgroundColor: Colors().light_gray, marginVertical: hp('1%'),borderColor:Colors().light_gray, borderWidth: 1,flex:0.5,borderBottomLeftRadius:6,borderTopLeftRadius:6,justifyContent:'center',alignItems:'center' }}>
-                                        <Text style={[styles.headingtext, { marginHorizontal: wp('1%'), padding: 2 }]}>{"item"}</Text>
-                                    </View>
-                                    <View style={{ backgroundColor:'white', marginVertical: hp('1%'), borderColor:Colors().light_gray, borderWidth: 1,flex:0.5,borderTopRightRadius:6,borderBottomLeftRadius:6 ,justifyContent:'center',alignItems:'center' }}>
-                                        <Text style={[styles.headingtext, { marginHorizontal: wp('1%'), padding: 2 }]}>{"item"}</Text>
-                                    </View>
-                                </View>
-                                <View style={{ backgroundColor: 'white', marginVertical: hp('1%'),flexDirection: 'row' }}>
-                                    <View style={{ backgroundColor: Colors().light_gray, marginVertical: hp('1%'),borderColor:Colors().light_gray, borderWidth: 1,flex:0.5,borderBottomLeftRadius:6,borderTopLeftRadius:6,justifyContent:'center',alignItems:'center' }}>
-                                        <Text style={[styles.headingtext, { marginHorizontal: wp('1%'), padding: 2 }]}>{"item"}</Text>
-                                    </View>
-                                    <View style={{ backgroundColor:'white', marginVertical: hp('1%'), borderColor:Colors().light_gray, borderWidth: 1,flex:0.5,borderTopRightRadius:6,borderBottomLeftRadius:6 ,justifyContent:'center',alignItems:'center' }}>
-                                        <Text style={[styles.headingtext, { marginHorizontal: wp('1%'), padding: 2 }]}>{"item"}</Text>
-                                    </View>
-                                </View>
-                                <View style={{ backgroundColor: 'white', marginVertical: hp('1%'),flexDirection: 'row' }}>
-                                    <View style={{ backgroundColor: Colors().light_gray, marginVertical: hp('1%'),borderColor:Colors().light_gray, borderWidth: 1,flex:0.5,borderBottomLeftRadius:6,borderTopLeftRadius:6,justifyContent:'center',alignItems:'center' }}>
-                                        <Text style={[styles.headingtext, { marginHorizontal: wp('1%'), padding: 2 }]}>{"item"}</Text>
-                                    </View>
-                                    <View style={{ backgroundColor:'white', marginVertical: hp('1%'), borderColor:Colors().light_gray, borderWidth: 1,flex:0.5,borderTopRightRadius:6,borderBottomLeftRadius:6 ,justifyContent:'center',alignItems:'center' }}>
-                                        <Text style={[styles.headingtext, { marginHorizontal: wp('1%'), padding: 2 }]}>{"item"}</Text>
-                                    </View>
-                                </View>
-                                <View style={{ backgroundColor: 'white', marginVertical: hp('1%'),flexDirection: 'row' }}>
-                                    <View style={{ backgroundColor: Colors().light_gray, marginVertical: hp('1%'),borderColor:Colors().light_gray, borderWidth: 1,flex:0.5,borderBottomLeftRadius:6,borderTopLeftRadius:6,justifyContent:'center',alignItems:'center' }}>
-                                        <Text style={[styles.headingtext, { marginHorizontal: wp('1%'), padding: 2 }]}>{"item"}</Text>
-                                    </View>
-                                    <View style={{ backgroundColor:'white', marginVertical: hp('1%'), borderColor:Colors().light_gray, borderWidth: 1,flex:0.5,borderTopRightRadius:6,borderBottomLeftRadius:6 ,justifyContent:'center',alignItems:'center' }}>
-                                        <Text style={[styles.headingtext, { marginHorizontal: wp('1%'), padding: 2 }]}>{"item"}</Text>
-                                    </View>
-                                </View> */}
-                            </Collapsible>
-
-    </>
-
-                                        )
-                                    }
-                            {/* <Text style={styles.description}>{productDescription.description}</Text> */}
-
-                             {/* {Object.keys(productAttributes).length > 0 &&
-                                <View>
-                                    <OtrixDivider size={'md'} />
-                                    <View style={GlobalStyles.horizontalLine}></View>
-                                    <OtrixDivider size={'sm'} />
-                                    <Text style={[styles.headingTxt, { fontSize: wp('3.8%') }]}>{strings.product_details.specification}</Text>
-                                    <OtrixDivider size={'sm'} />
-
-
-                                    {
-                                        Object.keys(productAttributes).map((item, index) =>
-                                            <>
-                                                <View style={{ backgroundColor: Colors().light_gray, marginVertical: hp('1%') }}>
-                                                    <Text style={[styles.headingtext, { marginHorizontal: wp('1%'), padding: 2 }]}>{item}</Text>
-                                                </View>
-                                                {productAttributes[item].map((attribute, attIndex) =>
-                                                    <View style={[styles.attributeView, {}]}>
-                                                        <Text style={[styles.attributeTitle, { color: 'rgba(0, 0, 0, 0.70)' }]}>{attribute.name}</Text>
-                                                        <Text style={[styles.attributeInfo, { color: 'rgba(0, 0, 0, 0.70)' }]}>{attribute.text}</Text>
+                                Object.keys(productAttributes).map((item, index) =>
+                                    <>
+                                        <Collapsible style={styles.subItemContainer} collapsed={!isProductDetails} >
+                                            {productAttributes[item].map((attribute, attIndex) =>
+                                                <View style={{ backgroundColor: 'white', flexDirection: 'row' }}>
+                                                    <View style={{ backgroundColor: '#F7F7F8', borderColor: Colors().light_gray, borderWidth: 1, flex: 0.5, justifyContent: 'center', alignItems: 'center' }}>
+                                                        <Text style={[styles.headingtext, { marginHorizontal: wp('1%'), padding: 6 }]}>{attribute.name}</Text>
                                                     </View>
-                                                )}
-                                            </>
+                                                    <View style={{ backgroundColor: 'white', borderColor: Colors().light_gray, borderWidth: 1, flex: 0.5, justifyContent: 'center', alignItems: 'center' }}>
+                                                        <Text style={[styles.headingtext, { marginHorizontal: wp('1%'), padding: 6 }]}>{attribute.text}</Text>
+                                                    </View>
+                                                </View>
+                                            )}
 
-                                        )
-                                    }
-                                </View>
-                            }  */}
+                                        </Collapsible>
 
-                            <OtrixDivider size={'md'} />
+                                    </>
+
+                                )
+                            }
+
+
+                            <OtrixDivider size={'sm'} />
                             <View style={GlobalStyles.horizontalLine}></View>
 
                             {/* Rating Container*/}
@@ -704,63 +581,64 @@ function ProductDetailScreen(props) {
 
                             }
 
-                        </ScrollView>
-                    </OtrixContent>
 
-                    {/* Zoom image */}
-                    <Modal visible={showZoom}
-                        transparent={true}>
-                        <ImageViewer imageUrls={zoomImages}
-                            saveToLocalByLongPress={false}
-                            backgroundColor={Colors().light_white}
-                            renderIndicator={
-                                (currentIndex, allSize) => {
-                                    return (
-                                        <View style={styles.pageindexview}>
-                                            <TouchableOpacity onPress={() => setState({ ...state, showZoom: false })} style={{ padding: 8 }}>
-                                                <Image square source={close} style={styles.cancleIcon} />
-                                            </TouchableOpacity>
-                                            <Text style={styles.pageindextext}>{currentIndex} / {allSize}</Text>
-                                        </View>
-                                    );
+                        </OtrixContent>
+
+                        {/* Zoom image */}
+                        <Modal visible={showZoom}
+                            transparent={true}>
+                            <ImageViewer imageUrls={zoomImages}
+                                saveToLocalByLongPress={false}
+                                backgroundColor={Colors().light_white}
+                                renderIndicator={
+                                    (currentIndex, allSize) => {
+                                        return (
+                                            <View style={styles.pageindexview}>
+                                                <TouchableOpacity onPress={() => setState({ ...state, showZoom: false })} style={{ padding: 8 }}>
+                                                    <Image square source={close} style={styles.cancleIcon} />
+                                                </TouchableOpacity>
+                                                <Text style={styles.pageindextext}>{currentIndex} / {allSize}</Text>
+                                            </View>
+                                        );
+                                    }
                                 }
-                            }
-                        />
-                    </Modal>
+                            />
+                        </Modal>
 
-                    {/* Bottom View */}
-                    <View style={styles.footerView}>
-                        <Button
-                            isLoading={fetchCart}
-                            size="md"
-                            variant="solid"
-                            bg={Colors().themeColor}
-                            style={[GlobalStyles.button, { flex: 0.70, marginHorizontal: wp('2%') }]}
-                            onPress={() => !productDetail.out_of_stock ? _addToCart() : showOutofStock()}
-                        >
+                        {/* Bottom View */}
+                        <View style={styles.footerView}>
+                            <Button
+                                isLoading={fetchCart}
+                                size="md"
+                                variant="solid"
+                                bg={Colors().themeColor}
+                                style={[GlobalStyles.button, { flex: 0.70, marginHorizontal: wp('2%') }]}
+                                onPress={() => !productDetail.out_of_stock ? _addToCart() : showOutofStock()}
+                            >
 
-                            <Text style={GlobalStyles.buttonText}>{strings.product_details.add_to_cart}</Text>
+                                <Text style={GlobalStyles.buttonText}>{strings.product_details.add_to_cart}</Text>
 
-                        </Button>
-                        <View style={styles.countBox}>
-                            <Text style={styles.countTxt}>{productCount}</Text>
-                            <View style={styles.arrowContainer}>
-                                <TouchableOpacity style={{ flex: 0.50 }} onPress={() => setState({ ...state, productCount: productCount + 1 })}>
-                                    <MaterialIconsIcon name="keyboard-arrow-up" style={styles.plusminusArrow} />
-                                </TouchableOpacity>
-                                <TouchableOpacity style={{ flex: 0.50 }} onPress={() => setState({ ...state, productCount: productCount > 1 ? productCount - 1 : 1 })}>
-                                    <MaterialIconsIcon name="keyboard-arrow-down" style={styles.plusminusArrow} />
-                                </TouchableOpacity>
+                            </Button>
+                            <View style={styles.countBox}>
+                                <Text style={styles.countTxt}>{productCount}</Text>
+                                <View style={styles.arrowContainer}>
+                                    <TouchableOpacity style={{ flex: 0.50 }} onPress={() => setState({ ...state, productCount: productCount + 1 })}>
+                                        <MaterialIconsIcon name="keyboard-arrow-up" style={styles.plusminusArrow} />
+                                    </TouchableOpacity>
+                                    <TouchableOpacity style={{ flex: 0.50 }} onPress={() => setState({ ...state, productCount: productCount > 1 ? productCount - 1 : 1 })}>
+                                        <MaterialIconsIcon name="keyboard-arrow-down" style={styles.plusminusArrow} />
+                                    </TouchableOpacity>
+                                </View>
                             </View>
                         </View>
-                    </View>
 
-                </>
-            }
+                    </>
+                }
 
-            {
-                message != null && <OtrixAlert type={type} message={message} />
-            }
+                {
+                    message != null && <OtrixAlert type={type} message={message} />
+                }
+            </ScrollView>
         </OtrixContainer >
     )
 }
@@ -787,9 +665,9 @@ const styles = StyleSheet.create({
     productDetailView: {
         backgroundColor: Colors().white,
         marginHorizontal: 0,
-        borderTopRightRadius: wp('13%'),
-        borderTopLeftRadius: wp('13%'),
-        marginTop: wp('6.33%')
+        borderTopRightRadius: wp('0%'),
+        borderTopLeftRadius: wp('0%'),
+        marginTop: wp('1.33%')
     },
     container: {
         height: hp('35%'),
@@ -820,6 +698,13 @@ const styles = StyleSheet.create({
 
     },
     colorContainer: {
+        alignItems: 'flex-start',
+        flexDirection: 'column',
+        justifyContent: 'flex-start',
+
+    },
+
+    componentContainer: {
         alignItems: 'flex-start',
         flexDirection: 'row',
         justifyContent: 'flex-start',
@@ -863,21 +748,28 @@ const styles = StyleSheet.create({
         fontSize: wp('3.5%'), textAlign: 'center', textAlignVertical: 'center', color: Colors().text_color
     },
     heartIconView: {
-        //flex:1,
-        //justifyContent: 'center',
-        //alignItems: 'center',
-        width: wp('100%'),
+        flex: 0.15,
+        justifyContent: 'center',
+        alignItems: 'center',
         flexDirection: 'row',
         backgroundColor: '#FFFFFF',
         justifyContent: 'space-between'
 
+
+        // width: wp('100%'),
+        // flexDirection: 'row',
+        // backgroundColor: '#FFFFFF',
+        // justifyContent: 'space-between'
+
     },
     headingTxt: {
+
         fontSize: wp('4.5%'),
-        fontFamily: Fonts.Font_Bold,
+        fontFamily: Fonts.Font_Reguler,
         textAlignVertical: 'center',
         //flex: 0.80
     },
+
     filterBox: {
         paddingHorizontal: wp('3.2%'),
         paddingVertical: hp('1.2%'),
@@ -892,10 +784,19 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     subContainer: {
+        margin: 3,
         flexDirection: 'row',
+        justifyContent: 'space-between'
+    },
+
+    titleTxt: {
+        flex: 0.75,
+        fontSize: wp('4.5%'),
+        fontFamily: Fonts.Font_Reguler,
+        textAlignVertical: 'center',
     },
     stock: {
-        flex: 0.20,
+        flex: 0.25,
         fontSize: wp('3%'),
         textAlignVertical: 'center',
         fontFamily: Fonts.Font_Semibold,
@@ -961,7 +862,8 @@ const styles = StyleSheet.create({
         shadowRadius: 3,
         elevation: 6,
         borderRadius: 5,
-        justifyContent: 'center'
+        justifyContent: 'center',
+        alignItems: 'center'
     },
     countTxt: {
         fontSize: wp('4.5%'),
@@ -992,8 +894,8 @@ const styles = StyleSheet.create({
         flexDirection: 'row'
     },
     sizeBox: {
-        height: hp('3%'),
-        width: wp('12.5%'),
+        height: hp('4%'),
+        width: wp('16.5%'),
         marginHorizontal: wp('1.4%'),
         backgroundColor: Colors().light_white,
     },
@@ -1071,3 +973,4 @@ const styles = StyleSheet.create({
         textAlign: 'left'
     },
 });
+

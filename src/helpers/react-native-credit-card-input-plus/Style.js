@@ -1,5 +1,5 @@
-'use strict'
-import {StyleSheet} from 'react-native'
+"use strict";
+import { StyleSheet } from "react-native";
 
 export default StyleSheet.create({
   flipCard: {
@@ -7,10 +7,10 @@ export default StyleSheet.create({
   },
 
   face: {
-    flex: 1
+    flex: 1,
   },
 
   back: {
-    flex: 1
-  }
-})
+    flex: 1,
+  },
+});

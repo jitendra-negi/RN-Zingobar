@@ -1,9 +1,5 @@
-import HomeSkeleton from './HomeSkeleton.js';
-import ProductListSkeleton from './ProductListSkeleton.js';
-import CategorySkeleton from './CategorySkeleton.js';
+import HomeSkeleton from "./HomeSkeleton.js";
+import ProductListSkeleton from "./ProductListSkeleton.js";
+import CategorySkeleton from "./CategorySkeleton.js";
 
-export {
-    HomeSkeleton,
-    ProductListSkeleton,
-    CategorySkeleton
-}
+export { HomeSkeleton, ProductListSkeleton, CategorySkeleton };

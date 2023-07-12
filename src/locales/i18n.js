@@ -1,8 +1,8 @@
 // import I18n from 'react-native-i18n';
 
 // Import all locales
-import en from './en.json';
-import ar from './ar.json';
+import en from "./en.json";
+import ar from "./ar.json";
 
 // Should the app fallback to English if user locale doesn't exists
 // I18n.fallbacks = true;
@@ -25,8 +25,8 @@ import ar from './ar.json';
 // The method we'll use instead of a regular string
 
 const i18n = {
-  "en": en,
-  "ar": ar
+  en: en,
+  ar: ar,
 };
 
 //Set State is must to rerender UI for the change layout redux can also be used similarly
@@ -35,17 +35,16 @@ export function changeLanguage(lang) {
   return {
     type: "CHANGE_LANGUAGE",
     payload: {
-      LANG_DATA: i18n[lang]
-    }
+      LANG_DATA: i18n[lang],
+    },
   };
-};
-[]
+}
+[];
 export function getLanguage() {
   return {
     type: "GET_LANGUAGE",
     payload: {
-      LANG_DATA: i18n
-    }
+      LANG_DATA: i18n,
+    },
   };
-};
-
+}

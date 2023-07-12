@@ -23,6 +23,7 @@
     "title": "Filter",
     "clear_all": "Clear All",
     "price": "Price",
+    "sort": "Sort By",
     "price_range": "Price Range",
     "rating": "Rating",
     "apply_filter": "Apply Filter"
@@ -36,7 +37,7 @@
   },
   "registration": {
     "title": "Register Account",
-    "subtitle": "Create account to continue shopping with Zingobar",
+    "subtitle": "Create account to continue shopping",
     "button_register": "Register Now",
     "label_login_info": "Already have an Account?",
     "button_login": "Sign In"

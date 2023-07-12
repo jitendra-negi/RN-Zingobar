@@ -1,30 +1,26 @@
-import React from 'react';
-import { View, ScrollView, StyleSheet, Text } from 'react-native';
-
- 
+import React from "react";
+import { View, ScrollView, StyleSheet, Text } from "react-native";
 
 const StickyHeaderExample = () => {
   return (
-<View style={styles.container}>
-<ScrollView
+    <View style={styles.container}>
+      <ScrollView
         contentContainerStyle={styles.contentContainer}
         stickyHeaderIndices={[0]} // Index of the sticky header component
->
-<View style={styles.content}>
+      >
+        <View style={styles.content}>
           {/* Your content here */}
-<Text>Scrollable content goes here...</Text>
-</View>
-</ScrollView>
+          <Text>Scrollable content goes here...</Text>
+        </View>
+      </ScrollView>
       {/* Sticky header component */}
-<View style={styles.stickyHeader}>
+      <View style={styles.stickyHeader}>
         {/* Content of the sticky header */}
-<Text style={styles.headerText}>Sticky Header</Text>
-</View>
-</View>
+        <Text style={styles.headerText}>Sticky Header</Text>
+      </View>
+    </View>
   );
 };
-
- 
 
 const styles = StyleSheet.create({
   container: {
@@ -37,18 +33,16 @@ const styles = StyleSheet.create({
     padding: 16,
   },
   stickyHeader: {
-    position: 'sticky',
+    position: "sticky",
     top: 0,
-    backgroundColor: '#FFFFFF',
+    backgroundColor: "#FFFFFF",
     padding: 16,
     elevation: 3,
   },
   headerText: {
     fontSize: 18,
-    fontWeight: 'bold',
+    fontWeight: "bold",
   },
 });
-
- 
 
 export default StickyHeaderExample;

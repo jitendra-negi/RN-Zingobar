@@ -1,3 +1,3 @@
-export * from './validation';
-export * from './Colors';
-export * from './GlobalStyles';
+export * from "./validation";
+export * from "./Colors";
+export * from "./GlobalStyles";
