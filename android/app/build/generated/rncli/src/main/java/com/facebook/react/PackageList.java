@@ -41,6 +41,8 @@ import com.imagepicker.ImagePickerPackage;
 import com.BV.LinearGradient.LinearGradientPackage;
 // react-native-rate
 import com.reactnativerate.RNRatePackage;
+// react-native-razorpay
+import com.razorpay.rn.RazorpayPackage;
 // react-native-reanimated
 import com.swmansion.reanimated.ReanimatedPackage;
 // react-native-restart
@@ -115,6 +117,7 @@ public class PackageList {
       new ImagePickerPackage(),
       new LinearGradientPackage(),
       new RNRatePackage(),
+      new RazorpayPackage(),
       new ReanimatedPackage(),
       new RestartPackage(),
       new SafeAreaContextPackage(),

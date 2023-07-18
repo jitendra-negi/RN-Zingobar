@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.zingobar.app-mergeDebugResources-43:/values-en-rGB/values-en-rGB.xml",
+            "outputFile": "com.zingobar.app-mergeDebugResources-46:/values-en-rGB/values-en-rGB.xml",
             "map": [
                 {
                     "source": "/Users/jitendra/.gradle/caches/transforms-3/a5e7c8d50fe7ab087249bb6821978034/transformed/jetified-facebook-login-8.2.0/res/values-en-rGB/values-en-rGB.xml",
@@ -52,6 +52,23 @@
                         "startOffsets": "5910",
                         "endColumns": "100",
                         "endOffsets": "6006"
+                    }
+                },
+                {
+                    "source": "/Users/jitendra/.gradle/caches/transforms-3/1cce0ddcbfd3b5d5c04acdacaa05167d/transformed/jetified-play-services-wallet-18.1.3/res/values-en-rGB/values.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "206",
+                        "endColumns": "70",
+                        "endOffsets": "276"
+                    },
+                    "to": {
+                        "startLines": "57",
+                        "startColumns": "4",
+                        "startOffsets": "6011",
+                        "endColumns": "74",
+                        "endOffsets": "6081"
                     }
                 },
                 {

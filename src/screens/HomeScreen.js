@@ -33,7 +33,7 @@ import {
 import { Colors, GlobalStyles } from "@helpers";
 import { bindActionCreators } from "redux";
 import { Badge, Avatar } from "native-base";
-import { heart, offerBanner, avatarImg, avatarImg2, menu,menu2 } from "@common";
+import { heart, offerBanner, avatarImg, avatarImg2, menu, menu2 } from "@common";
 import Fonts from "@helpers/Fonts";
 import { _roundDimensions } from "@helpers/util";
 import { _addToWishlist, logfunction } from "@helpers/FunctionHelper";
@@ -365,11 +365,11 @@ function HomeScreen(props) {
 
             {/* HomeManufacturerView Component */}
 
-            <HomeManufacturerView
+            {/* <HomeManufacturerView
               strings={strings}
               navigation={props.navigation}
               data={homePageData.manufacturers}
-            />
+            /> */}
 
             {/* BestDeal Component */}
 
@@ -458,7 +458,7 @@ const styles = StyleSheet.create({
     width: wp("6.5%"),
     height: hp("6.5%"),
     resizeMode: "contain",
-   // tintColor: Colors().custom_pink,
+    // tintColor: Colors().custom_pink,
   },
 
   headerCenter: {

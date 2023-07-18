@@ -64,6 +64,7 @@ export const AppFeatures = {
   enableSettingScreen: true,
   enableSearchScreen: true,
   enableWishListScreen: true,
+  enableCheckoutScreen: true,
   // Add more feature options as needed
 };
 

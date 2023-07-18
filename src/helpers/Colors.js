@@ -26,6 +26,7 @@ export function Colors() {
   // }
 
   return {
+    themeBlue: "#1E508F",
     lightGray: lightGray,
     light_white: lightWhite,
     custom_gray: "rgb(182,182,182)",

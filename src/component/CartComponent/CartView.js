@@ -22,12 +22,12 @@ function CartView(props) {
 
   return (
     <>
-      <OtrixDivider size={"md"} />
+
       {cartProduct.length > 0 &&
         cartProduct.map((data) => (
           <View style={styles.cartContent} key={data.cart_id}>
             <View style={styles.cartBox}>
-              <View style={styles.imageView}>
+              {/* <View style={styles.imageView}>
                 <FastImage
                   style={styles.image}
                   source={{
@@ -38,7 +38,7 @@ function CartView(props) {
                   }}
                   resizeMode={FastImage.resizeMode.contain}
                 />
-              </View>
+              </View> */}
               <View style={styles.infromationView}>
                 <TouchableOpacity
                   style={{ padding: 4 }}
@@ -55,7 +55,7 @@ function CartView(props) {
                   {data.special > 0 ? data.special : data.price}{" "}
                 </Text>
               </View>
-              <View style={{ justifyContent: "center", alignItems: "center" }}>
+              <View style={{ justifyContent: "center", alignItems: "flex-end" }}>
                 <TouchableOpacity
                   style={styles.deleteIcon}
                   onPress={() => props.deleteItem(data.cart_id)}
@@ -95,24 +95,25 @@ const styles = StyleSheet.create({
   cartContent: {
     flex: 1,
     flexDirection: "row",
-    backgroundColor: Colors().white,
+    backgroundColor: "#F7F7F8",
     justifyContent: "center",
     shadowColor: "grey",
-    shadowOffset: { width: 0, height: 0.4 },
-    shadowOpacity: 0.3,
-    shadowRadius: 3,
-    elevation: 6,
-    marginBottom: wp("3%"),
-    borderRadius: wp("2%"),
-    marginLeft: wp("1.5%"),
+    shadowOffset: { width: 0, height: 0.0 },
+    shadowOpacity: 0.1,
+    shadowRadius: 0,
+    elevation: 0,
+    marginBottom: wp("2%"),
+    borderRadius: wp("1%"),
+    marginLeft: wp("0%"),
   },
   cartBox: {
+
     flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
-    height: hp("14%"),
+    height: hp("11.5%"),
     width: wp("100%"),
-    flex: 0.9,
+    flex: 1,
   },
   imageView: {
     flex: 0.3,
@@ -130,14 +131,14 @@ const styles = StyleSheet.create({
     width: wp("21.5%"),
   },
   infromationView: {
-    flex: 0.7,
-    marginBottom: hp("1.4%"),
+    // backgroundColor: 'yellow',
+    flex: 0.9,
     justifyContent: "center",
     alignItems: "flex-start",
   },
   name: {
-    textAlign: "center",
-    color: Colors().secondry_text_color,
+    textAlign: "auto",
+    color: "#3B3B3B",
     fontSize: wp("3.8%"),
     fontFamily: Fonts.Font_Bold,
   },
@@ -145,21 +146,22 @@ const styles = StyleSheet.create({
     textAlign: "center",
     color: Colors().link_color,
     lineHeight: hp("4%"),
-    fontSize: wp("5%"),
+    fontSize: wp("4.3%"),
     fontFamily: Fonts.Font_Bold,
   },
   plusminus: {
+
     justifyContent: "center",
     alignItems: "center",
     flexDirection: "row",
     marginTop: hp("2%"),
-    height: wp("8%"),
+    height: wp("7%"),
     backgroundColor: Colors().secondaryColor,
-    borderRadius: 6,
+    borderRadius: 4,
     marginLeft: wp("10%"),
   },
   plusminusTxt: {
-    fontSize: wp("3%"),
+    fontSize: wp("2.5%"),
     color: Colors().white,
     textAlign: "center",
     padding: 2,
@@ -168,11 +170,11 @@ const styles = StyleSheet.create({
     fontSize: wp("4%"),
     color: Colors().white,
     // marginHorizontal: wp('1%'),
-    fontFamily: Fonts.Font_Bold,
+    fontFamily: Fonts.Font_Regular,
     textAlign: "center",
   },
   deleteIcon: {
-    marginLeft: wp("5%"),
+    marginRight: wp("1%"),
     justifyContent: "center",
     alignItems: "center",
     marginTop: wp("1%"),

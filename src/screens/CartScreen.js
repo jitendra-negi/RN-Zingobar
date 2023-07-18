@@ -25,6 +25,10 @@ import Icon from "react-native-vector-icons/Ionicons";
 import Fonts from "@helpers/Fonts";
 import getApi from "@apis/getApi";
 import { logfunction, numberWithComma } from "@helpers/FunctionHelper";
+import {
+  AppFeatures
+} from "@common/config";
+
 
 function CheckoutScreen(props) {
   const [state, setState] = React.useState({
@@ -263,16 +267,16 @@ function CheckoutScreen(props) {
     <OtrixContainer customStyles={{ backgroundColor: Colors().light_white }}>
       {/* Header */}
       <OtrixHeader customStyles={{ backgroundColor: Colors().light_white }}>
-       
+
         <TouchableOpacity
           style={GlobalStyles.headerLeft}
           onPress={() => props.navigation.goBack()}
         >
           <OtirxBackButton />
         </TouchableOpacity>
-       
+
         <View style={[GlobalStyles.headerCenter, { flex: 1 }]}>
-          <Text style={GlobalStyles.headingTxt}> {strings.cart.title}</Text>
+          <Text style={GlobalStyles.headingTxtWithBack}> {strings.cart.title}</Text>
         </View>
       </OtrixHeader>
 
@@ -402,7 +406,7 @@ function CheckoutScreen(props) {
             <Text
               style={[
                 styles.rightTxt,
-                { color: Colors().link_color, fontSize: wp("5.5%") },
+                { color: Colors().link_color, fontSize: wp("4.2%") },
               ]}
             >
               {CURRENCY}
@@ -421,7 +425,11 @@ function CheckoutScreen(props) {
                 marginTop: hp("1%"),
               },
             ]}
-            onPress={() => props.navigation.navigate("CheckoutScreen")}
+            onPress={() => {
+              if (AppFeatures.enableCheckoutScreen) {
+                props.navigation.navigate("CheckoutScreen");
+              }
+            }}
           >
             <Text style={GlobalStyles.buttonText}>{strings.cart.checkout}</Text>
           </Button>
@@ -491,15 +499,15 @@ const styles = StyleSheet.create({
   },
   leftTxt: {
     color: Colors().secondry_text_color,
-    fontFamily: Fonts.Font_Bold,
+    fontFamily: Fonts.Font_Semibold,
     flex: 0.5,
     fontSize: wp("3.8%"),
     textAlign: "left",
   },
   rightTxt: {
     color: Colors().text_color,
-    fontFamily: Fonts.Font_Bold,
-    fontSize: wp("4.5%"),
+    fontFamily: Fonts.Font_Regular,
+    fontSize: wp("4.2%"),
     flex: 0.5,
     textAlign: "right",
   },

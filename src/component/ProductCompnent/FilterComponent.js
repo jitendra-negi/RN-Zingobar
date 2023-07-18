@@ -358,10 +358,10 @@ const styles = StyleSheet.create({
     marginRight: wp("2%"),
   },
   clearTxt: {
-    color: Colors().link_color,
+    color: Colors().secondaryColor,
     textTransform: "uppercase",
     fontSize: wp("3%"),
-    fontFamily: Fonts.Font_Reguler,
+    fontFamily: Fonts.Font_Semibold,
   },
   horiLine: {
     width: wp("90%"),

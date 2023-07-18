@@ -73,10 +73,10 @@ function SettingScreen(props) {
       {/* Header */}
       <OtrixHeader customStyles={{ backgroundColor: Colors().light_white }}>
         <TouchableOpacity style={GlobalStyles.headerLeft} onPress={() => props.navigation.goBack()}>
-                    <OtirxBackButton />
-                </TouchableOpacity>
+          <OtirxBackButton />
+        </TouchableOpacity>
         <View style={[GlobalStyles.headerCenter, { flex: 1 }]}>
-          <Text style={GlobalStyles.headingTxt}> {strings.setting.title} </Text>
+          <Text style={GlobalStyles.headingTxtWithBack}> {strings.setting.title} </Text>
         </View>
       </OtrixHeader>
 

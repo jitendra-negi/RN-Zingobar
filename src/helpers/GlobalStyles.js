@@ -132,15 +132,22 @@ export const GlobalStyles = StyleSheet.create({
   },
   headerCenter: {
     flex: 0.8,
-    marginLeft: wp("5%"),
     justifyContent: "center",
-    alignItems: "flex-start",
+    alignItems: "center",
   },
+
   headingTxt: {
     fontFamily: Fonts.Font_Bold,
     fontSize: wp("5.5%"),
     color: Colors().text_color,
   },
+  headingTxtWithBack: {
+    marginLeft: -45,
+    fontFamily: Fonts.Font_Bold,
+    fontSize: wp("5.5%"),
+    color: Colors().text_color,
+  },
+
   headerRight: {
     flex: 0.1,
     justifyContent: "center",
@@ -274,7 +281,7 @@ export const GlobalStyles = StyleSheet.create({
     fontSize: Platform.isPad === true ? wp("3.5%") : wp("3.2%"),
     color: Colors().secondry_text_color,
     padding: 5,
-   // borderColor: Colors().white
+    // borderColor: Colors().white
   },
   textAreaInputStyle: {
     height: wp("20%"),

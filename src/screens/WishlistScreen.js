@@ -42,7 +42,7 @@ function WishlistScreen(props) {
       wishlistGetData();
     }, []),
 
-);
+  );
 
   const wishlistGetData = () => {
     getApi.getData("user/getWishlist", []).then((response) => {
@@ -71,7 +71,7 @@ function WishlistScreen(props) {
     });
     let wishlistData = await _addToWishlist(id);
     props.addToWishList(wishlistData, id);
-   // delay(100);
+    // delay(100);
     wishlistGetData();
   };
 

@@ -108,7 +108,7 @@ function OrderDetailScreen(props) {
       sendData.append("text", name);
       sendData.append("rating", star);
       sendData.append("product_id", productID);
-
+      logfunction("Rate ", star + " " + name);
       setState({
         ...state,
         loading: true,
@@ -574,26 +574,26 @@ function OrderDetailScreen(props) {
                 <Stars
                   default={0}
                   count={5}
-                  half={true}
+                  half={false}
                   starSize={60}
                   fullStar={
                     <FontAwesomeIcon
                       name={"star"}
-                      size={wp("3.5%")}
+                      size={wp("6%")}
                       style={[styles.myStarStyle]}
                     />
                   }
                   emptyStar={
                     <FontAwesomeIcon
                       name={"star-o"}
-                      size={wp("3.5%")}
+                      size={wp("6%")}
                       style={[styles.myStarStyle, styles.myEmptyStarStyle]}
                     />
                   }
                   halfStar={
                     <FontAwesomeIcon
                       name={"star-half-empty"}
-                      size={wp("3.5%")}
+                      size={wp("6%")}
                       style={[styles.myStarStyle]}
                     />
                   }

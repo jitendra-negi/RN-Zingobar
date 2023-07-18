@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.zingobar.app-mergeDebugResources-43:/values-tr/values-tr.xml",
+            "outputFile": "com.zingobar.app-mergeDebugResources-46:/values-tr/values-tr.xml",
             "map": [
                 {
                     "source": "/Users/jitendra/.gradle/caches/transforms-3/47b0a75a35b9d53b43a810f4bc8a2582/transformed/jetified-play-services-basement-18.1.0/res/values-tr/values.xml",
@@ -52,6 +52,23 @@
                         "startOffsets": "2797,2959,3096,3232,3345,3430,3516,3594,3682,3774,3887,3997,4090,4183,4290,4410,4492,4575,4752,4848,4957,5073,5176",
                         "endColumns": "161,136,135,112,84,85,77,87,91,112,109,92,92,106,119,81,82,176,95,108,115,102,138",
                         "endOffsets": "2954,3091,3227,3340,3425,3511,3589,3677,3769,3882,3992,4085,4178,4285,4405,4487,4570,4747,4843,4952,5068,5171,5310"
+                    }
+                },
+                {
+                    "source": "/Users/jitendra/.gradle/caches/transforms-3/1cce0ddcbfd3b5d5c04acdacaa05167d/transformed/jetified-play-services-wallet-18.1.3/res/values-tr/values.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "202",
+                        "endColumns": "74",
+                        "endOffsets": "276"
+                    },
+                    "to": {
+                        "startLines": "76",
+                        "startColumns": "4",
+                        "startOffsets": "8166",
+                        "endColumns": "78",
+                        "endOffsets": "8240"
                     }
                 },
                 {

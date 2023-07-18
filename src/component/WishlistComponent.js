@@ -37,11 +37,13 @@ function WishlistComponent(props) {
 
   return (
     <>
-      <OtrixDivider size={"md"} />
+
       {data.length > 0 &&
         data.map((item) => (
           <View style={styles.cartContent} key={item.id.toString()}>
             <View style={styles.cartBox}>
+
+
               <View style={styles.imageView}>
                 {/* <Image source={item.image} style={styles.image}
                                 ></Image> */}
@@ -86,6 +88,10 @@ function WishlistComponent(props) {
                   </Text>
                 )}
               </View>
+
+
+
+
             </View>
             <TouchableOpacity
               style={styles.deleteIcon}
@@ -104,28 +110,29 @@ const styles = StyleSheet.create({
   cartContent: {
     flex: 1,
     flexDirection: "row",
-    backgroundColor: Colors().white,
+    backgroundColor: "#F7F7F8",
     justifyContent: "center",
     shadowColor: "grey",
-    shadowOffset: { width: 0, height: 0.4 },
-    shadowOpacity: 0.3,
-    shadowRadius: 3,
-    elevation: 6,
-    marginBottom: wp("3%"),
-    borderRadius: wp("2%"),
-    marginLeft: wp("1%"),
+    shadowOffset: { width: 0, height: 0.0 },
+    shadowOpacity: 0.1,
+    shadowRadius: 0,
+    elevation: 0,
+    marginBottom: wp("2%"),
+    borderRadius: wp("1%"),
+    marginLeft: wp("0%"),
   },
   cartBox: {
+    margin: wp("2%"),
     flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
-    height: hp("12%"),
-    flex: 0.9,
+    width: wp("100%"),
+    flex: 1,
   },
   imageView: {
     flex: 0.4,
     backgroundColor: Colors().light_white,
-    height: hp("11%"),
+    height: hp("10%"),
     borderRadius: wp("1.5%"),
   },
   image: {
@@ -133,19 +140,19 @@ const styles = StyleSheet.create({
     alignSelf: "center",
     height: undefined,
     aspectRatio: 1,
-    width: wp("21.5%"),
+    width: wp("20.5%"),
   },
   infromationView: {
-    flex: 0.7,
-    marginBottom: hp("1.4%"),
+    flex: 0.9,
+    // marginBottom: hp("1.4%"),
     marginLeft: wp("5%"),
-    marginTop: hp("1%"),
+    // marginTop: hp("1%"),
     justifyContent: "center",
     alignItems: "flex-start",
   },
   name: {
-    textAlign: "center",
-    color: Colors().secondry_text_color,
+    textAlign: "auto",
+    color: "#3B3B3B",
     fontSize: wp("3.8%"),
     fontFamily: Fonts.Font_Bold,
   },
@@ -153,7 +160,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
     color: Colors().link_color,
     lineHeight: hp("4%"),
-    fontSize: wp("5%"),
+    fontSize: wp("4.3%"),
     fontFamily: Fonts.Font_Bold,
   },
   plusminus: {
@@ -179,7 +186,7 @@ const styles = StyleSheet.create({
     flex: 0.1,
     justifyContent: "flex-end",
     alignItems: "flex-end",
-    marginRight: wp("2%"),
+    margin: wp("4%"),
   },
   delete: {
     fontSize: wp("3.6%"),

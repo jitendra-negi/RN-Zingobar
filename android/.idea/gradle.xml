@@ -39,6 +39,7 @@
             <option value="$PROJECT_DIR$/../node_modules/react-native-image-picker/android" />
             <option value="$PROJECT_DIR$/../node_modules/react-native-linear-gradient/android" />
             <option value="$PROJECT_DIR$/../node_modules/react-native-rate/android" />
+            <option value="$PROJECT_DIR$/../node_modules/react-native-razorpay/android" />
             <option value="$PROJECT_DIR$/../node_modules/react-native-reanimated/android" />
             <option value="$PROJECT_DIR$/../node_modules/react-native-restart/android" />
             <option value="$PROJECT_DIR$/../node_modules/react-native-safe-area-context/android" />

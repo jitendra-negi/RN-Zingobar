@@ -85,7 +85,15 @@ export function navigate(name, params) {
 }
 
 // Empty component as a placeholder
-const EmptyComponent = () => null;
+const EmptyComponent = () => {
+  return (
+    <View style={styles.container}>
+      <Text style={styles.text}>Under development</Text>
+    </View>
+  );
+};
+
+//export default EmptyComponent;
 
 function SettingStackNavigation() {
   if (!AppFeatures.enableSettingScreen) {
@@ -688,5 +696,13 @@ const styles = StyleSheet.create({
   countText: {
     color: Colors().white,
     fontFamily: Fonts.Font_Bold,
+  },
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  text: {
+    textAlign: 'center',
   },
 });

@@ -1,0 +1,306 @@
+[
+    {
+        "merged": "com.zingobar.app-merged_res-47:/mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "com.zingobar.app-main-48:/mipmap-xxxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.zingobar.app-merged_res-47:/drawable-mdpi_src_assets_images_bottomtab_bottom_home_icon.png.flat",
+        "source": "com.zingobar.app-react-42:/drawable-mdpi/src_assets_images_bottomtab_bottom_home_icon.png"
+    },
+    {
+        "merged": "com.zingobar.app-merged_res-47:/drawable-mdpi_src_helpers_reactnativecreditcardinputplus_src_icons_stp_card_discover.png.flat",
+        "source": "com.zingobar.app-react-42:/drawable-mdpi/src_helpers_reactnativecreditcardinputplus_src_icons_stp_card_discover.png"
+    },
+    {
+        "merged": "com.zingobar.app-merged_res-47:/drawable-mdpi_src_assets_images_check.png.flat",
+        "source": "com.zingobar.app-react-42:/drawable-mdpi/src_assets_images_check.png"
+    },
+    {
+        "merged": "com.zingobar.app-merged_res-47:/mipmap-ldpi_ic_launcher.png.flat",
+        "source": "com.zingobar.app-main-48:/mipmap-ldpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.zingobar.app-merged_res-47:/drawable_playstore_icon.png.flat",
+        "source": "com.zingobar.app-main-48:/drawable/playstore_icon.png"
+    },
+    {
+        "merged": "com.zingobar.app-merged_res-47:/drawable-mdpi_node_modules_reactnativestars_exampleimages_starfilled.png.flat",
+        "source": "com.zingobar.app-react-42:/drawable-mdpi/node_modules_reactnativestars_exampleimages_starfilled.png"
+    },
+    {
+        "merged": "com.zingobar.app-merged_res-47:/drawable-mdpi_src_assets_images_man.jpg.flat",
+        "source": "com.zingobar.app-react-42:/drawable-mdpi/src_assets_images_man.jpg"
+    },
+    {
+        "merged": "com.zingobar.app-merged_res-47:/drawable-mdpi_src_assets_images_bottomtab_bottom_profile_fill.png.flat",
+        "source": "com.zingobar.app-react-42:/drawable-mdpi/src_assets_images_bottomtab_bottom_profile_fill.png"
+    },
+    {
+        "merged": "com.zingobar.app-merged_res-47:/drawable_ic_launcher_web.png.flat",
+        "source": "com.zingobar.app-main-48:/drawable/ic_launcher_web.png"
+    },
+    {
+        "merged": "com.zingobar.app-merged_res-47:/drawable-xxxhdpi_node_modules_reactnavigation_elements_src_assets_backicon.png.flat",
+        "source": "com.zingobar.app-react-42:/drawable-xxxhdpi/node_modules_reactnavigation_elements_src_assets_backicon.png"
+    },
+    {
+        "merged": "com.zingobar.app-merged_res-47:/drawable-mdpi_src_assets_images_cancel.png.flat",
+        "source": "com.zingobar.app-react-42:/drawable-mdpi/src_assets_images_cancel.png"
+    },
+    {
+        "merged": "com.zingobar.app-merged_res-47:/mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "com.zingobar.app-main-48:/mipmap-xhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.zingobar.app-merged_res-47:/drawable-mdpi_src_assets_images_heart.png.flat",
+        "source": "com.zingobar.app-react-42:/drawable-mdpi/src_assets_images_heart.png"
+    },
+    {
+        "merged": "com.zingobar.app-merged_res-47:/mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "com.zingobar.app-main-48:/mipmap-xxhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.zingobar.app-merged_res-47:/drawable-mdpi_src_assets_images_splash_logo.png.flat",
+        "source": "com.zingobar.app-react-42:/drawable-mdpi/src_assets_images_splash_logo.png"
+    },
+    {
+        "merged": "com.zingobar.app-merged_res-47:/drawable-mdpi_src_assets_images_check2.png.flat",
+        "source": "com.zingobar.app-react-42:/drawable-mdpi/src_assets_images_check2.png"
+    },
+    {
+        "merged": "com.zingobar.app-merged_res-47:/drawable-mdpi_src_assets_images_banner2.jpg.flat",
+        "source": "com.zingobar.app-react-42:/drawable-mdpi/src_assets_images_banner2.jpg"
+    },
+    {
+        "merged": "com.zingobar.app-merged_res-47:/drawable-mdpi_src_helpers_reactnativecreditcardinputplus_src_icons_stp_card_jcb.png.flat",
+        "source": "com.zingobar.app-react-42:/drawable-mdpi/src_helpers_reactnativecreditcardinputplus_src_icons_stp_card_jcb.png"
+    },
+    {
+        "merged": "com.zingobar.app-merged_res-47:/drawable-mdpi_src_assets_images_twitter.jpg.flat",
+        "source": "com.zingobar.app-react-42:/drawable-mdpi/src_assets_images_twitter.jpg"
+    },
+    {
+        "merged": "com.zingobar.app-merged_res-47:/mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "com.zingobar.app-main-48:/mipmap-hdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.zingobar.app-merged_res-47:/drawable-mdpi_node_modules_reactnativestars_exampleimages_starempty.png.flat",
+        "source": "com.zingobar.app-react-42:/drawable-mdpi/node_modules_reactnativestars_exampleimages_starempty.png"
+    },
+    {
+        "merged": "com.zingobar.app-merged_res-47:/drawable-mdpi_src_helpers_reactnativecreditcardinputplus_src_icons_stp_card_diners.png.flat",
+        "source": "com.zingobar.app-react-42:/drawable-mdpi/src_helpers_reactnativecreditcardinputplus_src_icons_stp_card_diners.png"
+    },
+    {
+        "merged": "com.zingobar.app-merged_res-47:/drawable-mdpi_src_assets_images_congratulation.png.flat",
+        "source": "com.zingobar.app-react-42:/drawable-mdpi/src_assets_images_congratulation.png"
+    },
+    {
+        "merged": "com.zingobar.app-merged_res-47:/drawable-mdpi_src_assets_images_menu.png.flat",
+        "source": "com.zingobar.app-react-42:/drawable-mdpi/src_assets_images_menu.png"
+    },
+    {
+        "merged": "com.zingobar.app-merged_res-47:/drawable-mdpi_src_assets_images_user.png.flat",
+        "source": "com.zingobar.app-react-42:/drawable-mdpi/src_assets_images_user.png"
+    },
+    {
+        "merged": "com.zingobar.app-merged_res-47:/drawable-mdpi_src_helpers_reactnativecreditcardinputplus_src_icons_stp_card_cvc_amex.png.flat",
+        "source": "com.zingobar.app-react-42:/drawable-mdpi/src_helpers_reactnativecreditcardinputplus_src_icons_stp_card_cvc_amex.png"
+    },
+    {
+        "merged": "com.zingobar.app-merged_res-47:/mipmap-xxhdpi_ic_launcher_foreground.png.flat",
+        "source": "com.zingobar.app-main-48:/mipmap-xxhdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "com.zingobar.app-merged_res-47:/drawable-mdpi_src_assets_images_my_return.png.flat",
+        "source": "com.zingobar.app-react-42:/drawable-mdpi/src_assets_images_my_return.png"
+    },
+    {
+        "merged": "com.zingobar.app-merged_res-47:/drawable-mdpi_node_modules_reactnavigation_elements_src_assets_backiconmask.png.flat",
+        "source": "com.zingobar.app-react-42:/drawable-mdpi/node_modules_reactnavigation_elements_src_assets_backiconmask.png"
+    },
+    {
+        "merged": "com.zingobar.app-merged_res-47:/drawable-mdpi_src_assets_images_bottomtab_bottom_setting.png.flat",
+        "source": "com.zingobar.app-react-42:/drawable-mdpi/src_assets_images_bottomtab_bottom_setting.png"
+    },
+    {
+        "merged": "com.zingobar.app-merged_res-47:/mipmap-mdpi_ic_launcher_foreground.png.flat",
+        "source": "com.zingobar.app-main-48:/mipmap-mdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "com.zingobar.app-merged_res-47:/drawable-mdpi_src_helpers_reactnativecreditcardinputplus_src_icons_stp_card_visa.png.flat",
+        "source": "com.zingobar.app-react-42:/drawable-mdpi/src_helpers_reactnativecreditcardinputplus_src_icons_stp_card_visa.png"
+    },
+    {
+        "merged": "com.zingobar.app-merged_res-47:/mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "com.zingobar.app-main-48:/mipmap-xxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.zingobar.app-merged_res-47:/drawable-mdpi_node_modules_reactnavigation_elements_src_assets_backicon.png.flat",
+        "source": "com.zingobar.app-react-42:/drawable-mdpi/node_modules_reactnavigation_elements_src_assets_backicon.png"
+    },
+    {
+        "merged": "com.zingobar.app-merged_res-47:/drawable_rn_edit_text_material.xml.flat",
+        "source": "com.zingobar.app-main-48:/drawable/rn_edit_text_material.xml"
+    },
+    {
+        "merged": "com.zingobar.app-merged_res-47:/drawable-mdpi_src_assets_images_bottomtab_bottom_setting_fill.png.flat",
+        "source": "com.zingobar.app-react-42:/drawable-mdpi/src_assets_images_bottomtab_bottom_setting_fill.png"
+    },
+    {
+        "merged": "com.zingobar.app-merged_res-47:/drawable-mdpi_src_assets_images_bottomtab_bottom_category.png.flat",
+        "source": "com.zingobar.app-react-42:/drawable-mdpi/src_assets_images_bottomtab_bottom_category.png"
+    },
+    {
+        "merged": "com.zingobar.app-merged_res-47:/drawable-mdpi_node_modules_reactnativestars_exampleimages_starhalf.png.flat",
+        "source": "com.zingobar.app-react-42:/drawable-mdpi/node_modules_reactnativestars_exampleimages_starhalf.png"
+    },
+    {
+        "merged": "com.zingobar.app-merged_res-47:/drawable-mdpi_src_assets_images_bottomtab_bottom_profile.png.flat",
+        "source": "com.zingobar.app-react-42:/drawable-mdpi/src_assets_images_bottomtab_bottom_profile.png"
+    },
+    {
+        "merged": "com.zingobar.app-merged_res-47:/drawable-mdpi_src_assets_images_bottomtab_bottom_cart.png.flat",
+        "source": "com.zingobar.app-react-42:/drawable-mdpi/src_assets_images_bottomtab_bottom_cart.png"
+    },
+    {
+        "merged": "com.zingobar.app-merged_res-47:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "com.zingobar.app-main-48:/mipmap-anydpi-v26/ic_launcher_round.xml"
+    },
+    {
+        "merged": "com.zingobar.app-merged_res-47:/mipmap-xhdpi_ic_launcher_foreground.png.flat",
+        "source": "com.zingobar.app-main-48:/mipmap-xhdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "com.zingobar.app-merged_res-47:/drawable-mdpi_src_helpers_reactnativecreditcardinputplus_src_icons_stp_card_amex.png.flat",
+        "source": "com.zingobar.app-react-42:/drawable-mdpi/src_helpers_reactnativecreditcardinputplus_src_icons_stp_card_amex.png"
+    },
+    {
+        "merged": "com.zingobar.app-merged_res-47:/mipmap-mdpi_ic_launcher.png.flat",
+        "source": "com.zingobar.app-main-48:/mipmap-mdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.zingobar.app-merged_res-47:/drawable-mdpi_src_assets_images_checked.png.flat",
+        "source": "com.zingobar.app-react-42:/drawable-mdpi/src_assets_images_checked.png"
+    },
+    {
+        "merged": "com.zingobar.app-merged_res-47:/drawable-mdpi_src_assets_images_menu2.png.flat",
+        "source": "com.zingobar.app-react-42:/drawable-mdpi/src_assets_images_menu2.png"
+    },
+    {
+        "merged": "com.zingobar.app-merged_res-47:/drawable-mdpi_src_assets_images_facebook.jpg.flat",
+        "source": "com.zingobar.app-react-42:/drawable-mdpi/src_assets_images_facebook.jpg"
+    },
+    {
+        "merged": "com.zingobar.app-merged_res-47:/drawable-hdpi_node_modules_reactnavigation_elements_src_assets_backicon.png.flat",
+        "source": "com.zingobar.app-react-42:/drawable-hdpi/node_modules_reactnavigation_elements_src_assets_backicon.png"
+    },
+    {
+        "merged": "com.zingobar.app-merged_res-47:/drawable-mdpi_src_assets_images_bottomtab_bottom_category_fill.png.flat",
+        "source": "com.zingobar.app-react-42:/drawable-mdpi/src_assets_images_bottomtab_bottom_category_fill.png"
+    },
+    {
+        "merged": "com.zingobar.app-merged_res-47:/drawable-mdpi_src_helpers_reactnativecreditcardinputplus_images_cardback.png.flat",
+        "source": "com.zingobar.app-react-42:/drawable-mdpi/src_helpers_reactnativecreditcardinputplus_images_cardback.png"
+    },
+    {
+        "merged": "com.zingobar.app-merged_res-47:/drawable-xxhdpi_node_modules_reactnavigation_elements_src_assets_backicon.png.flat",
+        "source": "com.zingobar.app-react-42:/drawable-xxhdpi/node_modules_reactnavigation_elements_src_assets_backicon.png"
+    },
+    {
+        "merged": "com.zingobar.app-merged_res-47:/drawable-mdpi_src_assets_images_circle.png.flat",
+        "source": "com.zingobar.app-react-42:/drawable-mdpi/src_assets_images_circle.png"
+    },
+    {
+        "merged": "com.zingobar.app-merged_res-47:/drawable-mdpi_node_modules_reactnativeelementdropdown_src_assets_down.png.flat",
+        "source": "com.zingobar.app-react-42:/drawable-mdpi/node_modules_reactnativeelementdropdown_src_assets_down.png"
+    },
+    {
+        "merged": "com.zingobar.app-merged_res-47:/drawable-mdpi_node_modules_reactnativepaper_src_assets_backchevron.png.flat",
+        "source": "com.zingobar.app-react-42:/drawable-mdpi/node_modules_reactnativepaper_src_assets_backchevron.png"
+    },
+    {
+        "merged": "com.zingobar.app-merged_res-47:/drawable-mdpi_src_assets_images_shipping_fast.png.flat",
+        "source": "com.zingobar.app-react-42:/drawable-mdpi/src_assets_images_shipping_fast.png"
+    },
+    {
+        "merged": "com.zingobar.app-merged_res-47:/drawable-mdpi_src_helpers_reactnativecreditcardinputplus_src_icons_stp_card_mastercard.png.flat",
+        "source": "com.zingobar.app-react-42:/drawable-mdpi/src_helpers_reactnativecreditcardinputplus_src_icons_stp_card_mastercard.png"
+    },
+    {
+        "merged": "com.zingobar.app-merged_res-47:/drawable-xhdpi_node_modules_reactnavigation_elements_src_assets_backicon.png.flat",
+        "source": "com.zingobar.app-react-42:/drawable-xhdpi/node_modules_reactnavigation_elements_src_assets_backicon.png"
+    },
+    {
+        "merged": "com.zingobar.app-merged_res-47:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "com.zingobar.app-main-48:/mipmap-anydpi-v26/ic_launcher.xml"
+    },
+    {
+        "merged": "com.zingobar.app-merged_res-47:/drawable-mdpi_node_modules_reactnativeelementdropdown_src_assets_close.png.flat",
+        "source": "com.zingobar.app-react-42:/drawable-mdpi/node_modules_reactnativeelementdropdown_src_assets_close.png"
+    },
+    {
+        "merged": "com.zingobar.app-merged_res-47:/drawable-mdpi_src_helpers_reactnativecreditcardinputplus_src_icons_stp_card_unknown.png.flat",
+        "source": "com.zingobar.app-react-42:/drawable-mdpi/src_helpers_reactnativecreditcardinputplus_src_icons_stp_card_unknown.png"
+    },
+    {
+        "merged": "com.zingobar.app-merged_res-47:/drawable-mdpi_src_assets_images_back.png.flat",
+        "source": "com.zingobar.app-react-42:/drawable-mdpi/src_assets_images_back.png"
+    },
+    {
+        "merged": "com.zingobar.app-merged_res-47:/mipmap-hdpi_ic_launcher_foreground.png.flat",
+        "source": "com.zingobar.app-main-48:/mipmap-hdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "com.zingobar.app-merged_res-47:/mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "com.zingobar.app-main-48:/mipmap-xxxhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.zingobar.app-merged_res-47:/drawable-mdpi_src_assets_images_google.png.flat",
+        "source": "com.zingobar.app-react-42:/drawable-mdpi/src_assets_images_google.png"
+    },
+    {
+        "merged": "com.zingobar.app-merged_res-47:/drawable-mdpi_src_assets_images_bottomtab_bottom_search_icon.png.flat",
+        "source": "com.zingobar.app-react-42:/drawable-mdpi/src_assets_images_bottomtab_bottom_search_icon.png"
+    },
+    {
+        "merged": "com.zingobar.app-merged_res-47:/mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "com.zingobar.app-main-48:/mipmap-xhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.zingobar.app-merged_res-47:/mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "com.zingobar.app-main-48:/mipmap-mdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.zingobar.app-merged_res-47:/drawable-mdpi_src_assets_images_filter.png.flat",
+        "source": "com.zingobar.app-react-42:/drawable-mdpi/src_assets_images_filter.png"
+    },
+    {
+        "merged": "com.zingobar.app-merged_res-47:/drawable-mdpi_src_helpers_reactnativecreditcardinputplus_src_icons_stp_card_cvc.png.flat",
+        "source": "com.zingobar.app-react-42:/drawable-mdpi/src_helpers_reactnativecreditcardinputplus_src_icons_stp_card_cvc.png"
+    },
+    {
+        "merged": "com.zingobar.app-merged_res-47:/drawable-mdpi_src_assets_images_logo.png.flat",
+        "source": "com.zingobar.app-react-42:/drawable-mdpi/src_assets_images_logo.png"
+    },
+    {
+        "merged": "com.zingobar.app-merged_res-47:/mipmap-hdpi_ic_launcher.png.flat",
+        "source": "com.zingobar.app-main-48:/mipmap-hdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.zingobar.app-merged_res-47:/drawable-mdpi_src_helpers_reactnativecreditcardinputplus_images_cardfront.png.flat",
+        "source": "com.zingobar.app-react-42:/drawable-mdpi/src_helpers_reactnativecreditcardinputplus_images_cardfront.png"
+    },
+    {
+        "merged": "com.zingobar.app-merged_res-47:/drawable-mdpi_src_assets_images_box.png.flat",
+        "source": "com.zingobar.app-react-42:/drawable-mdpi/src_assets_images_box.png"
+    },
+    {
+        "merged": "com.zingobar.app-merged_res-47:/drawable-mdpi_src_assets_images_bottomtab_bottom_cart2.png.flat",
+        "source": "com.zingobar.app-react-42:/drawable-mdpi/src_assets_images_bottomtab_bottom_cart2.png"
+    },
+    {
+        "merged": "com.zingobar.app-merged_res-47:/mipmap-xxxhdpi_ic_launcher_foreground.png.flat",
+        "source": "com.zingobar.app-main-48:/mipmap-xxxhdpi/ic_launcher_foreground.png"
+    }
+]

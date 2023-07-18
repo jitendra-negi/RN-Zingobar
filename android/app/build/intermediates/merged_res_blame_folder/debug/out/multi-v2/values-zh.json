@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.zingobar.app-mergeDebugResources-43:/values-zh/values-zh.xml",
+            "outputFile": "com.zingobar.app-mergeDebugResources-46:/values-zh/values-zh.xml",
             "map": [
                 {
                     "source": "/Users/jitendra/.gradle/caches/transforms-3/c71292433d1b368d798679fd90d5520d/transformed/jetified-ucrop-2.2.6-native/res/values-zh/values-zh.xml",
