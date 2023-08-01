@@ -64,6 +64,9 @@ function ProfileScreen(props) {
   }, [profileImage]);
 
   const openImagePicker = async (res) => {
+
+    console.log("imagepicker response------",res);
+
     let mainImage = {
       uri: res.assets[0].uri,
       type: res.assets[0].type,
@@ -95,6 +98,7 @@ function ProfileScreen(props) {
             );
           }, 3000);
         } else {
+          console.log("errormsg------",response.message);
           setState({
             ...state,
             type: "error",
@@ -167,11 +171,11 @@ function ProfileScreen(props) {
         <TouchableOpacity
           style={[
             GlobalStyles.headerLeft,
-            { zIndex: 999999999, flex: 0.9, alignItems: "flex-start" },
+            { zIndex: 999999999, flex:1, alignItems: "center" },
           ]}
           onPress={() => props.navigation.goBack()}
         >
-          <Text style={GlobalStyles.headingTxt}> {strings.account.title}</Text>
+          <Text style={[GlobalStyles.headingTxt,{marginRight:15}]}> {strings.account.title}</Text>
         </TouchableOpacity>
       </View>
 
@@ -319,6 +323,46 @@ function ProfileScreen(props) {
         <TouchableOpacity
           style={styles.listView}
           onPress={() => {
+            // props.doLogout(),
+            //   auth().signOut(),
+            //   getApi.getData("user/logout", []).then((response) => {
+            //     console.log("LOGOUT RRES ", response);
+            //   }),
+            //   Toast.show("Successfully Logout", {
+            //     duration: 2000,
+            //     position: Toast.positions.CENTER,
+            //     shadow: true,
+            //     animation: true,
+            //     hideOnPress: true,
+            //     delay: 0,
+            //   });
+            props.navigation.navigate("SupportScreen")
+          }}
+        >
+          <View style={styles.leftSide}>
+            <AntDesign name="logout" style={styles.icon} />
+          </View>
+          <View style={styles.center}>
+            <Text style={styles.listTitle}>{"Support"}</Text>
+          </View>
+          <View style={styles.rightSide}>
+            <MatIcon
+              name="arrow-forward-ios"
+              style={[
+                styles.rightIcon,
+                {
+                  transform: [
+                    { rotateY: I18nManager.isRTL == true ? "180deg" : "0deg" },
+                  ],
+                },
+              ]}
+            />
+          </View>
+        </TouchableOpacity>
+
+        <TouchableOpacity
+          style={styles.listView}
+          onPress={() => {
             props.doLogout(),
               auth().signOut(),
               getApi.getData("user/logout", []).then((response) => {
@@ -381,13 +425,13 @@ export default connect(mapStateToProps, mapDispatchToProps)(ProfileScreen);
 
 const styles = StyleSheet.create({
   container: {
-    height: hp("25%"),
+    height: hp("28%"),
     position: "relative",
     backgroundColor: Colors().light_white,
     justifyContent: "flex-end",
     alignItems: "center",
     zIndex: 99,
-    marginBottom: hp("4%"),
+    marginBottom: hp("2%"),
   },
   imageView: {
     justifyContent: "center",

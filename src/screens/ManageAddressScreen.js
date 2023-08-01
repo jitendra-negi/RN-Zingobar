@@ -67,6 +67,7 @@ function ManageAddressScreen(props) {
   } = state;
 
   const storeAddress = (addressData) => {
+    alert("gvbxchbv")
     setState({
       ...state,
       showAdd: false,
@@ -74,14 +75,14 @@ function ManageAddressScreen(props) {
     });
     try {
       getApi.postData("user/addAddress", addressData).then((response) => {
-        logfunction("RESPONSE ", response);
+        logfunction("RESPONSE add address ", response);
         if (response.status == 1) {
           fetchData();
           setState({
             ...state,
             addresses: response.addresses,
             selectedAddress:
-              response.addresses.length > 0 ? response.addresses[0].id : 0,
+            response.addresses.length > 0 ? response.addresses[0].id : 0,
             loading: false,
             showAdd: false,
           });
@@ -110,7 +111,7 @@ function ManageAddressScreen(props) {
         }
       });
     } catch (error) {
-      logfunction("Error", error);
+      logfunction("Error add address", error);
       setData({
         ...state,
         loading: false,
@@ -199,7 +200,7 @@ function ManageAddressScreen(props) {
   const fetchData = () => {
     try {
       getApi.getData("user/getAdress", []).then((response) => {
-        logfunction("RESPONSE ", response);
+        logfunction("RESPONSE------- ", response);
         if (response.status == 1) {
           setState({
             ...state,
@@ -326,7 +327,7 @@ function ManageAddressScreen(props) {
                       {item.address_2}, {item.city}
                     </Text>
                     <Text style={styles.addressTxt} numberOfLines={1}>
-                      {item.postcode}, {item.country}
+                    {item.state}, {item.postcode}, {item.country}
                     </Text>
                     <TouchableOpacity
                       style={[

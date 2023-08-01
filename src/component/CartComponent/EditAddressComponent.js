@@ -23,13 +23,15 @@ function EditAddressComponent(props) {
   const [formData, setData] = React.useState({
     name: props.editData.name,
     country: parseInt(props.editData.country_id),
+    mobileNumber: props.editData.mobile_number,
     city: props.editData.city,
     address1: props.editData.address_1,
     address2: props.editData.address_2,
+    state: props.editData.state,
     postcode: props.editData.postcode,
     submited: false,
   });
-  const { name, country, city, address1, address2, postcode, submited } =
+  const { name, country, mobileNumber,city, address1, address2, state,postcode, submited } =
     formData;
   const [errors, setErrors] = React.useState({});
   const { strings } = props;
@@ -41,7 +43,15 @@ function EditAddressComponent(props) {
         name: "Name is required",
       });
       return false;
-    } else if (country == null) {
+    } 
+    else if (mobileNumber == null) {
+      setErrors({
+          ...errors,
+          mobileNumber: "Mobile Number is required"
+      });
+      return false;
+  }
+    else if (country == null) {
       setErrors({
         ...errors,
         country: "Country is required",
@@ -53,7 +63,15 @@ function EditAddressComponent(props) {
         city: "City is required",
       });
       return false;
-    } else if (postcode == null) {
+    }
+    else if (state == null) {
+      setErrors({
+          ...errors,
+          state: "State is required"
+      });
+      return false;
+  }
+    else if (postcode == null) {
       setErrors({
         ...errors,
         postcode: "Postcode is required",
@@ -75,7 +93,9 @@ function EditAddressComponent(props) {
     if (validate()) {
       let sendData = new FormData();
       sendData.append("name", name);
-      sendData.append("country_id", country);
+      sendData.append('mobile_number',mobileNumber)
+      sendData.append('state', state);
+      sendData.append("country_id", 1);
       sendData.append("city", city);
       sendData.append("postcode", postcode);
       sendData.append("address_1", address1);
@@ -91,15 +111,15 @@ function EditAddressComponent(props) {
         {/* Model header */}
         <OtrixHeader customStyles={{ backgroundColor: Colors().white }}>
           <TouchableOpacity
-            style={GlobalStyles.headerLeft}
+            style={[GlobalStyles.headerLeft,{flex:0.4,alignItems:'flex-start'}]}
             onPress={() => props.closeEdit()}
           >
             <View style={styles.round}>
               <Image source={close} style={styles.button} />
             </View>
           </TouchableOpacity>
-          <View style={[GlobalStyles.headerCenter]}>
-            <Text style={GlobalStyles.headingTxt}>
+          <View style={[GlobalStyles.headerCenter,{flex:1.0}]}>
+            <Text style={[GlobalStyles.headingTxt]}>
               {strings.manage_address.update_address}
             </Text>
           </View>
@@ -108,7 +128,7 @@ function EditAddressComponent(props) {
           </TouchableOpacity>
         </OtrixHeader>
         <OtrixDivider size={"sm"} />
-        <View style={GlobalStyles.horizontalLine}></View>
+       {/* <View style={GlobalStyles.horizontalLine}></View>*/}
         <OtrixDivider size={"md"} />
 
         <View style={styles.contentView}>
@@ -128,7 +148,21 @@ function EditAddressComponent(props) {
             </FormControl.ErrorMessage>
           </FormControl>
           <OtrixDivider size={"sm"} />
-          <FormControl isRequired isInvalid={submited && "country" in errors}>
+
+          <FormControl isRequired isInvalid={submited && 'name' in errors}>
+                        <Input variant="outline"
+                            value={mobileNumber}
+                            placeholder={"Mobile Number"} style={GlobalStyles.textInputStyle}
+                            onChangeText={(value) => { setData({ ...formData, submited: false, mobileNumber: value }), delete errors.mobileNumber }}
+                        />
+                        <FormControl.ErrorMessage
+                            leftIcon={<InfoOutlineIcon size="xs" />}
+                        >
+                            {errors.mobileNumber}
+                        </FormControl.ErrorMessage>
+                    </FormControl>
+                    <OtrixDivider size={"sm"} />
+         {/* <FormControl isRequired isInvalid={submited && "country" in errors}>
             <Select
               selectedValue={country}
               minWidth="200"
@@ -151,8 +185,8 @@ function EditAddressComponent(props) {
             <FormControl.ErrorMessage leftIcon={<InfoOutlineIcon size="xs" />}>
               {errors.country}
             </FormControl.ErrorMessage>
-          </FormControl>
-          <OtrixDivider size={"sm"} />
+              </FormControl>*/}
+          {/* <OtrixDivider size={"sm"} /> */}
           <FormControl isRequired isInvalid={submited && "city" in errors}>
             <Input
               variant="outline"
@@ -168,6 +202,21 @@ function EditAddressComponent(props) {
               {errors.city}
             </FormControl.ErrorMessage>
           </FormControl>
+
+          <OtrixDivider size={'sm'} />
+                    <FormControl isRequired isInvalid={submited && 'state' in errors}>
+                        <Input variant="outline"
+                            value={state}
+                            placeholder={"state"} style={GlobalStyles.textInputStyle}
+                            onChangeText={(value) => { setData({ ...formData, submited: false, state: value }), delete errors.state }}
+
+                        />
+                        <FormControl.ErrorMessage
+                            leftIcon={<InfoOutlineIcon size="xs" />}
+                        >
+                            {errors.state}
+                        </FormControl.ErrorMessage>
+                    </FormControl>
 
           <OtrixDivider size={"sm"} />
           <FormControl isRequired isInvalid={submited && "postcode" in errors}>
@@ -246,7 +295,7 @@ const styles = StyleSheet.create({
     height: hp("95%"),
     width: wp("100%"),
     //alignSelf: 'flex-end',
-    marginTop: hp("5%"),
+    marginTop: hp("2%"),
     backgroundColor: Colors().white,
   },
   filter: {

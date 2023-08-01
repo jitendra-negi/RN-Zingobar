@@ -30,3 +30,4 @@ export { default as ShippingDeliveryScreen } from "./ShippingDeliveryScreen.js";
 export { default as VerifyOTPScreen } from "./VerifyOTPScreen.js";
 export { default as VerifyMobileOTPScreen } from "./VerifyMobileOTPScreen.js";
 export { default as ResetPasswordScreen } from "./ResetPasswordScreen.js";
+export { default as SupportScreen } from "./SupportScreen.js";

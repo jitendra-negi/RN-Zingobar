@@ -387,7 +387,7 @@ function ProductDetailScreen(props) {
 
 
                             {/* Name Container*/}
-                            <View style={styles.subContainer}>
+                            <View style={[styles.subContainer,{marginTop:'10%'}]}>
                                 <Text style={styles.titleTxt}>{productDescription.name}</Text>
                                 <Text style={[styles.stock, {
                                     color: productDetail.quantity > 0 ? '#5ddb79' : '#fe151b'

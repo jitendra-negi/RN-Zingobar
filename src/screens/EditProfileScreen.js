@@ -82,6 +82,57 @@ function EditProfileScreen(props) {
         loading: true,
       });
       let sendData = new FormData();
+      sendData.append("email", email);
+      try {
+        getApi
+          .postData("user/deleteCustomer", sendData)
+          .then(async (response) => {
+            logfunction("RESPONSE ", response);
+            if (response.status == 1) {
+              props.authData(response.data);
+              await AsyncStorage.setItem(
+                "CUSTOMER_DATA",
+                JSON.stringify(response.data)
+              );
+              setData({
+                ...formData,
+                type: "success",
+                message: response.message,
+                loading: false,
+              });
+              setShowLoading(true);
+              setTimeout(() => {
+                setShowLoading(false);
+              }, 3000);
+            } else {
+              setData({
+                ...formData,
+                type: "error",
+                message: response.message,
+                loading: false,
+              });
+              setShowLoading(true);
+              setTimeout(() => {
+                setShowLoading(false);
+              }, 3000);
+            }
+          });
+      } catch (error) {
+        logfunction("Error", error);
+        setData({
+          ...formData,
+          loading: false,
+        });
+      }
+    }
+  };
+  const deleteAccount = () => {
+    // if (validate()) {
+      setData({
+        ...formData,
+        loading: true,
+      });
+      let sendData = new FormData();
       sendData.append("firstname", first_name);
       sendData.append("lastname", last_name);
       sendData.append("telephone", mobileNumber);
@@ -126,7 +177,7 @@ function EditProfileScreen(props) {
           loading: false,
         });
       }
-    }
+    // }
   };
 
   useEffect(() => {
@@ -264,8 +315,23 @@ function EditProfileScreen(props) {
             {strings.reset_password.button_reset}
           </Text>
         </Button>
+ 
+        <OtrixDivider size={"md"} />
+        <Button
+          isLoading={loading}
+          size="md"
+          variant="solid"
+          bg={Colors().themeColor}
+          style={GlobalStyles.button}
+          onPress={() => deleteaccount()}
+        >
+          <Text style={GlobalStyles.buttonText}>
+            {"Delete Account"}
+          </Text>
+        </Button>
         <OtrixDivider size={"md"} />
       </OtrixContent>
+      
       {showMessage == true && <OtrixAlert type={type} message={message} />}
     </OtrixContainer>
   );

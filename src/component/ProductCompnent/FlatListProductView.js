@@ -17,6 +17,9 @@ import moment from "moment";
 import FastImage from "react-native-fast-image";
 
 function FlatListProductView(props) {
+
+  console.log("wishlistarray-----",props.wishlistArray);
+
   const data = props.data;
   let off = null;
   let special = 0;

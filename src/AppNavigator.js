@@ -43,6 +43,7 @@ import {
   ShippingDeliveryScreen,
   VerifyOTPScreen,
   ResetPasswordScreen,
+  SupportScreen,
 } from "./screens/index";
 import {
   bottomSearch1,
@@ -497,6 +498,14 @@ function AppNavigator(props) {
         <Stack.Screen
           name="ChangePasswordScreen"
           component={ChangePasswordScreen}
+          options={{
+            headerShown: false,
+            cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
+          }}
+        />
+         <Stack.Screen
+          name="SupportScreen"
+          component={SupportScreen}
           options={{
             headerShown: false,
             cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,

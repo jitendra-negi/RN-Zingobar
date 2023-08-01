@@ -379,7 +379,7 @@ function ProductListScreen(props) {
 
   const addToWishlist = async (id) => {
 
-    logfunction("IDD ", id)
+    logfunction("IDD------- ", id)
 
     if (props.USER_AUTH == true) {
 
@@ -716,13 +716,7 @@ function ProductListScreen(props) {
 
 
 
-
-
   const { wishlistData, strings } = props;
-
-
-
-
   return (
 
     <OtrixContainer customStyles={{ backgroundColor: Colors().light_white }}>
@@ -850,7 +844,7 @@ function ProductListScreen(props) {
 
                   renderItem={({ item, index }) =>
 
-                    <FlatListProductView strings={strings} data={item} key={item.id} imageViewBg={Colors().white} navToDetail={() => props.navigation.navigate('ProductDetailScreen', { id: item.id })} addToWishlist={() => addToWishlist} wishlistArray={wishlistData} />
+                    <FlatListProductView strings={strings} data={item} key={item.id} imageViewBg={Colors().white} navToDetail={() => props.navigation.navigate('ProductDetailScreen', { id: item.id })} addToWishlist={() => addToWishlist(item.id)} wishlistArray={wishlistData} />
 
                   }>
 

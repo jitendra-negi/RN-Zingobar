@@ -124,6 +124,41 @@ function FilterComponent(props) {
             }
           </View>
 
+
+
+
+          <OtrixDivider size={I18nManager.isRTL == true ? "sm" : "md"} />
+          <View style={GlobalStyles.horizontalLine}></View>
+          <OtrixDivider size={I18nManager.isRTL == true ? "sm" : "md"} />
+          <Text style={styles.titleTxt}>{"Stock"}:</Text>
+          <TouchableOpacity
+            onPress={() => checkSelection()}
+            style={{
+              flexDirection: "row",
+              flexWrap: "wrap",
+              marginHorizontal: wp("1%"),
+              top: 10,
+              marginBottom: 10,
+            }}
+          >
+            {select ? (
+              <CheckIcon
+                name="checkbox-active"
+                color={"#1E508F"}
+                size={wp("4%")}
+              />
+            ) : (
+              <CheckIcon
+                name="checkbox-passive"
+                color={"#00000014"}
+                size={wp("4%")}
+              />
+            )}
+            <Text style={[styles.titleTxt, { marginLeft: 10 }]}>
+              {"In Stock"}:
+            </Text>
+          </TouchableOpacity> 
+
           {/* Rating View */}
 
 
@@ -185,37 +220,7 @@ function FilterComponent(props) {
               />
             ))}
           </View> */}
-          {/* <OtrixDivider size={I18nManager.isRTL == true ? "sm" : "md"} />
-          <View style={GlobalStyles.horizontalLine}></View>
-          <OtrixDivider size={I18nManager.isRTL == true ? "sm" : "md"} />
-          <Text style={styles.titleTxt}>{"Stock"}:</Text>
-          <TouchableOpacity
-            onPress={() => checkSelection()}
-            style={{
-              flexDirection: "row",
-              flexWrap: "wrap",
-              marginHorizontal: wp("1%"),
-              top: 10,
-              marginBottom: 10,
-            }}
-          >
-            {select ? (
-              <CheckIcon
-                name="checkbox-active"
-                color={"#1E508F"}
-                size={wp("4%")}
-              />
-            ) : (
-              <CheckIcon
-                name="checkbox-passive"
-                color={"#00000014"}
-                size={wp("4%")}
-              />
-            )}
-            <Text style={[styles.titleTxt, { marginLeft: 10 }]}>
-              {"In Stock"}:
-            </Text>
-          </TouchableOpacity> */}
+          
 
           {/* <OtrixDivider size={I18nManager.isRTL == true ? "sm" : "md"} />
           <View style={GlobalStyles.horizontalLine}></View>

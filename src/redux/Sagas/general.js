@@ -169,6 +169,7 @@ function* proceedCheckout(action) {
 function* addToWishlist(action) {
   try {
     const { payload } = action;
+    console.log("wishlstpayload----",payload);
     let wishData = payload.data;
     let ID = payload.id;
     yield put(addRemoveWishlist(ID));

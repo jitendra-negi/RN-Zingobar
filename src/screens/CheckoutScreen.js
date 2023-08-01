@@ -27,6 +27,7 @@ import getApi from "@apis/getApi";
 import { logfunction } from "@helpers/FunctionHelper";
 import { shipping } from '@common';
 import RazorpayCheckout from 'react-native-razorpay';
+import { log } from "react-native-reanimated";
 
 function CheckoutScreen(props) {
   const [state, setState] = React.useState({ loading: true, orderProducts: [], trx: 0, comment: null, countries: [], shippingData: [], showAdd: false, cartProducts: [], sumAmount: 0, noRecord: false, addresses: [], selctedAddress: 0, selectedShipping: 0, showEdit: false, editAddressData: [], step: 1, selectedPaymentMethod: null, paymentSuccessModal: false, message: null, creditCardModal: false, type: 'error', grandTotal: 0 });
@@ -34,6 +35,8 @@ function CheckoutScreen(props) {
   const { loading, showAdd, addresses, orderProducts, trx, comment, selctedAddress, selectedShipping, showEdit, editAddressData, step, selectedPaymentMethod, paymentSuccessModal, countries, message, type, shippingData, creditCardModal, grandTotal } = state;
 
   const storeAddress = (addressData) => {
+    console.log("params----",addressData);
+    alert("hdsbvxbb")
     setState({
       ...state,
       showAdd: false,
@@ -44,7 +47,7 @@ function CheckoutScreen(props) {
         'user/addAddress',
         addressData,
       ).then((response => {
-        logfunction("RESPONSE ", response)
+        logfunction("RESPONSE address ", response)
         if (response.status == 1) {
           setState({
             ...state,
@@ -76,7 +79,7 @@ function CheckoutScreen(props) {
         }
       }));
     } catch (error) {
-      logfunction("Error", error)
+      logfunction("Error addadress------", error)
       setData({
         ...state,
         loading: false
@@ -393,7 +396,7 @@ function CheckoutScreen(props) {
         <TouchableOpacity style={GlobalStyles.headerLeft} onPress={() => props.navigation.goBack()}>
           <OtirxBackButton />
         </TouchableOpacity>
-        <View style={[GlobalStyles.headerCenter, { flex: 1 }]}>
+        <View style={[GlobalStyles.headerCenter, { flex: 1,marginRight:60 }]}>
           <Text style={GlobalStyles.headingTxt}>  {strings.cart.checkout}</Text>
         </View>
       </OtrixHeader>
@@ -602,7 +605,7 @@ function CheckoutScreen(props) {
               variant="solid"
               bg={'#0ab97a'}
               style={[GlobalStyles.button, { marginHorizontal: wp('5%'), marginBottom: hp('1%'), flex: 0.40, alignSelf: 'flex-end' }]}
-              onPress={() => checkout()}
+              onPress={() => payOnline()}
             >
               <Text style={[GlobalStyles.buttonText, { fontSize: I18nManager.isRTL == true ? wp('3.8%') : wp('4.8%') }]}>{strings.checkout.place_order}</Text>
             </Button>
