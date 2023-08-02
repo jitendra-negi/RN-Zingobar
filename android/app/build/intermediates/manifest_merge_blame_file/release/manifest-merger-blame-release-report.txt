@@ -32,7 +32,7 @@
 18-->[:react-native-image-crop-picker] /Users/jitendra/Documents/ReactNativeProjects/zingobar/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:11:21-70
 19        </intent>
 20        <intent>
-20-->[com.razorpay:checkout:1.6.33] /Users/jitendra/.gradle/caches/transforms-3/df47ad3c9eaffa11ce7f5cdd6c35bc08/transformed/jetified-checkout-1.6.33/AndroidManifest.xml:11:9-17:18
+20-->[com.razorpay:checkout:1.6.34] /Users/jitendra/.gradle/caches/transforms-3/4bf733a7bc127345f11325fb578fbded/transformed/jetified-checkout-1.6.34/AndroidManifest.xml:11:9-17:18
 21            <action android:name="android.intent.action.VIEW" />
 21-->[com.facebook.android:facebook-common:8.2.0] /Users/jitendra/.gradle/caches/transforms-3/b9e384a64c7dee4104ff39dac8f87906/transformed/jetified-facebook-common-8.2.0/AndroidManifest.xml:40:17-69
 21-->[com.facebook.android:facebook-common:8.2.0] /Users/jitendra/.gradle/caches/transforms-3/b9e384a64c7dee4104ff39dac8f87906/transformed/jetified-facebook-common-8.2.0/AndroidManifest.xml:40:25-66
@@ -44,7 +44,7 @@
 25-->[com.facebook.android:facebook-common:8.2.0] /Users/jitendra/.gradle/caches/transforms-3/b9e384a64c7dee4104ff39dac8f87906/transformed/jetified-facebook-common-8.2.0/AndroidManifest.xml:47:21-47
 26        </intent>
 27        <intent>
-27-->[com.razorpay:checkout:1.6.33] /Users/jitendra/.gradle/caches/transforms-3/df47ad3c9eaffa11ce7f5cdd6c35bc08/transformed/jetified-checkout-1.6.33/AndroidManifest.xml:18:9-27:18
+27-->[com.razorpay:checkout:1.6.34] /Users/jitendra/.gradle/caches/transforms-3/4bf733a7bc127345f11325fb578fbded/transformed/jetified-checkout-1.6.34/AndroidManifest.xml:18:9-27:18
 28            <action android:name="android.intent.action.VIEW" />
 28-->[com.facebook.android:facebook-common:8.2.0] /Users/jitendra/.gradle/caches/transforms-3/b9e384a64c7dee4104ff39dac8f87906/transformed/jetified-facebook-common-8.2.0/AndroidManifest.xml:40:17-69
 28-->[com.facebook.android:facebook-common:8.2.0] /Users/jitendra/.gradle/caches/transforms-3/b9e384a64c7dee4104ff39dac8f87906/transformed/jetified-facebook-common-8.2.0/AndroidManifest.xml:40:25-66
@@ -62,25 +62,25 @@
 35-->[com.facebook.android:facebook-common:8.2.0] /Users/jitendra/.gradle/caches/transforms-3/b9e384a64c7dee4104ff39dac8f87906/transformed/jetified-facebook-common-8.2.0/AndroidManifest.xml:47:21-47
 36        </intent>
 37        <intent>
-37-->[com.razorpay:checkout:1.6.33] /Users/jitendra/.gradle/caches/transforms-3/df47ad3c9eaffa11ce7f5cdd6c35bc08/transformed/jetified-checkout-1.6.33/AndroidManifest.xml:28:9-30:18
+37-->[com.razorpay:checkout:1.6.34] /Users/jitendra/.gradle/caches/transforms-3/4bf733a7bc127345f11325fb578fbded/transformed/jetified-checkout-1.6.34/AndroidManifest.xml:28:9-30:18
 38            <action android:name="android.intent.action.MAIN" />
 38-->/Users/jitendra/Documents/ReactNativeProjects/zingobar/android/app/src/main/AndroidManifest.xml:22:13-65
 38-->/Users/jitendra/Documents/ReactNativeProjects/zingobar/android/app/src/main/AndroidManifest.xml:22:21-62
 39        </intent>
 40        <intent>
-40-->[com.razorpay:checkout:1.6.33] /Users/jitendra/.gradle/caches/transforms-3/df47ad3c9eaffa11ce7f5cdd6c35bc08/transformed/jetified-checkout-1.6.33/AndroidManifest.xml:31:9-35:18
+40-->[com.razorpay:checkout:1.6.34] /Users/jitendra/.gradle/caches/transforms-3/4bf733a7bc127345f11325fb578fbded/transformed/jetified-checkout-1.6.34/AndroidManifest.xml:31:9-35:18
 41            <action android:name="android.intent.action.SEND" />
-41-->[com.razorpay:checkout:1.6.33] /Users/jitendra/.gradle/caches/transforms-3/df47ad3c9eaffa11ce7f5cdd6c35bc08/transformed/jetified-checkout-1.6.33/AndroidManifest.xml:32:13-65
-41-->[com.razorpay:checkout:1.6.33] /Users/jitendra/.gradle/caches/transforms-3/df47ad3c9eaffa11ce7f5cdd6c35bc08/transformed/jetified-checkout-1.6.33/AndroidManifest.xml:32:21-62
+41-->[com.razorpay:checkout:1.6.34] /Users/jitendra/.gradle/caches/transforms-3/4bf733a7bc127345f11325fb578fbded/transformed/jetified-checkout-1.6.34/AndroidManifest.xml:32:13-65
+41-->[com.razorpay:checkout:1.6.34] /Users/jitendra/.gradle/caches/transforms-3/4bf733a7bc127345f11325fb578fbded/transformed/jetified-checkout-1.6.34/AndroidManifest.xml:32:21-62
 42
 43            <data android:mimeType="*/*" />
 43-->[com.facebook.android:facebook-common:8.2.0] /Users/jitendra/.gradle/caches/transforms-3/b9e384a64c7dee4104ff39dac8f87906/transformed/jetified-facebook-common-8.2.0/AndroidManifest.xml:45:17-47:50
 44        </intent>
 45        <intent>
-45-->[com.razorpay:checkout:1.6.33] /Users/jitendra/.gradle/caches/transforms-3/df47ad3c9eaffa11ce7f5cdd6c35bc08/transformed/jetified-checkout-1.6.33/AndroidManifest.xml:36:9-38:18
+45-->[com.razorpay:checkout:1.6.34] /Users/jitendra/.gradle/caches/transforms-3/4bf733a7bc127345f11325fb578fbded/transformed/jetified-checkout-1.6.34/AndroidManifest.xml:36:9-38:18
 46            <action android:name="rzp.device_token.share" />
-46-->[com.razorpay:checkout:1.6.33] /Users/jitendra/.gradle/caches/transforms-3/df47ad3c9eaffa11ce7f5cdd6c35bc08/transformed/jetified-checkout-1.6.33/AndroidManifest.xml:37:13-61
-46-->[com.razorpay:checkout:1.6.33] /Users/jitendra/.gradle/caches/transforms-3/df47ad3c9eaffa11ce7f5cdd6c35bc08/transformed/jetified-checkout-1.6.33/AndroidManifest.xml:37:21-58
+46-->[com.razorpay:checkout:1.6.34] /Users/jitendra/.gradle/caches/transforms-3/4bf733a7bc127345f11325fb578fbded/transformed/jetified-checkout-1.6.34/AndroidManifest.xml:37:13-61
+46-->[com.razorpay:checkout:1.6.34] /Users/jitendra/.gradle/caches/transforms-3/4bf733a7bc127345f11325fb578fbded/transformed/jetified-checkout-1.6.34/AndroidManifest.xml:37:21-58
 47        </intent>
 48    </queries>
 49
@@ -102,8 +102,8 @@
 56-->[com.google.android.gms:play-services-maps:17.0.0] /Users/jitendra/.gradle/caches/transforms-3/c62712d2a784b7f3d12c5a700becd4c7/transformed/jetified-play-services-maps-17.0.0/AndroidManifest.xml:28:9-32
 57
 58    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" />
-58-->[com.android.installreferrer:installreferrer:1.0] /Users/jitendra/.gradle/caches/transforms-3/ea86394cf69f3d60f5eb61eb6b7600d2/transformed/jetified-installreferrer-1.0/AndroidManifest.xml:9:5-110
-58-->[com.android.installreferrer:installreferrer:1.0] /Users/jitendra/.gradle/caches/transforms-3/ea86394cf69f3d60f5eb61eb6b7600d2/transformed/jetified-installreferrer-1.0/AndroidManifest.xml:9:22-107
+58-->[com.android.installreferrer:installreferrer:1.0] /Users/jitendra/.gradle/caches/transforms-3/8d431bae313f41448eabbf83e32610a8/transformed/jetified-installreferrer-1.0/AndroidManifest.xml:9:5-110
+58-->[com.android.installreferrer:installreferrer:1.0] /Users/jitendra/.gradle/caches/transforms-3/8d431bae313f41448eabbf83e32610a8/transformed/jetified-installreferrer-1.0/AndroidManifest.xml:9:22-107
 59
 60    <application
 60-->/Users/jitendra/Documents/ReactNativeProjects/zingobar/android/app/src/main/AndroidManifest.xml:7:5-27:19
@@ -316,12 +316,12 @@
 171-->[:react-native-razorpay] /Users/jitendra/Documents/ReactNativeProjects/zingobar/node_modules/react-native-razorpay/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:11:13-57
 172            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
 172-->[:react-native-razorpay] /Users/jitendra/Documents/ReactNativeProjects/zingobar/node_modules/react-native-razorpay/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:12:13-83
-173            android:exported="true"
-173-->[com.razorpay:checkout:1.6.33] /Users/jitendra/.gradle/caches/transforms-3/df47ad3c9eaffa11ce7f5cdd6c35bc08/transformed/jetified-checkout-1.6.33/AndroidManifest.xml:54:13-36
+173            android:exported="false"
+173-->[com.razorpay:checkout:1.6.34] /Users/jitendra/.gradle/caches/transforms-3/4bf733a7bc127345f11325fb578fbded/transformed/jetified-checkout-1.6.34/AndroidManifest.xml:54:13-37
 174            android:theme="@style/CheckoutTheme" >
-174-->[com.razorpay:checkout:1.6.33] /Users/jitendra/.gradle/caches/transforms-3/df47ad3c9eaffa11ce7f5cdd6c35bc08/transformed/jetified-checkout-1.6.33/AndroidManifest.xml:55:13-49
+174-->[com.razorpay:checkout:1.6.34] /Users/jitendra/.gradle/caches/transforms-3/4bf733a7bc127345f11325fb578fbded/transformed/jetified-checkout-1.6.34/AndroidManifest.xml:55:13-49
 175            <intent-filter>
-175-->[com.razorpay:checkout:1.6.33] /Users/jitendra/.gradle/caches/transforms-3/df47ad3c9eaffa11ce7f5cdd6c35bc08/transformed/jetified-checkout-1.6.33/AndroidManifest.xml:56:13-58:29
+175-->[com.razorpay:checkout:1.6.34] /Users/jitendra/.gradle/caches/transforms-3/4bf733a7bc127345f11325fb578fbded/transformed/jetified-checkout-1.6.34/AndroidManifest.xml:56:13-58:29
 176                <action android:name="android.intent.action.MAIN" />
 176-->/Users/jitendra/Documents/ReactNativeProjects/zingobar/android/app/src/main/AndroidManifest.xml:22:13-65
 176-->/Users/jitendra/Documents/ReactNativeProjects/zingobar/android/app/src/main/AndroidManifest.xml:22:21-62
@@ -456,25 +456,25 @@
 249            android:exported="false" />
 249-->[com.google.android.datatransport:transport-runtime:3.1.8] /Users/jitendra/.gradle/caches/transforms-3/1742eac9aa8483db668d7aa7e799e0f6/transformed/jetified-transport-runtime-3.1.8/AndroidManifest.xml:34:13-37
 250        <receiver
-250-->[com.razorpay:checkout:1.6.33] /Users/jitendra/.gradle/caches/transforms-3/df47ad3c9eaffa11ce7f5cdd6c35bc08/transformed/jetified-checkout-1.6.33/AndroidManifest.xml:42:9-49:20
+250-->[com.razorpay:checkout:1.6.34] /Users/jitendra/.gradle/caches/transforms-3/4bf733a7bc127345f11325fb578fbded/transformed/jetified-checkout-1.6.34/AndroidManifest.xml:42:9-49:20
 251            android:name="com.razorpay.RzpTokenReceiver"
-251-->[com.razorpay:checkout:1.6.33] /Users/jitendra/.gradle/caches/transforms-3/df47ad3c9eaffa11ce7f5cdd6c35bc08/transformed/jetified-checkout-1.6.33/AndroidManifest.xml:43:13-57
+251-->[com.razorpay:checkout:1.6.34] /Users/jitendra/.gradle/caches/transforms-3/4bf733a7bc127345f11325fb578fbded/transformed/jetified-checkout-1.6.34/AndroidManifest.xml:43:13-57
 252            android:exported="true" >
-252-->[com.razorpay:checkout:1.6.33] /Users/jitendra/.gradle/caches/transforms-3/df47ad3c9eaffa11ce7f5cdd6c35bc08/transformed/jetified-checkout-1.6.33/AndroidManifest.xml:44:13-36
+252-->[com.razorpay:checkout:1.6.34] /Users/jitendra/.gradle/caches/transforms-3/4bf733a7bc127345f11325fb578fbded/transformed/jetified-checkout-1.6.34/AndroidManifest.xml:44:13-36
 253            <intent-filter>
-253-->[com.razorpay:checkout:1.6.33] /Users/jitendra/.gradle/caches/transforms-3/df47ad3c9eaffa11ce7f5cdd6c35bc08/transformed/jetified-checkout-1.6.33/AndroidManifest.xml:46:13-48:29
+253-->[com.razorpay:checkout:1.6.34] /Users/jitendra/.gradle/caches/transforms-3/4bf733a7bc127345f11325fb578fbded/transformed/jetified-checkout-1.6.34/AndroidManifest.xml:46:13-48:29
 254                <action android:name="rzp.device_token.share" />
-254-->[com.razorpay:checkout:1.6.33] /Users/jitendra/.gradle/caches/transforms-3/df47ad3c9eaffa11ce7f5cdd6c35bc08/transformed/jetified-checkout-1.6.33/AndroidManifest.xml:37:13-61
-254-->[com.razorpay:checkout:1.6.33] /Users/jitendra/.gradle/caches/transforms-3/df47ad3c9eaffa11ce7f5cdd6c35bc08/transformed/jetified-checkout-1.6.33/AndroidManifest.xml:37:21-58
+254-->[com.razorpay:checkout:1.6.34] /Users/jitendra/.gradle/caches/transforms-3/4bf733a7bc127345f11325fb578fbded/transformed/jetified-checkout-1.6.34/AndroidManifest.xml:37:13-61
+254-->[com.razorpay:checkout:1.6.34] /Users/jitendra/.gradle/caches/transforms-3/4bf733a7bc127345f11325fb578fbded/transformed/jetified-checkout-1.6.34/AndroidManifest.xml:37:21-58
 255            </intent-filter>
 256        </receiver>
 257
 258        <meta-data
-258-->[com.razorpay:checkout:1.6.33] /Users/jitendra/.gradle/caches/transforms-3/df47ad3c9eaffa11ce7f5cdd6c35bc08/transformed/jetified-checkout-1.6.33/AndroidManifest.xml:61:9-63:58
+258-->[com.razorpay:checkout:1.6.34] /Users/jitendra/.gradle/caches/transforms-3/4bf733a7bc127345f11325fb578fbded/transformed/jetified-checkout-1.6.34/AndroidManifest.xml:61:9-63:58
 259            android:name="com.razorpay.plugin.googlepay_all"
-259-->[com.razorpay:checkout:1.6.33] /Users/jitendra/.gradle/caches/transforms-3/df47ad3c9eaffa11ce7f5cdd6c35bc08/transformed/jetified-checkout-1.6.33/AndroidManifest.xml:62:13-61
+259-->[com.razorpay:checkout:1.6.34] /Users/jitendra/.gradle/caches/transforms-3/4bf733a7bc127345f11325fb578fbded/transformed/jetified-checkout-1.6.34/AndroidManifest.xml:62:13-61
 260            android:value="com.razorpay.RzpGpayMerged" />
-260-->[com.razorpay:checkout:1.6.33] /Users/jitendra/.gradle/caches/transforms-3/df47ad3c9eaffa11ce7f5cdd6c35bc08/transformed/jetified-checkout-1.6.33/AndroidManifest.xml:63:13-55
+260-->[com.razorpay:checkout:1.6.34] /Users/jitendra/.gradle/caches/transforms-3/4bf733a7bc127345f11325fb578fbded/transformed/jetified-checkout-1.6.34/AndroidManifest.xml:63:13-55
 261
 262        <activity
 262-->[com.google.android.gms:play-services-auth:20.3.0] /Users/jitendra/.gradle/caches/transforms-3/750928b5e5c17b1e3fffc3d09843a966/transformed/jetified-play-services-auth-20.3.0/AndroidManifest.xml:23:9-27:75
