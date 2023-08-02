@@ -49,7 +49,7 @@ function FilterComponent(props) {
     <ScrollView style={{ flex: 1 }}>
       {Platform.OS === "ios" && <View style={{ height: hp("2%") }}></View>}
       <View style={styles.modelView}>
-        <OtrixDivider size={I18nManager.isRTL == true ? "sm" : "md"} />
+
         <OtrixDivider size={I18nManager.isRTL == true ? "sm" : "md"} />
         {/* Model header */}
         <OtrixHeader customStyles={{ backgroundColor: Colors().light_white }}>
@@ -157,7 +157,7 @@ function FilterComponent(props) {
             <Text style={[styles.titleTxt, { marginLeft: 10 }]}>
               {"In Stock"}:
             </Text>
-          </TouchableOpacity> 
+          </TouchableOpacity>
 
           {/* Rating View */}
 
@@ -220,7 +220,7 @@ function FilterComponent(props) {
               />
             ))}
           </View> */}
-          
+
 
           {/* <OtrixDivider size={I18nManager.isRTL == true ? "sm" : "md"} />
           <View style={GlobalStyles.horizontalLine}></View>

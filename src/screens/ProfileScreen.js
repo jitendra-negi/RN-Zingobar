@@ -65,7 +65,7 @@ function ProfileScreen(props) {
 
   const openImagePicker = async (res) => {
 
-    console.log("imagepicker response------",res);
+    console.log("imagepicker response------", res);
 
     let mainImage = {
       uri: res.assets[0].uri,
@@ -98,7 +98,7 @@ function ProfileScreen(props) {
             );
           }, 3000);
         } else {
-          console.log("errormsg------",response.message);
+          console.log("errormsg------", response.message);
           setState({
             ...state,
             type: "error",
@@ -171,11 +171,11 @@ function ProfileScreen(props) {
         <TouchableOpacity
           style={[
             GlobalStyles.headerLeft,
-            { zIndex: 999999999, flex:1, alignItems: "center" },
+            { zIndex: 999999999, flex: 1, alignItems: "center" },
           ]}
           onPress={() => props.navigation.goBack()}
         >
-          <Text style={[GlobalStyles.headingTxt,{marginRight:15}]}> {strings.account.title}</Text>
+          <Text style={[GlobalStyles.headingTxt, { marginRight: 15 }]}> {strings.account.title}</Text>
         </TouchableOpacity>
       </View>
 
@@ -210,7 +210,7 @@ function ProfileScreen(props) {
             />
           </View>
         </TouchableOpacity>
-        <TouchableOpacity
+        {/* <TouchableOpacity
           style={styles.listView}
           onPress={() => props.navigation.navigate("WishlistScreen")}
         >
@@ -235,7 +235,7 @@ function ProfileScreen(props) {
               ]}
             />
           </View>
-        </TouchableOpacity>
+        </TouchableOpacity> */}
         <TouchableOpacity
           style={styles.listView}
           onPress={() => props.navigation.navigate("ManageAddressScreen")}

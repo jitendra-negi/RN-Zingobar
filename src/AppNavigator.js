@@ -105,11 +105,11 @@ const EmptyComponent = () => {
 // AddToCartButton component
 const AddToCartButton = ({ cartCount, addToCart }) => {
 
-    const navigation = useNavigation(); 
+  const navigation = useNavigation();
   const handleAddToCart = () => {
 
     //write here to open cart screen
-     navigation.navigate("CartScreen");
+    navigation.navigate("CartScreen");
     // props.navigation.navigate('CartScreen')
     //addToCart(); // Dispatch the addToCart action
   };
@@ -602,7 +602,7 @@ function AppNavigator(props) {
             cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
           }}
         />
-         <Stack.Screen
+        <Stack.Screen
           name="SupportScreen"
           component={SupportScreen}
           options={{
@@ -830,7 +830,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     height: 70,
     position: "absolute",
-    bottom: 95, // Adjust this value to position the button above the bottom tab bar
+    bottom: 70, // Adjust this value to position the button above the bottom tab bar
     left: 10,
     right: 10,
     justifyContent: "center",
