@@ -1,8 +1,9 @@
 import React from "react";
-import { Platform, StyleSheet, Image, Text, View } from "react-native";
+import { Platform, StyleSheet, Image, Text, Button, View, TouchableOpacity } from "react-native";
 import {
   NavigationContainer,
   createNavigationContainerRef,
+  useNavigation
 } from "@react-navigation/native";
 import {
   createStackNavigator,
@@ -58,6 +59,7 @@ import {
   bottomProfileFill,
   bottomSetting,
   bottomSettingFill,
+  cancel,
 } from "@common";
 import {
   widthPercentageToDP as wp,
@@ -79,6 +81,9 @@ import config, {
 } from "./common/config";
 import { isConfigured } from "react-native-reanimated/lib/reanimated2/core";
 
+
+import { addToCart } from "./helpers/actions/cartActions";
+
 export function navigate(name, params) {
   if (navigationRef.isReady()) {
     navigationRef.navigate(name, params);
@@ -95,6 +100,86 @@ const EmptyComponent = () => {
 };
 
 //export default EmptyComponent;
+
+
+// AddToCartButton component
+const AddToCartButton = ({ cartCount, addToCart }) => {
+
+    const navigation = useNavigation(); 
+  const handleAddToCart = () => {
+
+    //write here to open cart screen
+     navigation.navigate("CartScreen");
+    // props.navigation.navigate('CartScreen')
+    //addToCart(); // Dispatch the addToCart action
+  };
+
+  return (
+
+    <View style={styles.containerCart}>
+
+      <View style={styles.cartView}>
+        <Image
+          square
+          source={bottomCart}// Add the path to the add to cart icon
+          style={styles.bottomTabIcon}
+        />
+      </View>
+      <Text style={styles.itemCountText}>{cartCount} items</Text>
+
+      <TouchableOpacity onPress={handleAddToCart} style={styles.button}>
+        <Text style={styles.buttonText}>View Cart</Text>
+      </TouchableOpacity>
+
+
+      <TouchableOpacity onPress={handleAddToCart} style={styles.closeIcon}>
+        <View style={styles.cancelView}>
+          <Image
+            square
+            source={cancel}// Add the path to the add to cart icon
+            style={styles.cancelIcon}
+          />
+        </View>
+      </TouchableOpacity>
+    </View>
+
+
+
+
+    // <TouchableOpacity onPress={handleAddToCart}>
+    //   <View style={styles.cartView}>
+    //     <Image
+    //       square
+    //       source={bottomCart}// Add the path to the add to cart icon
+    //       style={styles.bottomTabIcon}
+    //     />
+    //     {cartCount > 0 && (
+    //       <View style={[GlobalStyles.badge, styles.count]}>
+    //         <Text style={[GlobalStyles.badgeText, styles.countText]}>
+    //           {cartCount}
+    //         </Text>
+    //       </View>
+    //     )}
+    //   </View>
+    // </TouchableOpacity>
+
+
+
+
+  );
+};
+
+
+
+const mapDispatchToProps = (dispatch) => ({
+  addToCart: () => dispatch(addToCart()),
+});
+
+const ConnectedAddToCartButton = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(AddToCartButton);
+
 
 function SettingStackNavigation() {
   if (!AppFeatures.enableSettingScreen) {
@@ -170,40 +255,46 @@ function MyTabs(props) {
   let authStatus = props.auth;
   let wishCount = props.wishlistCount;
   return (
-    <BottomTab.Navigator
-      initialRouteName="HomeScreen"
-      backBehavior={"order"}
-      labeled={false}
-      barStyle={styles.tabbarStyle}
-      screenOptions={{
-        // tabBarStyle: { position: 'absolute' },
-        unmountOnBlur: true,
-        tabBarShowLabel: false,
-        lazy: false,
-        // tabBarStyle: styles.tabbarStyle
-      }}
-    >
-      <BottomTab.Screen
-        name="SearchScreen"
-        component={
-          AppFeatures.enableSearchScreen ? SearchScreen : EmptyComponent
-        }
-        options={{
-          headerShown: false,
-          cardStyleInterpolator:
-            CardStyleInterpolators.forScaleFromCenterAndroid,
-          tabBarIcon: ({ focused, tintColor }) => (
-            <Image
-              square
-              resizeMode="contain"
-              source={focused ? bottomSearchFill1 : bottomSearch1}
-              style={[styles.bottomTabIcon]}
-            />
-          ),
-        }}
-      />
 
-      {/* <BottomTab.Screen
+    <View style={styles.container}>
+      <View style={styles.tabContainer}>
+
+
+
+        <BottomTab.Navigator
+          initialRouteName="HomeScreen"
+          backBehavior={"order"}
+          labeled={false}
+          barStyle={styles.tabbarStyle}
+          screenOptions={{
+            // tabBarStyle: { position: 'absolute' },
+            unmountOnBlur: true,
+            tabBarShowLabel: false,
+            lazy: false,
+            // tabBarStyle: styles.tabbarStyle
+          }}
+        >
+          <BottomTab.Screen
+            name="SearchScreen"
+            component={
+              AppFeatures.enableSearchScreen ? SearchScreen : EmptyComponent
+            }
+            options={{
+              headerShown: false,
+              cardStyleInterpolator:
+                CardStyleInterpolators.forScaleFromCenterAndroid,
+              tabBarIcon: ({ focused, tintColor }) => (
+                <Image
+                  square
+                  resizeMode="contain"
+                  source={focused ? bottomSearchFill1 : bottomSearch1}
+                  style={[styles.bottomTabIcon]}
+                />
+              ),
+            }}
+          />
+
+          {/* <BottomTab.Screen
         name="CategoryScreen"
         component={
           AppFeatures.enableCategoryScreen ? CategoryScreen : EmptyComponent
@@ -219,7 +310,7 @@ function MyTabs(props) {
           ),
         }}
       /> */}
-      {/* <BottomTab.Screen
+          {/* <BottomTab.Screen
         name="ProductListScreen"
         component={AppFeatures.enableCategoryScreen ? ProductListScreen : EmptyComponent}
         options={({ navigation }) => ({
@@ -234,79 +325,79 @@ function MyTabs(props) {
         })}
       /> */}
 
-      <BottomTab.Screen
-        name="ProductListScreen"
-        component={AppFeatures.enableCategoryScreen ? ProductNavigator : EmptyComponent}
-        options={{
-          headerShown: false,
-          cardStyleInterpolator:
-            CardStyleInterpolators.forScaleFromCenterAndroid,
-          tabBarIcon: ({ focused, tintColor }) => (
-            <Image
-              square
-              source={focused ? bottomCategoryFill : bottomCategory}
-              style={[styles.bottomTabIcon]}
-            />
-          ),
-        }}
-      />
+          <BottomTab.Screen
+            name="ProductListScreen"
+            component={AppFeatures.enableCategoryScreen ? ProductNavigator : EmptyComponent}
+            options={{
+              headerShown: false,
+              cardStyleInterpolator:
+                CardStyleInterpolators.forScaleFromCenterAndroid,
+              tabBarIcon: ({ focused, tintColor }) => (
+                <Image
+                  square
+                  source={focused ? bottomCategoryFill : bottomCategory}
+                  style={[styles.bottomTabIcon]}
+                />
+              ),
+            }}
+          />
 
-      <BottomTab.Screen
-        name="HomeScreen"
-        component={AppFeatures.enableHome ? HomeScreen : EmptyComponent}
+          <BottomTab.Screen
+            name="HomeScreen"
+            component={AppFeatures.enableHome ? HomeScreen : EmptyComponent}
 
-        options={{
-          headerShown: false,
-          cardStyleInterpolator:
-            CardStyleInterpolators.forScaleFromCenterAndroid,
-          tabBarIcon: ({ focused, tintColor }) => (
-            <Image
-              square
-              resizeMode="contain"
-              source={focused ? bottomHomeFill : bottomHome}
-              style={[styles.bottomTabIcon]}
-            />
-          ),
-        }}
-      />
+            options={{
+              headerShown: false,
+              cardStyleInterpolator:
+                CardStyleInterpolators.forScaleFromCenterAndroid,
+              tabBarIcon: ({ focused, tintColor }) => (
+                <Image
+                  square
+                  resizeMode="contain"
+                  source={focused ? bottomHomeFill : bottomHome}
+                  style={[styles.bottomTabIcon]}
+                />
+              ),
+            }}
+          />
 
-      <BottomTab.Screen
-        name="WishlistScreen"
-        component={authStatus == true ? (AppFeatures.enableWishListScreen ? WishlistScreen : EmptyComponent) : AuthNavigator}
-        options={{
-          headerShown: false,
-          cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
-          tabBarIcon: ({ focused, tintColor }) => (
-            <View style={styles.cartIconView}>
-              <Image
-                square
-                source={focused ? heart : heart}
-                style={[styles.bottomTabIcon, {
-                  top: wishCount > 9 ? hp('0.8%') : hp('0.2%'),
-                  right: wp('1%'),
-                  height: wp('7%'),
-                  width: wp('7%'),
-                }]}
-              />
-              {
-                wishCount > 0 && <Badge style={[GlobalStyles.badge, styles.count, {
-                  height: wishCount > 9 ? _roundDimensions()._height * 0.039 : _roundDimensions()._height * 0.030,
-                  width: wishCount > 9 ? _roundDimensions()._height * 0.039 : _roundDimensions()._height * 0.030,
-                  borderRadius: _roundDimensions()._borderRadius,
-                  right: wishCount > 9 ? wp('0.3') : wp('1.2%'),
-                  top: wishCount > 9 ? hp('0.1%') : hp('0.6%')
-                }]}>
+          <BottomTab.Screen
+            name="WishlistScreen"
+            component={authStatus == true ? (AppFeatures.enableWishListScreen ? WishlistScreen : EmptyComponent) : AuthNavigator}
+            options={{
+              headerShown: false,
+              cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
+              tabBarIcon: ({ focused, tintColor }) => (
+                <View style={styles.cartIconView}>
+                  <Image
+                    square
+                    source={focused ? heart : heart}
+                    style={[styles.bottomTabIcon, {
+                      top: wishCount > 9 ? hp('0.8%') : hp('0.2%'),
+                      right: wp('1%'),
+                      height: wp('7%'),
+                      width: wp('7%'),
+                    }]}
+                  />
+                  {
+                    wishCount > 0 && <Badge style={[GlobalStyles.badge, styles.count, {
+                      height: wishCount > 9 ? _roundDimensions()._height * 0.039 : _roundDimensions()._height * 0.030,
+                      width: wishCount > 9 ? _roundDimensions()._height * 0.039 : _roundDimensions()._height * 0.030,
+                      borderRadius: _roundDimensions()._borderRadius,
+                      right: wishCount > 9 ? wp('0.3') : wp('1.2%'),
+                      top: wishCount > 9 ? hp('0.1%') : hp('0.6%')
+                    }]}>
 
-                  <Text style={[GlobalStyles.badgeText, styles.countText, { fontSize: wishCount > 9 ? wp('2.4%') : wp('3%') }]}>{wishCount}</Text>
-                </Badge>
-              }
+                      <Text style={[GlobalStyles.badgeText, styles.countText, { fontSize: wishCount > 9 ? wp('2.4%') : wp('3%') }]}>{wishCount}</Text>
+                    </Badge>
+                  }
 
 
-            </View>
-          ),
-        }} />
+                </View>
+              ),
+            }} />
 
-      {/* <BottomTab.Screen
+          {/* <BottomTab.Screen
   name="WishlistScreen"
   component={authStatus == true ? (AppFeatures.enableWishListScreen ? WishlistScreen : EmptyComponent) : AuthNavigator}
   options={{
@@ -343,7 +434,7 @@ function MyTabs(props) {
                 }} /> */}
 
 
-      {/* <BottomTab.Screen name="CartScreen" component={authStatus == true ? AppFeatures.enableCartScreen? CartScreen : EmptyComponent : AuthNavigator} options={{ headerShown: false }}
+          {/* <BottomTab.Screen name="CartScreen" component={authStatus == true ? AppFeatures.enableCartScreen? CartScreen : EmptyComponent : AuthNavigator} options={{ headerShown: false }}
                 options={{
                     headerShown: false,
                     cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
@@ -379,7 +470,7 @@ function MyTabs(props) {
 
 
 
-      {/* <BottomTab.Screen
+          {/* <BottomTab.Screen
         name="WishlistScreen"
         component={
           AppFeatures.enableWishListScreen ? WishlistScreen : EmptyComponent
@@ -398,30 +489,38 @@ function MyTabs(props) {
         }}
       /> */}
 
-      <BottomTab.Screen
-        name="ProfileScreen"
-        component={
-          authStatus == true
-            ? AppFeatures.enableProfileScreen
-              ? ProfileScreen
-              : EmptyComponent
-            : AuthNavigator
-        }
+          <BottomTab.Screen
+            name="ProfileScreen"
+            component={
+              authStatus == true
+                ? AppFeatures.enableProfileScreen
+                  ? ProfileScreen
+                  : EmptyComponent
+                : AuthNavigator
+            }
 
-        options={{
-          headerShown: false,
-          cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
+            options={{
+              headerShown: false,
+              cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
 
-          tabBarIcon: ({ focused, tintColor }) => (
-            <Image
-              square
-              source={focused ? bottomProfileFill : bottomProfile}
-              style={[styles.bottomTabIcon]}
-            />
-          ),
-        }}
-      />
-    </BottomTab.Navigator>
+              tabBarIcon: ({ focused, tintColor }) => (
+                <Image
+                  square
+                  source={focused ? bottomProfileFill : bottomProfile}
+                  style={[styles.bottomTabIcon]}
+                />
+              ),
+            }}
+          />
+        </BottomTab.Navigator>
+
+      </View>
+
+      {/* AddToCartButton component */}
+      {cartCount > 0 && (<View style={styles.addButtonContainer}>
+        <ConnectedAddToCartButton />
+      </View>)}
+    </View>
   );
 }
 
@@ -706,12 +805,113 @@ const styles = StyleSheet.create({
     color: Colors().white,
     fontFamily: Fonts.Font_Bold,
   },
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
+  // container: {
+  //   backgroundColor: 'red',
+  //   flex: 1,
+  //   //  justifyContent: 'center',
+  //   //alignItems: 'center',
+  // },
   text: {
     textAlign: 'center',
+  },
+
+  container: {
+    justifyContent: 'center',
+    flex: 1,
+    position: "relative", // To allow absolute positioning inside the container
+  },
+  tabContainer: {
+
+    backgroundColor: 'yellow',
+    flex: 1, // Take the available space for bottom tab navigator
+  },
+  addButtonContainer: {
+    backgroundColor: Colors().light_white,
+    borderRadius: 10,
+    height: 70,
+    position: "absolute",
+    bottom: 95, // Adjust this value to position the button above the bottom tab bar
+    left: 10,
+    right: 10,
+    justifyContent: "center",
+    // alignItems: "center",
+    // Add shadow properties below
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    elevation: 5,
+  },
+
+  cartView: {
+    backgroundColor: Colors().themeColor,
+    height: _roundDimensions()._height * 0.065,
+    width: _roundDimensions()._height * 0.065,
+    borderRadius: _roundDimensions()._borderRadius,
+    justifyContent: "center",
+    alignItems: "center",
+    position: "relative",
+    zIndex: 9999,
+  },
+
+
+  containerCart: {
+    flex: 1,
+    marginStart: 10,
+    marginEnd: 10,
+    flexDirection: "row",
+    justifyContent: "space-around",
+    alignItems: "center",
+  },
+
+  itemCountContainer: {
+    flexDirection: "row",
+    alignItems: "center",
+    marginRight: 10,
+  },
+  cartIcon: {
+    width: 20,
+    height: 20,
+    marginRight: 5,
+  },
+  itemCountText: {
+    marginStart: 20,
+    fontFamily: Fonts.Font_Bold,
+    marginRight: 5,
+  },
+  closeIcon: {
+    padding: 5,
+  },
+
+  button: {
+    marginStart: 70,
+    backgroundColor: Colors().themeBlue,
+    paddingVertical: 10,
+    paddingHorizontal: 15,
+    borderRadius: 5,
+  },
+  buttonText: {
+    color: Colors().white,
+    fontFamily: Fonts.Font_Bold,
+  },
+
+  cancelView: {
+    backgroundColor: "#DCDCDC",
+    height: _roundDimensions()._height * 0.030,
+    width: _roundDimensions()._height * 0.030,
+    borderRadius: _roundDimensions()._borderRadius,
+    justifyContent: "center",
+    alignItems: "center",
+    padding: 5,
+    position: "relative",
+    zIndex: 9999,
+  },
+
+  cancelIcon: {
+    height: wp("3%"),
+    width: wp("3%"),
   },
 });
