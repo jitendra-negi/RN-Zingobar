@@ -373,7 +373,7 @@ function CheckoutScreen(props) {
         onPress={() => setState({ ...state, selectedShipping: item.id })}>
         <View style={[styles.shippingBox]}>
           <Image source={shipping} resizeMode="contain" style={styles.shippingImage} />
-          <Text style={styles.shippingTxt} numberOfLines={2}>{item.name}     </Text>
+          {/* <Text style={styles.shippingTxt} numberOfLines={2}>{item.name}     </Text> */}
           <OtrixDivider size={'sm'} />
           <Text style={styles.shippingTxt} numberOfLines={1}>Charges : <Text style={styles.chargeTxt}> {CURRENCY}{item.shipping_charge}</Text> </Text>
           {selectedShipping == item.id &&
