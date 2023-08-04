@@ -6,6 +6,7 @@ import {
   FlatList,
   Image,
   TouchableOpacity,
+  Dimensions
 } from "react-native";
 import { GlobalStyles, Colors } from "@helpers";
 import {
@@ -16,6 +17,33 @@ import { ASSETS_DIR } from "@env";
 import OtrixDivider from "../OtrixComponent/OtrixDivider";
 import Fonts from "@helpers/Fonts";
 import { logfunction } from "@helpers/FunctionHelper";
+const { width } = Dimensions.get('window');
+
+const renderItemWithEllipsis = ({ item }) => {
+  const textLength = item.category_description.name.length;
+  const shouldShowEllipsis = textLength > 8; // Adjust the value '8' based on your font size and container width
+
+  return (
+    <TouchableOpacity
+      style={styles.catBox}
+      onPress={() => {
+        props.navigation.navigate('ProductListScreen', {
+          type: 'category',
+          id: item.category_id,
+          children: item.children !== undefined ? item.children : [],
+          title: item.category_description.name,
+        });
+      }}
+    >
+      <View style={styles.imageContainer}>
+        <Image source={{ uri: ASSETS_DIR + 'category/' + item.image }} style={styles.imageView} resizeMode="cover" />
+      </View>
+      <Text numberOfLines={shouldShowEllipsis ? 1 : null} ellipsizeMode="tail" style={styles.catName}>
+        {item.category_description.name}
+      </Text>
+    </TouchableOpacity>
+  );
+};
 
 function HomeCategory(props) {
   return (
@@ -42,31 +70,7 @@ function HomeCategory(props) {
         showsHorizontalScrollIndicator={false}
         onEndReachedThreshold={0.7}
         keyExtractor={(contact, index) => String(index)}
-        renderItem={({ item, index }) => (
-          <TouchableOpacity
-            style={styles.catBox}
-            key={item.id}
-            onPress={() =>
-              props.navigation.navigate("ProductListScreen", {
-                type: "category",
-                id: item.category_id,
-                childerns: item.children != undefined ? item.children : [],
-                title: item.category_description.name,
-              })
-            }
-          >
-            <View style={styles.imageContainer}>
-              <Image
-                source={{ uri: ASSETS_DIR + "category/" + item.image }}
-                style={styles.imageView}
-                resizeMode="cover"
-              ></Image>
-            </View>
-            <Text numberOfLines={2} style={styles.catName}>
-              {item.category_description.name}
-            </Text>
-          </TouchableOpacity>
-        )}
+        renderItem={renderItemWithEllipsis}
       ></FlatList>
     </View>
   );
@@ -102,5 +106,6 @@ const styles = StyleSheet.create({
     fontFamily: Fonts.Font_Reguler,
     textAlign: "center",
     color: Colors().text_color,
+    maxWidth: width * 0.6,
   },
 });
