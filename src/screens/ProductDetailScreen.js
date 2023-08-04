@@ -23,6 +23,7 @@ import Fonts from "../helpers/Fonts";
 import { bindActionCreators } from "redux";
 import { addToCart, addToWishList } from '@actions';
 import Icon from 'react-native-vector-icons/AntDesign'
+import Icon1 from 'react-native-vector-icons/FontAwesome';
 import FontAwesomeIcon from 'react-native-vector-icons/FontAwesome';
 import MaterialIconsIcon from 'react-native-vector-icons/MaterialIcons';
 import ImageViewer from 'react-native-image-zoom-viewer';
@@ -520,7 +521,7 @@ function ProductDetailScreen(props) {
                             <View style={GlobalStyles.horizontalLine}></View>
                             <OtrixDivider size={'sm'} />
                             <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
-                                <Text style={[styles.headingTxt, { fontSize: wp('3.8%') }]}>{strings.product_details.description}</Text>
+                                <Text style={[styles.headingTxt, { fontSize: wp('3.8%'),color:Colors().secondry_text_color  }]}>{strings.product_details.description}</Text>
                                 <Text onPress={() => expandView()} style={[styles.headingTxt, { fontSize: wp('5.8%'), marginRight: wp('2%') }]}>{isCollasped ? "-" : "+"}</Text>
 
                             </View>
@@ -540,7 +541,7 @@ function ProductDetailScreen(props) {
                             <OtrixDivider size={'sm'} />
                             {Object.keys(productAttributes).length > 0 &&
                                 <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
-                                    <Text style={[styles.headingTxt, { fontSize: wp('3.8%') }]}>{"Product Details"}</Text>
+                                    <Text style={[styles.headingTxt, { fontSize: wp('3.8%'),color:Colors().secondry_text_color  }]}>{"Product Details"}</Text>
                                     <Text onPress={() => expandDetailView()} style={[styles.headingTxt, { fontSize: wp('5.8%'), marginRight: wp('2%') }]}>{isProductDetails ? "-" : "+"}</Text>
 
                                 </View>
@@ -620,13 +621,18 @@ function ProductDetailScreen(props) {
 
                             </Button>
                             <View style={styles.countBox}>
+                            <View style={styles.arrowContainer}>
+                            <TouchableOpacity style={{ flex: 0.50 }} onPress={() => setState({ ...state, productCount: productCount + 1 })}>
+                                        {/* <MaterialIconsIcon name="keyboard-arrow-up" style={styles.plusminusArrow} /> */}
+                                        <Icon1 name="plus" style={styles.plusminusArrow} />
+                                    </TouchableOpacity>
+                                    </View>
                                 <Text style={styles.countTxt}>{productCount}</Text>
                                 <View style={styles.arrowContainer}>
-                                    <TouchableOpacity style={{ flex: 0.50 }} onPress={() => setState({ ...state, productCount: productCount + 1 })}>
-                                        <MaterialIconsIcon name="keyboard-arrow-up" style={styles.plusminusArrow} />
-                                    </TouchableOpacity>
+                                    
                                     <TouchableOpacity style={{ flex: 0.50 }} onPress={() => setState({ ...state, productCount: productCount > 1 ? productCount - 1 : 1 })}>
-                                        <MaterialIconsIcon name="keyboard-arrow-down" style={styles.plusminusArrow} />
+                                        {/* <MaterialIconsIcon name="keyboard-arrow-down" style={styles.plusminusArrow} /> */}
+                                        <Icon1 name="minus" style={styles.plusminusArrow} />
                                     </TouchableOpacity>
                                 </View>
                             </View>
@@ -794,6 +800,7 @@ const styles = StyleSheet.create({
         fontSize: wp('4.5%'),
         fontFamily: Fonts.Font_Reguler,
         textAlignVertical: 'center',
+        color:Colors().secondry_text_color ,
     },
     stock: {
         flex: 0.25,
@@ -851,9 +858,9 @@ const styles = StyleSheet.create({
         borderTopWidth: 1
     },
     countBox: {
-        backgroundColor: Colors().light_white,
+        backgroundColor: Colors().secondaryColor,
         flexDirection: 'row',
-        flex: 0.20,
+        flex: 0.30,
         height: hp('4.8%'),
         marginHorizontal: wp('1%'),
         shadowColor: 'grey',
@@ -870,16 +877,19 @@ const styles = StyleSheet.create({
         flex: 0.60,
         textAlign: 'center',
         textAlignVertical: 'center',
-        color: Colors().text_color,
+        color: Colors().white,
         fontFamily: Fonts.Font_Semibold
 
     },
     arrowContainer: {
         flex: 0.40,
         flexDirection: 'column',
+        justifyContent:'center',
+        alignItems:'center'
     },
     plusminusArrow: {
-        fontSize: wp('5.2%'),
+        fontSize: wp('4.2%'),
+        color:Colors().white
 
     },
     cancleIcon: {

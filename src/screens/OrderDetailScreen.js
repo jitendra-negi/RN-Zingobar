@@ -318,7 +318,7 @@ function OrderDetailScreen(props) {
 
                     <View style={styles.cartContent} >
                         <TouchableOpacity style={[styles.deliveryBox]}>
-                            <Text style={styles.addressTxt} numberOfLines={1}>{orderData.shipping_name}     </Text>
+                            {/* <Text style={styles.addressTxt} numberOfLines={1}>{orderData.shipping_name}     </Text> */}
                             <Text style={styles.addressTxt} numberOfLines={2}>{orderData.shipping_address_1}    </Text>
                             <Text style={styles.addressTxt} numberOfLines={2}>{orderData.shipping_address_2 ? orderData.shipping_address_2 + ',' : ','} {orderData.shipping_city}</Text>
                             <Text style={styles.addressTxt} numberOfLines={1}>{orderData.shipping_postcode}</Text>
