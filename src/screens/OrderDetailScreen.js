@@ -25,14 +25,69 @@ import { Input, FormControl, Button, TextArea, Select, CheckIcon, InfoOutlineIco
 import Stars from 'react-native-stars';
 import FontAwesomeIcon from 'react-native-vector-icons/FontAwesome';
 import Timeline from 'react-native-timeline-flatlist';
+import { addToCart} from '@actions';
+import { bindActionCreators } from "redux";
 import { log } from "react-native-reanimated";
 
 function OrderDetailScreen(props) {
     const { orderData } = props.route.params;
-    const [state, setState] = React.useState({ rateReview: false, loading: false, name: null, star: 0, submited: false, cancelSubmited: false, productID: null, message: null, type: 'error', cancelOrder: false, orderID: null, cancelMessage: null, timelineData: null });
-    const { rateReview, name, star, message, loading, submited, productID, type, cancelOrder, orderID, cancelMessage, cancelSubmited, timelineData } = state;
+    console.log("orderDetails--------", orderData);
+    const [state, setState] = React.useState({ fetchCart: false, rateReview: false, loading: false, name: null, star: 0, submited: false, cancelSubmited: false, productID: null, message: null, type: 'error', cancelOrder: false, orderID: null, cancelMessage: null, timelineData: null });
+    const { optionColor, optionSelect, optionSize, rateReview, name, star, message, loading, submited, productID, type, cancelOrder, orderID, cancelMessage, cancelSubmited, timelineData } = state;
     const [errors, setErrors] = React.useState({});
     const [showMessage, setShowLoading] = React.useState(false)
+
+    const { USER_AUTH } = props;
+
+    const _addToCart = () => {
+        if (USER_AUTH == true) {
+            setState({ ...state, fetchCart: true })
+
+            let sendData = new FormData();
+            sendData.append('quantity', orderData.products[0].quantity)
+            sendData.append('product_id', orderData.products[0].product_id)
+            sendData.append('options', JSON.stringify({ "optionColorSelected": optionColor, "optionSizeSelected": optionSize, "optionSelectSelected": optionSelect }))
+            logfunction("Sample requrest  ", sendData);
+            getApi.postData(
+                'user/addToCart',
+                sendData,
+            ).then((response => {
+                logfunction("response response  ", response);
+
+                if (response.status == 1) {
+                    props.addToCart(response.cartCount);
+                    setState({
+                        ...state,
+                        message: response.message,
+                        fetchCart: false,
+                        type: 'success'
+                    });
+
+                    props.navigation.navigate('CartScreen')
+                }
+                else {
+                    setState({
+                        ...state,
+                        message: response.message,
+                        fetchCart: false,
+                        type: 'error'
+                    });
+                }
+
+                setTimeout(() => {
+                    setState({
+                        ...state,
+                        message: null,
+                    })
+                }, 3000);
+            }));
+        }
+        else {
+            props.navigation.navigate('LoginScreen');
+        }
+
+
+    }
 
     const validate = () => {
         if (star == 0) {
@@ -228,11 +283,11 @@ function OrderDetailScreen(props) {
 
             {/* Header */}
             <OtrixHeader customStyles={{ backgroundColor: Colors().light_white }}>
-                <TouchableOpacity style={[GlobalStyles.headerLeft,{alignItems:'flex-start',marginLeft:wp('3%')}]} onPress={() => props.navigation.goBack()}>
+                <TouchableOpacity style={[GlobalStyles.headerLeft, { alignItems: 'flex-start', marginLeft: wp('3%') }]} onPress={() => props.navigation.goBack()}>
                     <OtirxBackButton />
                 </TouchableOpacity>
-                <View style={[GlobalStyles.headerCenter, { flex:1.0}]}>
-                    <Text style={[GlobalStyles.headingTxt,{marginRight:30}]}> {strings.order_details.title} </Text>
+                <View style={[GlobalStyles.headerCenter, { flex: 1.0 }]}>
+                    <Text style={[GlobalStyles.headingTxt, { marginRight: 30 }]}> {strings.order_details.title} </Text>
                 </View>
             </OtrixHeader>
 
@@ -288,7 +343,7 @@ function OrderDetailScreen(props) {
                         circleSize={20}
                         circleColor='rgb(45,156,219)'
                         lineColor='rgb(45,156,219)'
-                        timeContainerStyle={{  }}
+                        timeContainerStyle={{}}
                         timeStyle={{ textAlign: 'center', backgroundColor: '#ff9797', color: 'white', padding: 10, borderRadius: 13 }}
                         descriptionStyle={{ color: 'gray' }}
                         options={{
@@ -297,7 +352,7 @@ function OrderDetailScreen(props) {
                         }}
                         innerCircle={'dot'}
                     />
-                     {/* {timelineData != null &&
+                    {/* {timelineData != null &&
                         <View style={{ width: '100%', height: '8%', backgroundColor: 'white', flexDirection: 'row', alignItems: 'center' }}>
                             <View style={{ width: 80, height: 30, backgroundColor: '#ff9797', marginLeft: 10, borderRadius: 20, justifyContent: 'center', alignItems: 'center' }}>
                                 <Text style={{ color: 'white' }}>{timelineData[0].time}</Text>
@@ -411,10 +466,10 @@ function OrderDetailScreen(props) {
                             </View>
                             <View style={styles.detailRow}>
                                 <View style={styles.leftView}>
-                                    <Text style={[styles.leftTxt, { color: Colors().link_color, fontSize: wp('4.5%') }]}>{strings.order_details.order_total}</Text>
+                                    <Text style={[styles.leftTxt, { color: Colors().link_color, fontSize: wp('4%') }]}>{strings.order_details.order_total}</Text>
                                 </View>
                                 <View style={styles.rightView}>
-                                    <Text style={[styles.rightTxt, , { color: Colors().link_color, fontSize: wp('4.5%') }]}> {CURRENCY}{orderData.grand_total}</Text>
+                                    <Text style={[styles.rightTxt, , { color: Colors().link_color, fontSize: wp('4%') }]}> {CURRENCY}{orderData.grand_total}</Text>
                                 </View>
                             </View>
                         </View>
@@ -424,6 +479,8 @@ function OrderDetailScreen(props) {
 
                 </View>
             </OtrixContent>
+
+            {/* Canceled */}
             {
                 orderData.order_status.name === "Pending" ?
                     <Button
@@ -434,7 +491,21 @@ function OrderDetailScreen(props) {
                         onPress={() => setState({ ...state, orderID: orderData.id, cancelOrder: true })}
                     >
                         <Text style={GlobalStyles.buttonText}>{strings.order_details.cancel_order}</Text>
-                    </Button> : null
+                    </Button>
+                    :
+                    orderData.order_status.name === "Canceled" ?
+                        <Button
+                            size="md"
+                            variant="solid"
+                            bg={Colors().red}
+                            style={[GlobalStyles.button, { marginHorizontal: wp('2%'), marginVertical: wp('2%') }]}
+                            onPress={() => _addToCart()}
+                        >
+                            <Text style={GlobalStyles.buttonText}>{"Repeat Order"}</Text>
+                        </Button>
+                        :
+                        null
+
             }
 
             <Modal visible={rateReview} transparent={true}>
@@ -569,11 +640,18 @@ function mapStateToProps(state) {
     return {
         cartData: state.cart.cartData,
         strings: state.mainScreenInit.strings,
+        cartCount: state.cart.cartCount,
+        USER_AUTH: state.auth.USER_AUTH,
     }
 }
+const mapDispatchToProps = dispatch => (
+    bindActionCreators({
+        addToCart,
+       
+    }, dispatch)
+);
 
-
-export default connect(mapStateToProps)(OrderDetailScreen);
+export default connect(mapStateToProps,mapDispatchToProps)(OrderDetailScreen);
 
 const styles = StyleSheet.create({
 
@@ -718,7 +796,7 @@ const styles = StyleSheet.create({
     },
     detailRow: {
         flexDirection: 'row',
-        marginVertical: hp('0.4%')
+        marginTop: hp('0.2%')
     },
 
     bottomButton: {
@@ -744,7 +822,7 @@ const styles = StyleSheet.create({
     contentView: {
         marginHorizontal: wp('10%'),
         backgroundColor: Colors().white,
-        height:hp('40%'),
+        height: hp('40%'),
         padding: wp('5%')
     },
     rateTitle: {

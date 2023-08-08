@@ -119,7 +119,7 @@ function EditAddressComponent(props) {
             </View>
           </TouchableOpacity>
           <View style={[GlobalStyles.headerCenter,{flex:1.0}]}>
-            <Text style={[GlobalStyles.headingTxt]}>
+            <Text style={[GlobalStyles.headingTxt,{marginRight:wp('5%')}]}>
               {strings.manage_address.update_address}
             </Text>
           </View>

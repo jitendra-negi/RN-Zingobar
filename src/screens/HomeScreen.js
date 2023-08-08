@@ -212,7 +212,7 @@ function HomeScreen(props) {
       >
         {/* Header */}
 
-        <OtrixHeader customStyles={{ backgroundColor: Colors().white }}>
+        <OtrixHeader customStyles={{ backgroundColor: Colors().white,marginTop:15 }}>
           {/* <TouchableOpacity style={styles.headerLeft} onPress={() => props.navigation.navigate('ProfileScreen')}>
 
             {
@@ -348,8 +348,8 @@ function HomeScreen(props) {
             <OtrixDivider size={"md"} />
 
             {/* NewProduct Component */}
-
-            <NewProduct
+{/* <View style={{width:wp('100%'),backgroundColor:'yellow'}}> */}
+<NewProduct
               navigation={props.navigation}
               strings={strings}
               wishlistArr={wishlistData}
@@ -362,6 +362,8 @@ function HomeScreen(props) {
               addToWishlist={addToWish}
               userAuth={props.USER_AUTH}
             />
+{/* </View> */}
+           
 
             {/* HomeManufacturerView Component */}
 
@@ -445,19 +447,21 @@ export default connect(mapStateToProps, mapDispatchToProps)(HomeScreen);
 
 const styles = StyleSheet.create({
   headerRight: {
-    flex: 0.15,
+    flex: 0.16,
 
-    marginRight: wp("2%"),
+   
 
-    justifyContent: "center",
+    justifyContent:'flex-start',
 
-    alignItems: "center",
+    alignItems:'flex-end',
+    
   },
 
   heartIcon: {
     width: wp("6.5%"),
     height: hp("6.5%"),
     resizeMode: "contain",
+    //marginRight:-40
     // tintColor: Colors().custom_pink,
   },
 

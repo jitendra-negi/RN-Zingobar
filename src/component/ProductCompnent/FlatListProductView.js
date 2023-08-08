@@ -18,7 +18,7 @@ import FastImage from "react-native-fast-image";
 
 function FlatListProductView(props) {
 
-  console.log("wishlistarray-----",props.wishlistArray);
+  console.log("wishlistarray-----", props.wishlistArray);
 
   const data = props.data;
   let off = null;
@@ -67,9 +67,17 @@ function FlatListProductView(props) {
           resizeMode={FastImage.resizeMode.contain}
         />
       </View>
+
       <View style={styles.infromationView}>
         <View style={styles.starView}>
-          <Stars
+        <Icon name={"star"} size={11} style={[styles.myStarStyle]} />
+        <Text style={styles.reviewTxt} numberOfLines={2}>
+          {data.review_avg ? parseFloat(data.review_avg) : 0}
+        </Text>
+        <Text style={[styles.reviewTxt,{marginLeft:5}]}>
+           ({data.product_review_count ? parseFloat(data.product_review_count) : 0} Reviews)
+        </Text>
+          {/* <Stars
             default={data.review_avg ? parseFloat(data.review_avg) : 0}
             count={5}
             half={true}
@@ -92,7 +100,7 @@ function FlatListProductView(props) {
               />
             }
             disabled={true}
-          />
+          /> */}
         </View>
         <Text style={styles.productName} numberOfLines={2}>
           {data.product_description.name}
@@ -116,7 +124,12 @@ function FlatListProductView(props) {
             </Text>
           )}
           {off != null && <Text style={styles.offerTxt}>{off} </Text>}
+
+
         </View>
+
+
+
       </View>
 
       {data.quantity == 0 && (
@@ -127,9 +140,25 @@ function FlatListProductView(props) {
         </View>
       )}
 
+      {/* <View style={styles.countBox}>
+        <View style={styles.arrowContainer}>
+          <TouchableOpacity style={{ flex: 0.50 }} onPress={() => setState({ ...state, productCount: productCount > 1 ? productCount - 1 : 1 })}>
+            <Icon name="minus" style={styles.plusminusArrow} />
+          </TouchableOpacity>
+
+        </View>
+        <Text style={styles.countTxt}>{"1"}</Text>
+        <View style={styles.arrowContainer}>
+
+          <TouchableOpacity style={{ flex: 0.50 }} onPress={() => setState({ ...state, productCount: productCount + 1 })}>
+            <Icon name="plus" style={styles.plusminusArrow} />
+          </TouchableOpacity>
+        </View>
+      </View> */}
+
       {wishlistArr &&
-      wishlistArr.length > 0 &&
-      wishlistArr.includes(data.id) ? (
+        wishlistArr.length > 0 &&
+        wishlistArr.includes(data.id) ? (
         <TouchableOpacity
           style={GlobalStyles.FavCircle}
           onPress={() => props.addToWishlist(data.id)}
@@ -188,6 +217,13 @@ const styles = StyleSheet.create({
     borderTopStartRadius: wp("2%"),
     borderTopEndRadius: wp("2%"),
   },
+  reviewTxt: {
+    fontFamily: Fonts.Font_Reguler,
+    fontSize: wp('2.5%'),
+    marginTop: hp('0.3%'),
+    textAlign: 'center',
+    color: Colors().secondry_text_color
+},
   image: {
     resizeMode: "contain",
     alignSelf: "center",
@@ -197,22 +233,26 @@ const styles = StyleSheet.create({
   infromationView: {
     flex: 0.37,
     width: wp("40%"),
+    //backgroundColor:'green',
+    //flexDirection:'row'
   },
   starView: {
     alignItems: "flex-start",
     marginVertical: hp("0.6%"),
+    flexDirection:'row'
   },
   myStarStyle: {
     color: "#ffd12d",
     backgroundColor: "transparent",
     marginHorizontal: 1,
     textShadowRadius: 1,
+    marginTop:3
   },
   myEmptyStarStyle: {
     color: "gray",
   },
   productName: {
-    color: Colors().secondry_text_color,
+    color: Colors().black,
     fontFamily: Fonts.Font_Semibold,
     fontSize: wp("3.5%"),
   },
@@ -220,6 +260,7 @@ const styles = StyleSheet.create({
     flex: 1,
     marginTop: hp("0.6%"),
     flexDirection: "row",
+    //backgroundColor:'red'
   },
   price: {
     color: Colors().black,
@@ -245,5 +286,45 @@ const styles = StyleSheet.create({
   SpcialView: {
     flex: 0.7,
     flexDirection: "row",
+  },
+  countBox: {
+    backgroundColor: Colors().secondaryColor,
+    flexDirection: 'row',
+    position: "absolute",
+    top: hp("17.2%"),
+    left: wp("22%"),
+    right: wp("0.5%"),
+    bottom: 0,
+    flex: 0.3,
+    height: hp('4.8%'),
+    marginHorizontal: wp('1%'),
+    shadowColor: 'grey',
+    shadowOffset: { width: 0, height: 0.4 },
+    shadowOpacity: 0.30,
+    shadowRadius: 3,
+    elevation: 6,
+    borderRadius: 5,
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  countTxt: {
+    fontSize: wp('4.5%'),
+    flex: 0.60,
+    textAlign: 'center',
+    textAlignVertical: 'center',
+    color: Colors().white,
+    fontFamily: Fonts.Font_Semibold
+
+  },
+  arrowContainer: {
+    flex: 0.40,
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  plusminusArrow: {
+    fontSize: wp('4.2%'),
+    color: Colors().white
+
   },
 });

@@ -205,7 +205,7 @@ function EditProfileScreen(props) {
           <OtirxBackButton />
         </TouchableOpacity>
         <View style={[GlobalStyles.headerCenter, { flex: 1 }]}>
-          <Text style={[GlobalStyles.headingTxt, { lineHeight: hp("4.5%") }]}>
+          <Text style={[GlobalStyles.headingTxt, { lineHeight: hp("4.5%"),marginRight:wp('10%') }]}>
             {" "}
             {strings.account.label_edit_profile}
           </Text>

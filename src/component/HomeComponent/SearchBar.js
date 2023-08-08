@@ -29,8 +29,10 @@ export default SearchBar = React.memo(Search);
 
 const styles = StyleSheet.create({
   searchView: {
-    height: hp("8%"),
+    height: hp("10%"),
     backgroundColor: Colors().white,
+    justifyContent:'center'
+    //marginTop:10
   },
   searchContainer: {
     flexDirection: "row",
@@ -39,8 +41,10 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     backgroundColor: Colors().lightGray,
     height: hp("6%"),
-    marginLeft: 10,
-    marginRight: 10,
+    // marginLeft: 20,
+    // marginRight: 20,
+marginHorizontal:14
+
   },
   searchIcon: {
     flex: 0.1,

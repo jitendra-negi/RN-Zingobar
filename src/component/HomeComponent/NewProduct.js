@@ -94,6 +94,7 @@ const styles = StyleSheet.create({
     width: wp("15%"),
     marginHorizontal: wp("1%"),
     borderRadius: 5,
+   
   },
   productBox: {
     flexDirection: "column",

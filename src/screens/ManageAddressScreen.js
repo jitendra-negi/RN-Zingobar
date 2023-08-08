@@ -278,7 +278,7 @@ function ManageAddressScreen(props) {
           <OtirxBackButton />
         </TouchableOpacity>
         <View style={[GlobalStyles.headerCenter, { flex: 1 }]}>
-          <Text style={GlobalStyles.headingTxt}>
+          <Text style={[GlobalStyles.headingTxt,{marginRight:wp('8%')}]}>
             {" "}
             {strings.account.label_manage_address}
           </Text>

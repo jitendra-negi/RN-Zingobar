@@ -95,6 +95,11 @@ function SearchScreen(props) {
 
   return (
     <OtrixContainer customStyles={{ backgroundColor: Colors().light_white }}>
+       
+
+<Text style={[GlobalStyles.headingTxt,{textAlign:'center',marginTop:20,marginLeft:0}]}>{"Search"}</Text>
+
+
       <View style={[styles.headerView]}>
         {!isShowBack ?    
          <TouchableOpacity
@@ -108,7 +113,7 @@ function SearchScreen(props) {
         </TouchableOpacity>  
            : null}
        
-          
+     
         <View style={styles.searchContainer}>
           <Icon name="search" style={styles.searchIcon} />
           <View style={styles.verticalLine}></View>
@@ -180,7 +185,7 @@ const styles = StyleSheet.create({
     backgroundColor: Colors().white,
   },
   searchContainer: {
-    flex: 0.9,
+    flex:1.0,
     flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",

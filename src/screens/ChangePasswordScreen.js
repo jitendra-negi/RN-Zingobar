@@ -149,7 +149,7 @@ function ChangePasswordScreen(props) {
           <OtirxBackButton />
         </TouchableOpacity>
         <View style={[GlobalStyles.headerCenter, { flex: 1 }]}>
-          <Text style={[GlobalStyles.headingTxt, { lineHeight: hp("4%") }]}>
+          <Text style={[GlobalStyles.headingTxt, { lineHeight: hp("4%"),marginRight:wp('8%') }]}>
             {" "}
             {strings.reset_password.title}
           </Text>

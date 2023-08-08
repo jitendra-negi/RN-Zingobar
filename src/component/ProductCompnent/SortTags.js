@@ -36,10 +36,10 @@ function SizeTags(props) {
               ]}
               onPress={() => props.onFilterPress(props.type, props.tagID)}
             >
-              {
+              {/* {
                 props.selectedSort == props.tagID && (
                   <Image source={checkaround} style={styles.imageView} />
-                )}
+                )} */}
               <Text style={styles.tagStyle}>{props.tagName}</Text>
             </TouchableOpacity>
     );

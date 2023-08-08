@@ -39,7 +39,7 @@ const AddToCartButton = ({ cartCount, removeAllFromCart }) => {
       </TouchableOpacity>
 
 
-      <TouchableOpacity onPress={handleAddToCart} style={styles.closeIcon}>
+      <TouchableOpacity onPress={handleRemoveAllFromCart} style={styles.closeIcon}>
         <View style={styles.cancelView}>
           <Image
             square

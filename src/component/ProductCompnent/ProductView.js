@@ -18,6 +18,7 @@ import FastImage from "react-native-fast-image";
 
 function ProductView(props) {
   const data = props.data;
+  console.log("product list data-----",data);
   let off = null;
   let special = 0;
 
@@ -58,7 +59,14 @@ function ProductView(props) {
       </View>
       <View style={styles.infromationView}>
         <View style={styles.starView}>
-          <Stars
+        <Icon name={"star"} size={11} style={[styles.myStarStyle]} />
+        <Text style={[styles.reviewTxt]}>
+          {data.review_avg ? parseFloat(data.review_avg) : 0}
+        </Text>
+        <Text style={[styles.reviewTxt,{marginLeft:5}]}>
+           ({data.product_review_count ? parseFloat(data.product_review_count) : 0} Reviews)
+        </Text>
+          {/* <Stars
             default={data.review_avg ? parseFloat(data.review_avg) : 0}
             count={5}
             half={true}
@@ -81,7 +89,7 @@ function ProductView(props) {
               />
             }
             disabled={true}
-          />
+          /> */}
         </View>
         <Text style={styles.productName} numberOfLines={2}>
           {data.product_description.name}
@@ -115,13 +123,13 @@ function ProductView(props) {
           </Text>
         </View>
       )}
-      {data.quantity > 0 && data.new == true && (
+      {/* {data.quantity > 0 && data.new == true && (
         <View style={GlobalStyles.newtextView}>
           <Text style={GlobalStyles.newTxt}>
             {props.strings.common.label_new}
           </Text>
         </View>
-      )}
+      )} */}
       {wishlistArr &&
       wishlistArr.length > 0 &&
       wishlistArr.includes(data.id) ? (
@@ -183,20 +191,22 @@ const styles = StyleSheet.create({
     width: wp("40%"),
   },
   starView: {
-    alignItems: "flex-start",
-    marginVertical: hp("0.6%"),
+    flexDirection:'row',
+    //alignItems: "flex-start",
+    //marginVertical: hp("0.6%"),
   },
   myStarStyle: {
     color: "#ffd12d",
     backgroundColor: "transparent",
     marginHorizontal: 1,
     textShadowRadius: 1,
+    marginTop:3
   },
   myEmptyStarStyle: {
     color: "gray",
   },
   productName: {
-    color: Colors().secondry_text_color,
+    color: Colors().black,
     fontFamily: Fonts.Font_Semibold,
     fontSize: wp("3.5%"),
   },
@@ -210,6 +220,13 @@ const styles = StyleSheet.create({
     fontFamily: Fonts.Font_Bold,
     fontSize: wp("3.5%"),
   },
+  reviewTxt: {
+    fontFamily: Fonts.Font_Reguler,
+    fontSize: wp('2.5%'),
+    marginTop: hp('0.3%'),
+    textAlign: 'center',
+    color: Colors().secondry_text_color
+},
   originalPrice: {
     color: Colors().secondry_text_color,
     fontFamily: Fonts.Font_Bold,

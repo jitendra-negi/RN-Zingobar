@@ -49,23 +49,23 @@ function HomeCategory(props) {
   return (
     <View>
       <View style={styles.catHeading}>
-        <Text style={GlobalStyles.boxHeading}>
+        <Text style={[GlobalStyles.boxHeading]}>
           {props.strings.homepage.label_category}
         </Text>
         <TouchableOpacity
-          style={{ flex: 0.5 }}
+          style={{ flex: 0.5}}
           onPress={() => props.navigation.navigate("CategoryScreen")}
         >
-          <Text style={GlobalStyles.viewAll}>
+          <Text style={[GlobalStyles.viewAll,{padding:0}]}>
             {props.strings.homepage.viewall}
           </Text>
         </TouchableOpacity>
       </View>
       <OtrixDivider size={"sm"} />
       <FlatList
-        style={{ padding: wp("1%") }}
+        //style={{ padding: wp("1%") }}
         data={props.data}
-        contentContainerStyle={{ paddingRight: wp("3%") }}
+        contentContainerStyle={{}}
         horizontal={true}
         showsHorizontalScrollIndicator={false}
         onEndReachedThreshold={0.7}
@@ -80,9 +80,10 @@ export default HomeCategoryView = React.memo(HomeCategory);
 
 const styles = StyleSheet.create({
   catHeading: {
-    justifyContent: "space-evenly",
+    justifyContent:'space-between',
     alignItems: "center",
     flexDirection: "row",
+    
   },
   catBox: {
     height: hp("12.5%"),

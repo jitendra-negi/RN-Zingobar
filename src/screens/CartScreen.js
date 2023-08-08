@@ -28,6 +28,7 @@ import getApi from "@apis/getApi";
 import { logfunction, numberWithComma } from "@helpers/FunctionHelper";
 
 
+
 function CheckoutScreen(props) {
     const [state, setState] = React.useState({ addOtherTip: false, loading: true, cartProducts: [], sumAmount: 0, isApplied: false, validCode: false, couponCode: null, noRecord: false, subTotal: 0, discount: null, tax: null, grandTotal: 0, message: null, type: 'error', tipAmt: 0 });
     const [showMessage, setShowLoading] = React.useState(false)
@@ -514,7 +515,7 @@ function CheckoutScreen(props) {
                         {
                             showTip && <View style={styles.totalView}>
                                 <Text style={styles.leftTxt}>{"Tip"} </Text>
-                                <Text style={styles.rightTxt}>{tipAmt}.00</Text>
+                                <Text style={styles.rightTxt}>{CURRENCY}{tipAmt}.00</Text>
                                 <OtrixDivider size={'sm'} />
 
                             </View>
@@ -525,18 +526,10 @@ function CheckoutScreen(props) {
                         <View style={styles.totalView}>
                             <Text style={styles.leftTxt}>{strings.cart.total}</Text>
 
-                            <Text style={[styles.rightTxt, { color: Colors().link_color, fontSize: wp('5.5%') }]}>{CURRENCY}{grandTotal}</Text>
+                            <Text style={[styles.rightTxt, { color: Colors().link_color, fontSize: wp('4.5%') }]}>{CURRENCY}{grandTotal}</Text>
                         </View>
 
-                        <Button
-                            size="md"
-                            variant="solid"
-                            bg={Colors().themeColor}
-                            style={[GlobalStyles.button, { marginHorizontal: wp('5%'), marginBottom: hp('2.5%'), marginTop: hp('3%') }]}
-                            onPress={() => props.navigation.navigate("CheckoutScreen")}
-                        >
-                            <Text style={GlobalStyles.buttonText}>{strings.cart.checkout}</Text>
-                        </Button>
+                      
                     </View>
                 }
                 {
@@ -592,7 +585,15 @@ function CheckoutScreen(props) {
                 </Modal>
             </ScrollView>
 
-
+            <Button
+                            size="md"
+                            variant="solid"
+                            bg={Colors().themeColor}
+                            style={[GlobalStyles.button, { marginHorizontal: wp('5%'), marginBottom: hp('2.5%'), marginTop: hp('3%') }]}
+                            onPress={() => props.navigation.navigate("CheckoutScreen")}
+                        >
+                            <Text style={GlobalStyles.buttonText}>{"Checkout"}</Text>
+                        </Button>
 
         </OtrixContainer >
     )

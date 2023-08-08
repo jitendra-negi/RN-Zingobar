@@ -478,6 +478,7 @@ function ProductDetailScreen(props) {
                                                                     <FontAwesomeIcon name="heart-o" style={GlobalStyles.unFavIcon} color={Colors().secondry_text_color} />
                                                                 </TouchableOpacity>
                                                             }
+                                                            
                                                         </View>)}
 
                                                     </View>
@@ -520,11 +521,11 @@ function ProductDetailScreen(props) {
                             <OtrixDivider size={'md'} />
                             <View style={GlobalStyles.horizontalLine}></View>
                             <OtrixDivider size={'sm'} />
-                            <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
+                            <TouchableOpacity onPress={() => expandView()} style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
                                 <Text style={[styles.headingTxt, { fontSize: wp('3.8%'),color:Colors().secondry_text_color  }]}>{strings.product_details.description}</Text>
                                 <Text onPress={() => expandView()} style={[styles.headingTxt, { fontSize: wp('5.8%'), marginRight: wp('2%') }]}>{isCollasped ? "-" : "+"}</Text>
 
-                            </View>
+                            </TouchableOpacity>
                             <OtrixDivider size={'sm'} />
                             <Collapsible style={styles.subItemContainer} collapsed={!isCollasped} >
                                 <RenderHtml
@@ -540,11 +541,11 @@ function ProductDetailScreen(props) {
                             <View style={GlobalStyles.horizontalLine}></View>
                             <OtrixDivider size={'sm'} />
                             {Object.keys(productAttributes).length > 0 &&
-                                <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
+                                <TouchableOpacity onPress={() => expandDetailView()} style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
                                     <Text style={[styles.headingTxt, { fontSize: wp('3.8%'),color:Colors().secondry_text_color  }]}>{"Product Details"}</Text>
                                     <Text onPress={() => expandDetailView()} style={[styles.headingTxt, { fontSize: wp('5.8%'), marginRight: wp('2%') }]}>{isProductDetails ? "-" : "+"}</Text>
 
-                                </View>
+                                </TouchableOpacity>
                             }
                             <OtrixDivider size={'sm'} />
                             {
@@ -607,7 +608,15 @@ function ProductDetailScreen(props) {
                         </Modal>
 
                         {/* Bottom View */}
-                        <View style={styles.footerView}>
+                       
+                    </>
+                }
+
+                {
+                    message != null && <OtrixAlert type={type} message={message} />
+                }
+            </ScrollView>
+            <View style={styles.footerView}>
                             <Button
                                 isLoading={fetchCart}
                                 size="md"
@@ -622,29 +631,23 @@ function ProductDetailScreen(props) {
                             </Button>
                             <View style={styles.countBox}>
                             <View style={styles.arrowContainer}>
-                            <TouchableOpacity style={{ flex: 0.50 }} onPress={() => setState({ ...state, productCount: productCount + 1 })}>
-                                        {/* <MaterialIconsIcon name="keyboard-arrow-up" style={styles.plusminusArrow} /> */}
-                                        <Icon1 name="plus" style={styles.plusminusArrow} />
+                            <TouchableOpacity style={{ flex: 0.50 }} onPress={() => setState({ ...state, productCount: productCount > 1 ? productCount - 1 : 1 })}>
+                                        {/* <MaterialIconsIcon name="keyboard-arrow-down" style={styles.plusminusArrow} /> */}
+                                        <Icon1 name="minus" style={styles.plusminusArrow} />
                                     </TouchableOpacity>
+                            
                                     </View>
                                 <Text style={styles.countTxt}>{productCount}</Text>
                                 <View style={styles.arrowContainer}>
                                     
-                                    <TouchableOpacity style={{ flex: 0.50 }} onPress={() => setState({ ...state, productCount: productCount > 1 ? productCount - 1 : 1 })}>
-                                        {/* <MaterialIconsIcon name="keyboard-arrow-down" style={styles.plusminusArrow} /> */}
-                                        <Icon1 name="minus" style={styles.plusminusArrow} />
+                                <TouchableOpacity style={{ flex: 0.50 }} onPress={() => setState({ ...state, productCount: productCount + 1 })}>
+                                        {/* <MaterialIconsIcon name="keyboard-arrow-up" style={styles.plusminusArrow} /> */}
+                                        <Icon1 name="plus" style={styles.plusminusArrow} />
                                     </TouchableOpacity>
                                 </View>
                             </View>
                         </View>
 
-                    </>
-                }
-
-                {
-                    message != null && <OtrixAlert type={type} message={message} />
-                }
-            </ScrollView>
         </OtrixContainer >
     )
 }

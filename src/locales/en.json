@@ -82,7 +82,7 @@
     "label_new_product": "New Product",
     "label_shop_by_brands": "Shop By Brands",
     "label_dod": "Deals of the day",
-    "label_tranding": "Tranding Product"
+    "label_tranding": "Trending Product"
   },
   "categories": {
     "title": "Categories"
@@ -122,14 +122,14 @@
     "buy_again": "Buy it Again",
     "order_detail": "Order Details",
     "order_status": "Order Status",
-    "order_on": "Order On"
+    "order_on": "Order Date"
   },
   "order_details": {
     "title": "Order Details",
     "view_order_detail": "View Orders Details",
     "order_date": "Order Date",
     "payment_method": "Payment Method",
-    "order": "Order",
+    "order": "Order Id",
     "order_total": "Order Total",
     "shipping_address": "Shipping Address",
     "order_product_list": "Order Product List",

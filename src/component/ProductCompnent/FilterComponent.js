@@ -133,15 +133,16 @@ function FilterComponent(props) {
           <Text style={styles.titleTxt}>{"Stock"}:</Text>
           <TouchableOpacity
             onPress={() => checkSelection()}
-            style={{
+            style={[{
               flexDirection: "row",
               flexWrap: "wrap",
               marginHorizontal: wp("1%"),
               top: 10,
               marginBottom: 10,
-            }}
+            },select && styles.borderBox]}
           >
-            {select ? (
+           
+            {/* {select ? (
               <CheckIcon
                 name="checkbox-active"
                 color={"#1E508F"}
@@ -153,7 +154,7 @@ function FilterComponent(props) {
                 color={"#00000014"}
                 size={wp("4%")}
               />
-            )}
+            )} */}
             <Text style={[styles.titleTxt, { marginLeft: 10 }]}>
               {"In Stock"}:
             </Text>
@@ -399,6 +400,9 @@ const styles = StyleSheet.create({
   borderBox: {
     borderColor: Colors().themeColor,
     borderWidth: 1,
+    width:wp('23%'),
+    borderRadius:5,
+    
   },
 
   imageView: {
