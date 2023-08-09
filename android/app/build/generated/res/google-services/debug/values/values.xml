@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">750908141751-bga64fh851g4suhmui29p4o8eppifcr6.apps.googleusercontent.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">750908141751</string>
+    <string name="google_api_key" translatable="false">AIzaSyDajFs4NE0rg1VtfBIg-vz396STvzqOb0I</string>
+    <string name="google_app_id" translatable="false">1:750908141751:android:53feaa7f883655d27c1d32</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyDajFs4NE0rg1VtfBIg-vz396STvzqOb0I</string>
+    <string name="google_storage_bucket" translatable="false">zingobar-d2dd6.appspot.com</string>
+    <string name="project_id" translatable="false">zingobar-d2dd6</string>
+</resources>

@@ -21,10 +21,10 @@ yarn-error.log
 **/ios/build/
 **/ios/Podfile.lock
 **/android/build/
-**/android/app/google-services.json
-**/android/app/debug.keystore
-**/android/app/release.keystore
-**/android/gradle.properties
+# **/android/app/google-services.json
+# **/android/app/debug.keystore
+# **/android/app/release.keystore
+# **/android/gradle.properties
 
 # Dependency directories
 ios/Pods/

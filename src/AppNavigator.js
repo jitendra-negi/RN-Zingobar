@@ -114,6 +114,17 @@ const AddToCartButton = ({ cartCount, addToCart }) => {
     //addToCart(); // Dispatch the addToCart action
   };
 
+
+  const handleRemoveAddToCart = () => {
+
+    setState({
+      ...state,
+      cartCount: 0,
+      cartProduct: [],
+      
+  });
+  };
+
   return (
 
     <View style={styles.containerCart}>
@@ -132,7 +143,7 @@ const AddToCartButton = ({ cartCount, addToCart }) => {
       </TouchableOpacity>
 
 
-      <TouchableOpacity onPress={handleAddToCart} style={styles.closeIcon}>
+      <TouchableOpacity onPress={handleRemoveAddToCart} style={styles.closeIcon}>
         <View style={styles.cancelView}>
           <Image
             square
@@ -771,6 +782,7 @@ function AppNavigator(props) {
 function mapStateToProps(state) {
   return {
     cartCount: state.cart.cartCount ? state.cart.cartCount : null,
+    cartProduct: state.cart.cartProduct ? state.cart.cartProduct : null,
     authStatus: state.auth.USER_AUTH,
     // wishlistData: state.wishlist.wishlistData,
     wishCount: state.wishlist.wishlistCount ? state.wishlist.wishlistCount : null,

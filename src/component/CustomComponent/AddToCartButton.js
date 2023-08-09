@@ -11,7 +11,16 @@ import { removeAllFromCart } from "./helpers/actions/cartActions"; // Import the
 const AddToCartButton = ({ cartCount, removeAllFromCart }) => {
     const navigation = useNavigation(); 
   const handleRemoveAllFromCart = () => {
-    removeAllFromCart(); // Dispatch the removeAllFromCart action
+   // removeAllFromCart(); // Dispatch the removeAllFromCart action
+
+ 
+    setState({
+      ...state,
+      cartCount: 0,
+      cartProduct: [],
+      
+  });
+    
   };
 
   const handleOpenCart = () => {
@@ -34,7 +43,7 @@ const AddToCartButton = ({ cartCount, removeAllFromCart }) => {
       </View>
       <Text style={styles.itemCountText}>{cartCount} items</Text>
 
-      <TouchableOpacity onPress={handleAddToCart} style={styles.button}>
+      <TouchableOpacity onPress={handleOpenCart} style={styles.button}>
         <Text style={styles.buttonText}>View Cart</Text>
       </TouchableOpacity>
 
@@ -72,6 +81,7 @@ const AddToCartButton = ({ cartCount, removeAllFromCart }) => {
 
 const mapStateToProps = (state) => ({
   cartCount: state.cart.cartCount,
+  cartProduct: state.cart.cartProduct
 });
 
 const mapDispatchToProps = (dispatch) => ({
